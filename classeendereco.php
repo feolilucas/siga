@@ -121,6 +121,56 @@
 			
 		}
 		
+		public function alterar()
+		{
+			$conexao = new conexao();
+			
+			try
+			{	
+				$query = $conexao->conn->prepare("update endereco set logradouro = :logradouro, numero = :numero, complemento = :complemento, bairro = :bairro, referencia = :referencia, 
+				cidade = :cidade, estado = :estado, cep = :cep where idendereco = :idendereco;");
+				
+				$query->bindValue(":idendereco", $this->getIdendereco());
+				$query->bindValue(":logradouro", $this->getLogradouro());
+				$query->bindValue(":numero", $this->getNumero());
+				$query->bindValue(":complemento", $this->getComplemento());
+				$query->bindValue(":bairro", $this->getBairro());
+				$query->bindValue(":referencia", $this->getReferencia());
+				$query->bindValue(":cidade", $this->getCidade());
+				$query->bindValue(":estado", $this->getEstado());
+				$query->bindValue(":cep", $this->getCep());
+				
+				$query->execute();		
+						
+			}
+			catch(PDOException $e)
+			{
+				echo $e->getMessage();
+			}
+			
+		}
+		
+		public function deletar()
+		{
+			$conexao = new conexao();
+			
+			try
+			{	
+				$query = $conexao->conn->prepare("delete from endereco where idendereco = :idendereco;");
+				
+				$query->bindValue(":idendereco", $this->getIdendereco());
+				
+				$query->execute();		
+						
+			}
+			catch(PDOException $e)
+			{
+				echo $e->getMessage();
+			}
+			
+		}
+		
+		
 		public function ultimoid()
 		{
 			$conexao = new conexao();

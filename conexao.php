@@ -6,9 +6,6 @@
 	class conexao{
 
 
-
-
-		
 		private $host= "localhost";
 		private $user= "root";
 		private $db= "siga";

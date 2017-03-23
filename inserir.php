@@ -18,18 +18,21 @@
 </html>
 
 <?php
+	require_once "classepermissoes.php";
+	require_once "classeendereco.php";
+	require_once "classeusuario.php";
+	require_once "classealuno.php";
+	
+	$permissoes = new permissoes;
+	$endereco = new endereco;
+	$usuario = new usuario;
+	
 	$id = $_GET['id'];
 	
 	switch($id)
 	{
-		case 1:
-			require_once "classepermissoes.php";
-			require_once "classeendereco.php";
-			require_once "classeusuario.php";
+		case 1: //cadastro de usuário
 			
-			$permissoes = new permissoes;
-			$endereco = new endereco;
-			$usuario = new usuario;
 			try
 			{
 				$usuario->setNome($_POST['nome']);
@@ -115,22 +118,16 @@
 				}
 				
 				$permissoes->cadastrar();
-				$idpermissoes = $permissoes->ultimoid();
+				$usuario->setIdpermissoes($permissoes->ultimoid());
 
 				$endereco->cadastrar();
-				$idendereco = $endereco->ultimoid();
+				$usuario->setIdendereco($endereco->ultimoid());
 				$usuario->cadastrar($idpermissoes['id'], $idendereco['id']);
 				
 				
 				
- $redirect = "http://localhost/siga/cadastrousuario.php?gravou=1";
- header("location:$redirect");
- 
-
-				
-				
-				
-				
+				$redirect = "http://localhost/siga/cadastrousuario.php?gravou=1";
+				header("location:$redirect");	
 				
 			}
 			catch(PDOException $e)
@@ -139,6 +136,18 @@
 				
 			}
 			
+		break;
+		case 2: // cadastro de aluno
+			
+			try
+			{
+				
+			}
+			catch(PDOException $e)
+			{
+				echo $e->getMessage();
+				
+			}
 		break;
 		default:
 		break;

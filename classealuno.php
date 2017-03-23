@@ -56,6 +56,138 @@
 		
 		function setDeficiencia($deficiencia) { $this->deficiencia = $deficiencia; }
 		function getDeficiencia() { return $this->deficiencia; }
+		
+		public function cadastrar()
+		{
+			$conexao = new conexao();
+			
+			try
+			{
+				$query = $conexao->conn->prepare("insert into aluno(nome, datanascimento, datacadastro, sexo, nomepai, nomemae, idendereco,
+				cpf, nacionalidade, rg, dataemissaorg, deficiencia) values( :nome, :datanascimento, :datacadastro, :sexo, :nomepai, :nomemae, :idendereco,
+				:cpf, :nacionalidade, :rg, :dataemissaorg, :deficiencia);");
+				
+				$query->bindValue(":nome", $this->getNome());
+				$query->bindValue(":datanascimento", $this->getDatanascimento());
+				$query->bindValue(":datacadastro", $this->getDatacadastro());
+				$query->bindValue(":sexo", $this->getSexo());
+				$query->bindValue(":nomepai", $this->getNomepai());
+				$query->bindValue(":nomemae", $this->getNomemae());
+				$query->bindValue(":idendereco", $this->getIdendereco());
+				$query->bindValue(":cpf", $this->getCpf());
+				$query->bindValue(":nacionalidade", $this->getNacionalidade());
+				$query->bindValue(":rg", $this->getRg());
+				$query->bindValue(":dataemissaorg", $this->getDataemissaorg());
+				$query->bindValue(":deficiencia", $this->getDeficiencia());
+				
+				$query->execute();
+			}
+			catch(PDOException $e)
+			{
+				echo $e->getMessage();
+				
+			}
+		}
+		
+		public function alterar()
+		{
+			$conexao = new conexao();
+			
+			try
+			{
+				$query = $conexao->conn->prepare("update aluno set nome = :nome, datanascimento = :datanascimento, datacadastro = :datacadastro,
+				sexo = :sexo, nomepai = :nomepai, nomemae = :nomemae, cpf = :cpf, nacionalidade = :nacionalidade, rg = :rg, dataemissaorg = :dataemissaorg, deficiencia = :deficiencia 
+				where idaluno = :idaluno;");
+				
+				$query->bindValue(":idaluno", $this->getIdaluno());
+				$query->bindValue(":nome", $this->getNome());
+				$query->bindValue(":datanascimento", $this->getDatanascimento());
+				$query->bindValue(":datacadastro", $this->getDatacadastro());
+				$query->bindValue(":sexo", $this->getSexo());
+				$query->bindValue(":nomepai", $this->getNomepai());
+				$query->bindValue(":nomemae", $this->getNomemae());
+				$query->bindValue(":cpf", $this->getCpf());
+				$query->bindValue(":nacionalidade", $this->getNacionalidade());
+				$query->bindValue(":rg", $this->getRg());
+				$query->bindValue(":dataemissaorg", $this->getDataemissaorg());
+				$query->bindValue(":deficiencia", $this->getDeficiencia());
+				
+				$query->execute();
+			}
+			catch(PDOException $e)
+			{
+				echo $e->getMessage();
+				
+			}
+		}
+		
+		public function mostrarum()
+		{
+			$conexao = new conexao();
+			
+			try
+			{
+				$query = $conexao->conn->prepare("select nome, datanascimento, datacadastro, sexo, nomepai, nomemae,
+				e.logradouro, e.numero, e.complemento, e. bairro, e.referencia, e.cidade, e.estado, e.cep,
+				cpf, nacionalidade, rg, dataemissaorg, deficiencia from aluno as a inner join endereco as e on a.idendereco = e.idendereco where idaluno = :idaluno;");
+				
+				$query->bindValue(":idaluno", $this->getIdaluno());
+			
+				$query->execute();
+				
+				$r = $query->fetch();
+				
+				return $r;
+			}
+			catch(PDOException $e)
+			{
+				echo $e->getMessage();
+				
+			}
+		}
+		
+		public function mostrartodos()
+		{
+			$conexao = new conexao();
+			
+			try
+			{
+				$query = $conexao->conn->prepare("select select nome, datanascimento, datacadastro, sexo, nomepai, nomemae,
+				e.logradouro, e.numero, e.complemento, e. bairro, e.referencia, e.cidade, e.estado, e.cep,
+				cpf, nacionalidade, rg, dataemissaorg, deficiencia from aluno as a inner join endereco as e on a.idendereco = e.idendereco from aluno;");
+				
+				$query->execute();
+				
+				$r = $query->fetchAll();
+				
+				return $r;
+			}
+			catch(PDOException $e)
+			{
+				echo $e->getMessage();
+				
+			}
+		}
+		
+		public function deletar()
+		{
+			$conexao = new conexao();
+			
+			try
+			{
+				$query = $conexao->conn->prepare("delete from aluno where idaluno = :idaluno;");
+				
+				$query->bindValue(":idaluno", $this->getIdaluno());
+			
+				$query->execute();
+
+			}
+			catch(PDOException $e)
+			{
+				echo $e->getMessage();
+				
+			}
+		}
 	}
 
 

@@ -31,6 +31,125 @@
 		
 		function setHabilidadesbasicas($habilidadesbasicas) { $this->habilidadesbasicas = $habilidadesbasicas; }
 		function getHabilidadesbasicas() { return $this->habilidadesbasicas; }
+		
+		public function cadastrar()
+		{
+			$conexao = new conexao();
+			
+			try
+			{	
+				$query = $conexao->conn->prepare("insert into relatoriodeobservacao(idaluno, datacadastro, observacoesgerais, vidadiaria, vidapratica, habilidadesbasicas)
+				values(:idaluno, :datacadastro, :observacoesgerais, :vidadiaria, :vidapratica, :habilidadesbasicas)");
+				
+				$query->bindValue(":idaluno", $this->getIdaluno());
+				$query->bindValue(":datacadastro", $this->getDatacadastro());
+				$query->bindValue(":observacoesgerais", $this->getObservacoesgerais());
+				$query->bindValue(":vidadiaria", $this->getVidadiaria());
+				$query->bindValue(":vidapratica", $this->getVidapratica());
+				$query->bindValue(":habilidadesbasicas", $this->getHabilidadesbasicas());
+				
+				$query->execute();		
+						
+			}
+			catch(PDOException $e)
+			{
+				echo $e->getMessage();
+			}
+			
+		}
+		
+		public function alterar()
+		{
+			$conexao = new conexao();
+			
+			try
+			{	
+				$query = $conexao->conn->prepare("update relatoriodeobservacao set observacoesgerais = :observacoesgerais, vidadiaria = :vidadiaria, vidapratica = :vidapratica, habilidadesbasicas = :habilidadesbasicas 
+				where idrelatoriodeobservacao = :idrelatoriodeobservacao");
+				
+				$query->bindValue(":idrelatoriodeobservacao", $this->getIdrelatoriodeobservacao());
+				$query->bindValue(":observacoesgerais", $this->getObservacoesgerais());
+				$query->bindValue(":vidadiaria", $this->getVidadiaria());
+				$query->bindValue(":vidapratica", $this->getVidapratica());
+				$query->bindValue(":habilidadesbasicas", $this->getHabilidadesbasicas());
+				
+				$query->execute();		
+						
+			}
+			catch(PDOException $e)
+			{
+				echo $e->getMessage();
+			}
+			
+		}
+		
+		public function mostrarum()
+		{
+			$conexao = new conexao();
+			
+			try
+			{	
+				$query = $conexao->conn->prepare("select *from relatoriodeobservacao where idrelatoriodeobservacao = :idrelatoriodeobservacao");
+				
+				$query->bindValue(":idrelatoriodeobservacao", $this->getIdrelatoriodeobservacao());
+				
+				$query->execute();	
+
+				$r = $query->fetch();
+				
+				return $r;
+						
+			}
+			catch(PDOException $e)
+			{
+				echo $e->getMessage();
+			}
+			
+		}
+		
+		public function mostrartodos()
+		{
+			$conexao = new conexao();
+			
+			try
+			{	
+				$query = $conexao->conn->prepare("select *from relatoriodeobservacao where idaluno = :idaluno");
+				
+				$query->bindValue(":idaluno", $this->getIdaluno());
+				
+				$query->execute();	
+
+				$r = $query->fetchAll();
+				
+				return $r;
+						
+			}
+			catch(PDOException $e)
+			{
+				echo $e->getMessage();
+			}
+			
+		}
+		
+		public function deletar()
+		{
+			$conexao = new conexao();
+			
+			try
+			{	
+				$query = $conexao->conn->prepare("delete from relatoriodeobservacao where idrelatoriodeobservacao = :idrelatoriodeobservacao");
+				
+				$query->bindValue(":idrelatoriodeobservacao", $this->getIdrelatoriodeobservacao());
+				
+				$query->execute();
+						
+			}
+			catch(PDOException $e)
+			{
+				echo $e->getMessage();
+			}
+			
+		}
 	}
 	
 ?>

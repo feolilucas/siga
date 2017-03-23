@@ -92,7 +92,165 @@
 		function setDadosmedicos($dadosmedicos) { $this->dadosmedicos = $dadosmedicos; }
 		function getDadosmedicos() { return $this->dadosmedicos; }
 
+		public function cadastrar()
+		{
+			$conexao = new conexao();
+			
+			try
+			{	
+				$query = $conexao->conn->prepare("insert into planoterapeuticoindividual(idaluno, datacadastro, observacoesgerais, servicosocial, objservicosocial, fonoaudiologia, objfonoaudiologia,
+				psicologia, objpsicologia, terapeutaocupacional, objterapeutaocupacional, fisioterapia, objfisioterapia, nutricionista, objnutricionista, dentista, objdentista,
+				diagnostico, etiologia, cid, dadosmedicos)
+				values(:idaluno, :datacadastro, :observacoesgerais, :servicosocial, :objservicosocial, :fonoaudiologia, :objfonoaudiologia,
+				:psicologia, :objpsicologia, :terapeutaocupacional, :objterapeutaocupacional, :fisioterapia, :objfisioterapia, :nutricionista, :objnutricionista, :dentista, :objdentista,
+				:diagnostico, :etiologia, :cid, :dadosmedicos )");
+				
+				$query->bindValue(":idaluno", $this->getIdaluno());
+				$query->bindValue(":datacadastro", $this->getDatacadastro());
+				$query->bindValue(":observacoesgerais", $this->getObservacoesgerais());
+				$query->bindValue(":servicosocial", $this->getServicosocial());
+				$query->bindValue(":objservicosocial", $this->getObjservicosocial());
+				$query->bindValue(":fonoaudiologia", $this->getFonoaudiologia());
+				$query->bindValue(":objfonoaudiologia", $this->getObjfonoaudiologia());
+				$query->bindValue(":psicologia", $this->getPsicologia());
+				$query->bindValue(":objpsicologia", $this->getObjpsicologia());
+				$query->bindValue(":terapeutaocupacional", $this->getTerapeutaocupacional());
+				$query->bindValue(":objterapeutaocupacional", $this->getObjterapeutaocupacional());
+				$query->bindValue(":fisioterapia", $this->getFisioterapia());
+				$query->bindValue(":objfisioterapia", $this->getObjfisioterapia());
+				$query->bindValue(":nutricionista", $this->getNutricionista());
+				$query->bindValue(":objnutricionista", $this->getObjnutricionista());
+				$query->bindValue(":dentista", $this->getDentista());
+				$query->bindValue(":objdentista", $this->getObjdentista());
+				$query->bindValue(":diagnostico", $this->getDiagnostico());
+				$query->bindValue(":etiologia", $this->getEtiologia());
+				$query->bindValue(":cid", $this->getCid());
+				$query->bindValue(":dadosmedicos", $this->getDadosmedicos());
+				
+				$query->execute();		
+						
+			}
+			catch(PDOException $e)
+			{
+				echo $e->getMessage();
+			}
+			
+		}
+		
+		public function alterar()
+		{
+			$conexao = new conexao();
+			
+			try
+			{	
+				$query = $conexao->conn->prepare("update planoterapeuticoindividual set observacoesgerais = :observacoesgerais,
+				servicosocial = :servicosocial, objservicosocial = :objservicosocial, fonoaudiologia = :fonoaudiologia, objfonoaudiologia = :objfonoaudiologia,
+				psicologia = :psicologia, objpsicologia = :objpsicologia, terapeutaocupacional = :terapeutaocupacional, objterapeutaocupacional = :objterapeutaocupacional,
+				fisioterapia = :fisioterapia, objfisioterapia = :objfisioterapia, nutricionista = :nutricionista, objnutricionista = :objnutricionista, 
+				dentista = :dentista, objdentista = :objdentista, diagnostico = :diagnostico, etiologia = :etiologia, cid = :cid, dadosmedicos = :dadosmedicos 
+				where idplanoterapeuticoindividual = :idplanoterapeuticoindividual )");
+				
+				$query->bindValue(":idplanoterapeuticoindividual", $this->getIdplanoterapeuticoindividual());
+				$query->bindValue(":observacoesgerais", $this->getObservacoesgerais());
+				$query->bindValue(":servicosocial", $this->getServicosocial());
+				$query->bindValue(":objservicosocial", $this->getObjservicosocial());
+				$query->bindValue(":fonoaudiologia", $this->getFonoaudiologia());
+				$query->bindValue(":objfonoaudiologia", $this->getObjfonoaudiologia());
+				$query->bindValue(":psicologia", $this->getPsicologia());
+				$query->bindValue(":objpsicologia", $this->getObjpsicologia());
+				$query->bindValue(":terapeutaocupacional", $this->getTerapeutaocupacional());
+				$query->bindValue(":objterapeutaocupacional", $this->getObjterapeutaocupacional());
+				$query->bindValue(":fisioterapia", $this->getFisioterapia());
+				$query->bindValue(":objfisioterapia", $this->getObjfisioterapia());
+				$query->bindValue(":nutricionista", $this->getNutricionista());
+				$query->bindValue(":objnutricionista", $this->getObjnutricionista());
+				$query->bindValue(":dentista", $this->getDentista());
+				$query->bindValue(":objdentista", $this->getObjdentista());
+				$query->bindValue(":diagnostico", $this->getDiagnostico());
+				$query->bindValue(":etiologia", $this->getEtiologia());
+				$query->bindValue(":cid", $this->getCid());
+				$query->bindValue(":dadosmedicos", $this->getDadosmedicos());
+				
+				$query->execute();		
+						
+			}
+			catch(PDOException $e)
+			{
+				echo $e->getMessage();
+			}
+			
+		}
+		
+		public function mostrarum()
+		{
+			$conexao = new conexao();
+			
+			try
+			{	
+				$query = $conexao->conn->prepare("select *from planoterapeuticoindividual 
+				where idplanoterapeuticoindividual = :idplanoterapeuticoindividual )");
+				
+				$query->bindValue(":idplanoterapeuticoindividual", $this->getIdplanoterapeuticoindividual());
+				
+				$query->execute();
 
+				$r = $query->fetch();
+				
+				return $r;
+						
+			}
+			catch(PDOException $e)
+			{
+				echo $e->getMessage();
+			}
+			
+		}
+		
+		public function mostrartodos()
+		{
+			$conexao = new conexao();
+			
+			try
+			{	
+				$query = $conexao->conn->prepare("select *from planoterapeuticoindividual 
+				where idaluno = :idaluno )");
+				
+				$query->bindValue(":idaluno", $this->getIdaluno());
+				
+				$query->execute();
+
+				$r = $query->fetchAll();
+				
+				return $r;
+						
+			}
+			catch(PDOException $e)
+			{
+				echo $e->getMessage();
+			}
+			
+		}
+		
+		public function deletar()
+		{
+			$conexao = new conexao();
+			
+			try
+			{	
+				$query = $conexao->conn->prepare("delete from planoterapeuticoindividual 
+				where idplanoterapeuticoindividual = :idplanoterapeuticoindividual )");
+				
+				$query->bindValue(":idplanoterapeuticoindividual", $this->getIdplanoterapeuticoindividual());
+				
+				$query->execute();
+						
+			}
+			catch(PDOException $e)
+			{
+				echo $e->getMessage();
+			}
+			
+		}
 	}
 	
 ?>

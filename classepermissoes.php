@@ -120,6 +120,60 @@
 			}
 			
 		}
+		
+		public function alterar()
+		{
+			$conexao = new conexao();
+			
+			try
+			{	
+				$query = $conexao->conn->prepare("update permissoes set administrativo = :administrativo, planoterapeutico = :planoterapeutico, psicologico = :psicologico,
+				neurologico = :neurologico, fonoaudiologico = :fonoaudiologico, terapiaocupacional = :terapiaocupacional, pedagogico = :pedagogico, social = :social where idpermissoes = :idpermissoes; ");
+				
+				$query->bindValue(":idpermissoes", $this->getIdpermissoes());
+				$query->bindValue(":administrativo", $this->getAdministrativo());
+				$query->bindValue(":planoterapeutico", $this->getPlanoterapeutico());
+				$query->bindValue(":psicologico", $this->getPsicologico());
+				$query->bindValue(":neurologico", $this->getNeurologico());
+				$query->bindValue(":fonoaudiologico", $this->getFonoaudiologico());
+				$query->bindValue(":terapiaocupacional", $this->getTerapiaocupacional());
+				$query->bindValue(":pedagogico", $this->getPedagogico());
+				$query->bindValue(":social", $this->getSocial());
+				
+				$query->execute();		
+						
+			}
+			catch(PDOException $e)
+			{
+				echo $e->getMessage();
+			}
+			
+		}
+		
+		public function mostrar()
+		{
+			$conexao = new conexao();
+			
+			try
+			{	
+				$query = $conexao->conn->prepare("select *from permissoes where idpermissoes = :idpermissoes; ");
+				
+				$query->bindValue(":idpermissoes", $this->getIdpermissoes());
+				
+				$query->execute();	
+				
+				$r = $query->fetch();
+				
+				return $r;
+						
+			}
+			catch(PDOException $e)
+			{
+				echo $e->getMessage();
+			}
+			
+		}
+		
 		public function ultimoid()
 		{
 			$conexao = new conexao();

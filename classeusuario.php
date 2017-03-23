@@ -98,13 +98,13 @@
 			$this->telefone = $telefone;
 		}
 		
-		public function getIdUsuario()
+		public function getIdusuario()
 		{
-			return $this->idUsuario;
+			return $this->idusuario;
 		}
-		public function setIdUsuario($idUsuario)
+		public function setIdusuario($idusuario)
 		{
-			$this->idUsuario = $idUsuario;
+			$this->idusuario = $idusuario;
 		}
 		
 		public function getUsuario()
@@ -151,7 +151,7 @@
 			}
 		}
 		
-		public function cadastrar($idpermissoes, $idendereco)
+		public function cadastrar()
 		{
 	
 			$conexao = new conexao();
@@ -168,14 +168,161 @@
 				$query->bindValue(":datanascimento", $this->getDatanascimento());
 				$query->bindValue(":usuario", $this->getUsuario());
 				$query->bindValue(":senha", $this->getSenha());
-				$query->bindValue(":idendereco", $idendereco);
+				$query->bindValue(":idendereco", $this->getIdendereco());
 				$query->bindValue(":idarea", $this->getIdarea());
-				$query->bindValue(":idpermissoes", $idpermissoes);
+				$query->bindValue(":idpermissoes", $this->getIdpermissoes());
 				$query->bindValue(":email", $this->getEmail());
 				$query->bindValue(":telefone", $this->getTelefone());
 				
 				$query->execute();		
 						
+			}
+			catch(PDOException $e)
+			{
+				echo $e->getMessage();
+			}
+			
+		}
+		
+		public function mostrarum()
+		{
+	
+			$conexao = new conexao();
+			
+			try
+			{	
+				$query = $conexao->conn->prepare("select u.nome, rg, cpf, datanascimento, e.logradouro, e.numero, e.complemento, e. bairro, e.referencia, e.cidade, e.estado, e.cep,
+				a.nome as area, email, telefone from usuario as u inner join area as a on u.idarea = a.idarea 
+				inner join endereco as e on u.idendereco = e.idendereco where idusuario = :idusuario;");
+				
+				$query->bindValue(":idusuario", $this->getIdusuario());
+				
+				$query->execute();
+
+				$r = $query->fetch();	
+
+				return $r;
+						
+			}
+			catch(PDOException $e)
+			{
+				echo $e->getMessage();
+			}
+			
+		}
+		
+		public function mostrartodos()
+		{
+	
+			$conexao = new conexao();
+			
+			try
+			{	
+				$query = $conexao->conn->prepare("select select u.nome, rg, cpf, datanascimento, e.logradouro, e.numero, e.complemento, e. bairro, e.referencia, e.cidade, e.estado, e.cep,
+				a.nome as area, email, telefone from usuario as u inner join area as a on u.idarea = a.idarea 
+				inner join endereco as e on u.idendereco = e.idendereco;");
+				
+				$query->execute();
+
+				$r = $query->fetchAll();	
+
+				return $r;
+						
+			}
+			catch(PDOException $e)
+			{
+				echo $e->getMessage();
+			}
+			
+		}
+		
+		public function mostrarusuariosenha()
+		{
+	
+			$conexao = new conexao();
+			
+			try
+			{	
+				$query = $conexao->conn->prepare("select usuario, senha from usuario where idusuario = :idusuario");
+				
+				$query->bindValue(":idusuario", $this->getIdusuario());
+				
+				$query->execute();
+				
+				$r = $query->fetch();
+				
+				return $r;
+						
+			}
+			catch(PDOException $e)
+			{
+				echo $e->getMessage();
+			}
+			
+		}
+		
+		public function alterarsenha()
+		{
+	
+			$conexao = new conexao();
+			
+			try
+			{	
+				$query = $conexao->conn->prepare("update usuario set senha = :senha where idusuario = :idusuario");
+				
+				$query->bindValue(":idusuario", $this->getIdusuario());
+				$query->bindValue(":senha", $this->getSenha());
+				
+				$query->execute();
+			
+			}
+			catch(PDOException $e)
+			{
+				echo $e->getMessage();
+			}
+			
+		}
+		
+		public function alterar()
+		{
+	
+			$conexao = new conexao();
+			
+			try
+			{	
+				$query = $conexao->conn->prepare("update usuario set nome = :nome, rg = :rg, cpf = :cpf, datanascimento =  :datanascimento,
+				email = :email, telefone = :telefone where idusuario = :idusuario");
+				
+				$query->bindValue(":idusuario", $this->getIdusuario());
+				$query->bindValue(":nome", $this->getNome());
+				$query->bindValue(":rg", $this->getRg());
+				$query->bindValue(":cpf", $this->getCpf());
+				$query->bindValue(":datanascimento", $this->getDatanascimento());
+				$query->bindValue(":email", $this->getEmail());
+				$query->bindValue(":telefone", $this->getTelefone());
+				
+				$query->execute();
+						
+			}
+			catch(PDOException $e)
+			{
+				echo $e->getMessage();
+			}
+			
+		}
+		
+		public function deletar()
+		{
+	
+			$conexao = new conexao();
+			
+			try
+			{	
+				$query = $conexao->conn->prepare("delete from usuario where idusuario = :idusuario;");
+				
+				$query->bindValue(":idusuario", $this->getIdusuario());
+				
+				$query->execute();						
 			}
 			catch(PDOException $e)
 			{
