@@ -7,7 +7,7 @@ require_once "classearea.php";
 $area = new area;
 $r = $area->buscarAreas();
 ?>
-<title>Avaliação Pedagógica</title>
+<title>Parecer Psicológico</title>
 
 <body style="padding-top:60px;">
   <section style="width:60%" class="container">
@@ -21,10 +21,10 @@ $r = $area->buscarAreas();
             <h4 class="modal-title">Cadastro realizado</h4>
           </div>
           <div class="modal-body">
-            <p>Avaliação Pedagógica enviada com sucesso.</p>
+            <p>Parecer psicológico enviado com sucesso.</p>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal" onclick="location.href='http://localhost/siga/avaliacaopsicologica.php';">Fechar</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal" onclick="location.href='http://localhost/siga/parecerpsicologico.php';">Fechar</button>
           </div>
         </div>
       </div>
@@ -33,7 +33,7 @@ $r = $area->buscarAreas();
     <div>
       <!-- Nav tabs -->
       <ul class="nav nav-tabs " role="tablist">
-        <li role="presentation" class="active"><a href="#avaliacaopedagogica" aria-controls="avaliacaopedagogica" role="tab" data-toggle="tab">Avaliação Pedagógica</a></li>
+        <li role="presentation" class="active"><a href="#parecerpsicologico" aria-controls="parecerpsicologico" role="tab" data-toggle="tab">Parecer Psicológico</a></li>
 
 
       </ul>
@@ -41,7 +41,7 @@ $r = $area->buscarAreas();
       <!-- Tab panes -->
 
       <div class="tab-content">
-        <div role="tabpanel" class="tab-pane active form-group panel panel-body" id="avaliacaopedagogica" style="border-color: #00688B;">
+        <div role="tabpanel" class="tab-pane active form-group panel panel-body" id="parecerpsicologico" style="border-color: #00688B;">
           <div style="padding-top:20px;">
 
             <form class="form-horizontal" action="" method="POST" data-toggle="validator">
@@ -56,8 +56,8 @@ $r = $area->buscarAreas();
 
                     <div class="row">
                       <div class="col-md-12 form-group">
-                        <label for="avaliacaopedagogica" class="control-label">Avaliação Pedagógica</label>
-                        <textarea rows="7" id="avaliacaopedagogica" name="avaliacaopedagogica" class="form-control input-md" required></textarea>
+                        <label for="parecerpsicologico" class="control-label">Parecer Psicológico</label>
+                        <textarea rows="7" id="parecerpsicologico" name="parecerpsicologico" class="form-control input-md" required></textarea>
                       </div>
                     </div>
 
@@ -93,7 +93,6 @@ $r = $area->buscarAreas();
     </div>
   </section>
 </body>
-
 <?php  
 include "rodape.php";
 ?>

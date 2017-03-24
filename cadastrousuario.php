@@ -1,5 +1,3 @@
-<html>
-
 <?php  
 /*include "session.php";*/
 include "cabecalho.php";
@@ -382,4 +380,6 @@ box-shadow:10px 10px 5px cadetblue;" class="alert alert-success"> <strong>Succes
     }
   }
 </script>
-</html>
+<?php  
+include "rodape.php";
+?>

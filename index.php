@@ -1,20 +1,22 @@
-<html>
-<head>
-	<meta charset="utf-8">
-	<title>Cadastro de Usuário</title>
-	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<script src='js/jquery-2.1.3.min.js'></script>
-	<script src='js/bootstrap.min.js'></script>
-	 
-	
-</head>
-
 <?php
-	include "session.php";
-	include "menu.php";
-
-
+include "cabecalho.php";
+include "session.php";
+include "menu.php";
 ?>
+<title>SIGA APAE</title>
 <body style="padding-top:60px;">
-	oiiiiiii
+	
+	<div align="center">
+		<a href="/siga/cadastrousuario.php">cadastrousuario</a><br>
+		<a href="/siga/cadastroaluno.php">cadastroaluno</a><br>
+		<a href="/siga/cadastroareas.php">cadastroareas</a><br>
+		<a href="/siga/parecerpsicologico.php">parecerpsicologico</a><br>
+		<a href="/siga/avaliacaopedagogica.php">avaliacaopedagogica</a><br>
+	</div>
+
+	
+
 </body>
+<?php  
+include "rodape.php";
+?>

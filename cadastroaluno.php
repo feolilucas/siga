@@ -1,5 +1,3 @@
-<html>
-
 <?php  
 /*include "session.php";*/
 include "cabecalho.php";
@@ -199,6 +197,10 @@ $r = $area->buscarAreas();
               </form>
             </div>
           </div>
+          </div>
+          </div>
+          </section>
+        
 
 
 
@@ -219,6 +221,7 @@ box-shadow:10px 10px 5px cadetblue;" class="alert alert-success"> <strong>Succes
 
 </script>
 </body>
+
 <script>
   function formatar(mascara, documento){
     var i = documento.value.length;
@@ -285,4 +288,7 @@ box-shadow:10px 10px 5px cadetblue;" class="alert alert-success"> <strong>Succes
     }
   }
 </script>
-</html>
+
+<?php  
+include "rodape.php";
+?>

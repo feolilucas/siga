@@ -1,5 +1,3 @@
-<html>
-
 <?php  
 /*include "session.php";*/
 include "cabecalho.php";
@@ -84,4 +82,6 @@ $r = $area->buscarAreas();
        </script>
 
      </body>
-     </html>
+     <?php  
+include "rodape.php";
+?>
