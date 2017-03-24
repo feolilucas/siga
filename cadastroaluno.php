@@ -12,6 +12,10 @@ $r = $area->buscarAreas();
 <body style="padding-top:60px;">
   <section style="width:60%" class="container">
 
+
+
+  
+
     <!-- Modal -->
     <div class="modal fade in" id="divSucesso" role="dialog" style="display:none; position: absolute;top: 20%;">
       <div class="modal-dialog modal-sm">
