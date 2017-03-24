@@ -9,10 +9,9 @@ require_once "classearea.php";
 $area = new area;
 $r = $area->buscarAreas();
 ?>
-
+<title>Cadastro de Usuário</title>
 <body style="padding-top:60px;">
   <section style="width:60%" class="container">
-
     <!-- Modal -->
     <div class="modal fade in" id="divSucesso" role="dialog" style="display:none; position: absolute;top: 20%;">
       <div class="modal-dialog modal-sm">
@@ -242,7 +241,7 @@ $r = $area->buscarAreas();
                    </div>
                  </fieldset>
 
-                 
+
                  <form class="form-horizontal" action="" method="POST" data-toggle="validator">
                    <fieldset>
                     <div style="padding-left: 5%; padding-right: 5%;" width: "80%;">

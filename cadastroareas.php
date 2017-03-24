@@ -9,10 +9,8 @@ require_once "classearea.php";
 $area = new area;
 $r = $area->buscarAreas();
 ?>
-
+ <title>Cadastro de Áreas Técnicas</title>
 <body style="padding-top:60px;">
-
-
   <section style="width:60%" class="container">
     <!-- Modal -->
     <div class="modal fade in" id="divSucesso" role="dialog" style="display:none; position: absolute;top: 20%;">

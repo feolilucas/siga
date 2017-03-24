@@ -9,6 +9,7 @@ require_once "classearea.php";
 $area = new area;
 $r = $area->buscarAreas();
 ?>
+ <title>Cadastro de Alunos</title>
 
 <body style="padding-top:60px;">
   <section style="width:60%" class="container">
@@ -22,10 +23,10 @@ $r = $area->buscarAreas();
             <h4 class="modal-title">Cadastro realizado</h4>
           </div>
           <div class="modal-body">
-            <p>Usuário cadastrado com sucesso.</p>
+            <p>Aluno cadastrado com sucesso.</p>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal" onclick="location.href='http://localhost/siga/cadastrousuario.php';">Fechar</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal" onclick="location.href='http://localhost/siga/cadastroaluno.php';">Fechar</button>
           </div>
         </div>
       </div>
@@ -38,9 +39,6 @@ $r = $area->buscarAreas();
 
         <li role="presentation"><a href="#endereco" aria-controls="endereco" role="tab" data-toggle="tab">Endereço</a></li>
 
-        <li role="presentation"><a href="#dados_de_acesso" aria-controls="dados_de_acesso" role="tab" data-toggle="tab">Dados de Acesso</a></li>
-
-        <li role="presentation"><a href="#permissoes" aria-controls="permissoes" role="tab" data-toggle="tab">Permissões</a></li>
       </ul>
 
       <!-- Tab panes -->
@@ -58,11 +56,11 @@ $r = $area->buscarAreas();
                   <div style="padding-left: 5%; padding-right: 5%;">
 
                     <div class="row">
-                      <div class="col-md-9 form-group">
+                      <div class="col-md-8 form-group">
                         <label for="nome" class="control-label">Nome</label>
                         <input id="nome" type="text" maxlength="200" name="nome" size="92" class="form-control input-md" required>
                       </div>
-                      <div class="col-md-3 form-group">
+                      <div class="col-md-4 form-group">
                         <label for="datanascimento" class="control-label">Nascimento</label>
                         <input type="date" id="datanascimento" name="datanascimento" class="form-control input-md" size="10" maxlength="10" required>
                       </div>
@@ -70,19 +68,52 @@ $r = $area->buscarAreas();
 
 
                     <div class="row">
-                      <div class="col-md-6 form-group">
-                        <label for="cpf" class="control-label">CPF</label>
-                        <input type="text" name="cpf" maxlength="14" OnKeyPress="formatar('###.###.###-##', this)" class="form-control input-md" id="cpf" required>
-                      </div>
+                    
                       <div class="col-md-6 form-group">
                         <label for="rg" class="control-label">RG</label>
-                        <input id="rg" type="text" maxlength="10" size="19" name="rg" class="form-control input-md" onkeyup="somenteNumeros(this);" required>
+                        <input id="rg" type="text" maxlength="10" size="19" name="rg" class="form-control input-md" onkeyup="somenteNumeros(this);">
                         <span class="help-block">Somente números</span> 
+                      </div>
+                        <div class="col-md-6 form-group">
+                        <label for="cpf" class="control-label">CPF</label>
+                        <input type="text" name="cpf" maxlength="14" OnKeyPress="formatar('###.###.###-##', this)" class="form-control input-md" id="cpf">
+                      </div>
+                      </div>
+
+                      <div class="row">
+                      <div class="col-md-4 form-group">
+                        <label for="dataemissaorg" class="control-label">Data de emissão do RG</label>
+                        <input id="dataemissaorg" type="date" maxlength="10" size="19" name="dataemissaorg" class="form-control input-md">
+                       </div>
+                       </div>        
+
+
+                    <div class="row">
+                      <div class="col-md-8 form-group">
+                        <label for="nomepai" class="control-label">Nome do pai</label>
+                        <input id="nomepai" type="text" maxlength="200" name="nomepai" size="92" class="form-control input-md" required>
                       </div>
                     </div>
 
-                  </div>
-                </fieldset>
+                    <div class="row">
+                      <div class="col-md-8 form-group">
+                        <label for="nomemae" class="control-label">Nome da mãe</label>
+                        <input id="nomemae" type="text" maxlength="200" name="nomemae" size="92" class="form-control input-md" required>
+                      </div>
+                    </div>
+
+
+                    <div class="row">
+                      <div class="col-md-12 form-group">
+                        <label for="deficiencia" class="control-label">Deficiencia</label>
+                        <textarea rows="5" id="deficiencia" name="deficiencia" class="form-control input-md" required>Informe a deficiência do aluno...</textarea>
+                      </div>
+                    </div>
+</div></fieldset>
+
+
+                   
+                   
                 <!-- Button (Double) -->
                 <br><br><br>
                 <div class="form-group">
@@ -171,135 +202,7 @@ $r = $area->buscarAreas();
 
 
 
-        <div role="tabpanel" class="tab-pane form-group panel panel-body" id="dados_de_acesso" style="border-color: #00688B;">
-          <div style="padding-top:20px;">
-
-            <form class="form-horizontal" action="" method="POST" data-toggle="validator">
-
-              <div class="form-group panel panel-body">
-
-               <fieldset>
-                <div style="padding-left: 5%; padding-right: 5%;" width: "80%;">
-                  <div class="row">
-                    <div class="col-md-6 form-group">
-                      <label for="usuario" class="control-label">Nome de usuário</label>
-                      <input type="text" size="22" name="usuario" class="form-control input-md" data-minlength="6" required>
-                      <span class="help-block">O nome de usuário deve ter no minimo (6) dígitos</span> </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-md-6 form-group">
-                        <label for="senha" class="control-label">Senha</label>
-                        <input id="senha" type="password" size="22" name="senha" class="form-control input-md" data-minlength="4" required>
-                        <span class="help-block">A senha deve ter no minímo (4) dígitos</span> </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-md-6 form-group">
-                          <label for="confirmasenha" class="control-label">Confirme a senha</label>
-                          <input name="confirmasenha" type="password" class="form-control" id="confirmasenha" placeholder="Confirme sua Senha..." 
-                          data-match="#senha" data-match-error="Atenção! As senhas não estão iguais." required>
-                          <div class="help-block with-errors"></div>
-                        </div>
-                      </div>
-                    </div>
-                  </fieldset>
-                  <!-- Button (Double) -->
-                  <br><br><br>
-                  <div class="form-group">
-                    <label class="col-md-4 control-label" for="idConfirmar"></label>
-                    <div class="col-md-8">
-                      <button id="idConfirmar" name="idConfirmar" class="btn btn-success" type="submit">Confirmar</button>
-                      <button id="idCancelar" name="idCancelar" class="btn btn-danger">Cancelar</button>
-                    </div>
-                  </div>
-                </div>
-              </form>
-            </div>
-          </div>
-
-
-
-          <div role="tabpanel" class="tab-pane form-group panel panel-body" id="permissoes" style="border-color: #00688B;">
-            <div style="padding-top:20px;">
-
-              <form class="form-horizontal" action="" method="POST" data-toggle="validator">
-
-                <div class="form-group panel panel-body">
-
-                 <fieldset>
-                  <div style="padding-left: 5%; padding-right: 5%;" width: "80%;">
-                    <legend>Corporativo</legend>
-                    <div class="row">
-                      <div class="col-md-6 form-group">
-                        <label for="areatecnica" class="control-label">Área técnica</label>
-                        <select class="form-control" name="area">
-                          <?php
-                          foreach($r as $linha){
-                           echo "<option value='".$linha['idarea']."'>".$linha['nome']."</option>";
-                         }
-                         ?>
-                       </select>
-                     </div>
-                   </div>
-                 </fieldset>
-
-                 
-                 <form class="form-horizontal" action="" method="POST" data-toggle="validator">
-                   <fieldset>
-                    <div style="padding-left: 5%; padding-right: 5%;" width: "80%;">
-                      <legend>Permissões</legend>
-                      <div class="row">
-                        <div class="checkbox form-group col-md-6">
-                          <p>
-                            <input type="checkbox" name="administrativo" value="1">
-                            Administrativo</p>
-                            <p>
-                              <input type="checkbox" name="planoterapeutico" value="1">
-                              Plano Terapêutico</p>
-                              <p>
-                                <input type="checkbox" name="psicologico" value="1">
-                                Psicológico</p>
-                                <p>
-                                  <input type="checkbox" name="neurologico" value="1">
-                                  Neurológico</p>
-                                </div>
-                                <div class="checkbox form-group col-md-6">
-                                  <p><br>
-                                    <input type="checkbox" name="fonoaudiologico" value="1">
-                                    Fonoaudiológico</p>
-                                    <p>
-                                      <input type="checkbox" name="terapiaocupacional" value="1">
-                                      Terapia Ocupacional</p>
-                                      <p>
-                                        <input type="checkbox" name="pedagogico" value="1">
-                                        Pedagógico</p>
-                                        <p>
-                                          <input type="checkbox" name="social" value="1">
-                                          Social</p>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </fieldset>
-
-                                  <!-- Button (Double) -->
-                                  <br><br><br>
-                                  <div class="form-group">
-                                    <label class="col-md-4 control-label" for="idConfirmar"></label>
-                                    <div class="col-md-8">
-                                      <button id="idConfirmar" name="idConfirmar" class="btn btn-success" type="submit">Confirmar</button>
-                                      <button id="idCancelar" name="idCancelar" class="btn btn-danger">Cancelar</button>
-                                    </div>
-                                  </div>
-
-                                </form>
-
-                                <br>
-                              </div>
-                            </div>
-                          </fieldset>
-                        </div>
-                      </form>
-                    </div>
-                  </div>
+       
 
 
 
@@ -311,7 +214,7 @@ box-shadow:10px 10px 5px cadetblue;" class="alert alert-success"> <strong>Succes
 
 <script>
 
-  if(window.location.href == "http://localhost/siga/cadastrousuario.php?gravou=1"){
+  if(window.location.href == "http://localhost/siga/cadastroaluno.php?gravou=3"){
    MostrarEsconderDiv('divSucesso');
  };
 
