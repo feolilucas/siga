@@ -92,7 +92,8 @@ $r = $area->buscarAreas();
       </div>
     </div>
   </section>
-</body>
+  </body>
+
 
 <?php  
 include "rodape.php";
