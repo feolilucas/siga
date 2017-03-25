@@ -20,7 +20,7 @@
 
         </div>
         
-        <table class="table table-hover" id="dev-table">
+        <table class="table table-hover teste" id="dev-table">
           <thead>
             <tr>
               <th>ID</th>
@@ -36,12 +36,12 @@
               foreach($r as $linha)
               {
                 echo "<tr>";
-                echo "<td>".$linha['idaluno']."</td>";
-                echo "<td>".$linha['nome']."</td>";
+                echo "<td class='colunaid'>".$linha['idaluno']."</td>";
+                echo "<td class='colunanome'>".$linha['nome']."</td>";
                 echo "<td>".$linha['datanascimento']."</td>";
               //echo "<td>".$linha['cpf']."</td>";
               //echo "<td>".$linha['rg']."</td>"; 
-                echo "<td class='text-center'><a class='btn btn-success btn-xs' href='#'><span class='glyphicon glyphicon-plus'></span>Selecionar</a></td>";
+                echo "<td class='text-center'><a class='btn btn-success btn-xs getaluno btn-toggle' data-element='#minhaDiv' href='#'><span class='glyphicon glyphicon-plus'></span>Selecionar</a></td>";
                 echo "</tr>";
               }
               ?>

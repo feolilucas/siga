@@ -124,6 +124,16 @@
   }
 </script>
 
+<script>
+ $(document).on("click", ".getaluno", function(){
+        var nome = $(this).parent().parent().find(".colunanome").text();
+        var id = $(this).parent().parent().find(".colunaid").text();
+
+        document.getElementById("idaluno").value = id;
+        document.getElementById("nomealuno").value = nome;
+    });
+</script>
+
 <div style="background: #e7e7E8;height: 30px; text-align:center;width: 100%; line-height:30px;" class="navbar-fixed-bottom">
 SIGA APAE - Sitema de Gestão das Áreas Técnicas da APAE</div>
 
