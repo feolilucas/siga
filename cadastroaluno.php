@@ -11,10 +11,7 @@ $r = $area->buscarAreas();
 
 <body style="padding-top:60px;">
   <section style="width:60%" class="container">
-
-
-
-  
+ 
 
     <!-- Modal -->
     <div class="modal fade in" id="divSucesso" role="dialog" style="display:none; position: absolute;top: 20%;">
@@ -49,7 +46,7 @@ $r = $area->buscarAreas();
         <div role="tabpanel" class="tab-pane active form-group panel panel-body" id="dados_pessoais" style="border-color: #00688B;">
           <div style="padding-top:20px;">
 
-            <form class="form-horizontal" action="" method="POST" data-toggle="validator">
+            <form class="form-horizontal" action="" method="POST" data-toggle="validator" id="2">
 
               <div class="form-group panel panel-body">
 
@@ -135,7 +132,7 @@ $r = $area->buscarAreas();
           <div role="tabpanel" class="tab-pane form-group panel panel-body" id="endereco" style="border-color: #00688B;">
             <div style="padding-top:20px;">
 
-              <form class="form-horizontal" action="" method="POST" data-toggle="validator">
+              <form class="form-horizontal" action="" method="POST" data-toggle="validator" id="2">
 
                 <div class="form-group panel panel-body">
 

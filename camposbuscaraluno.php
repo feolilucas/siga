@@ -10,6 +10,8 @@
 
     <div class="col-md-3 form-group">
       <button type="button" class="btn-toggle btn btn-info" data-element="#minhaDiv">Buscar Aluno</button>
+
+      
     </div> 
 
   </div>

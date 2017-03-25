@@ -15,14 +15,7 @@ include "menu.php";
 		<a href="/siga/planoterapeuticopsicologico.php">planoterapeuticopsicologico</a><br>
 		<a href="/siga/relatorioobservacao.php">relatorioobservacao</a><br>
 		<a href="/siga/triagempsicologica.php">triagempsicologica</a><br>
-
-
-
-
-
-
-
-
+		<a href="/siga/planoterapeuticoindividual.php">planoterapeuticoindividual</a><br>
 	</div>
 
 	

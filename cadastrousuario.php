@@ -46,7 +46,7 @@ $r = $area->buscarAreas();
         <div role="tabpanel" class="tab-pane active form-group panel panel-body" id="dados_pessoais" style="border-color: #00688B;">
           <div style="padding-top:20px;">
 
-            <form class="form-horizontal" action="" method="POST" data-toggle="validator">
+            <form class="form-horizontal" action="inserir.php?id=1" method="POST" data-toggle="validator" id="1">
 
               <div class="form-group panel panel-body">
 
@@ -99,7 +99,7 @@ $r = $area->buscarAreas();
         <div role="tabpanel" class="tab-pane form-group panel panel-body" id="endereco" style="border-color: #00688B;">
           <div style="padding-top:20px;">
 
-            <form class="form-horizontal" action="" method="POST" data-toggle="validator">
+            <form class="form-horizontal" action="inserir.php?id=1" method="POST" data-toggle="validator" id="1">
 
               <div class="form-group panel panel-body">
 
@@ -171,7 +171,7 @@ $r = $area->buscarAreas();
         <div role="tabpanel" class="tab-pane form-group panel panel-body" id="dados_de_acesso" style="border-color: #00688B;">
           <div style="padding-top:20px;">
 
-            <form class="form-horizontal" action="" method="POST" data-toggle="validator">
+            <form class="form-horizontal" action="inserir.php?id=1" method="POST" data-toggle="validator" id="1">
 
               <div class="form-group panel panel-body">
 
@@ -218,7 +218,7 @@ $r = $area->buscarAreas();
           <div role="tabpanel" class="tab-pane form-group panel panel-body" id="permissoes" style="border-color: #00688B;">
             <div style="padding-top:20px;">
 
-              <form class="form-horizontal" action="" method="POST" data-toggle="validator">
+              <form class="form-horizontal" action="inserir.php?id=1" method="POST" data-toggle="validator" id="1">
 
                 <div class="form-group panel panel-body">
 
@@ -240,7 +240,7 @@ $r = $area->buscarAreas();
                  </fieldset>
 
 
-                 <form class="form-horizontal" action="" method="POST" data-toggle="validator">
+                 <form class="form-horizontal" action="inserir.php?id=1" method="POST" data-toggle="validator" id="1">
                    <fieldset>
                     <div style="padding-left: 5%; padding-right: 5%;" width: "80%;">
                       <legend>Permissões</legend>
