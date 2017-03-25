@@ -12,6 +12,17 @@ include "menu.php";
 		<a href="/siga/cadastroareas.php">cadastroareas</a><br>
 		<a href="/siga/parecerpsicologico.php">parecerpsicologico</a><br>
 		<a href="/siga/avaliacaopedagogica.php">avaliacaopedagogica</a><br>
+		<a href="/siga/planoterapeuticopsicologico.php">planoterapeuticopsicologico</a><br>
+		<a href="/siga/relatorioobservacao.php">relatorioobservacao</a><br>
+		<a href="/siga/triagempsicologica.php">triagempsicologica</a><br>
+
+
+
+
+
+
+
+
 	</div>
 
 	

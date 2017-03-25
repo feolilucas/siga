@@ -10,8 +10,10 @@
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/bootstrap.css">
 	<link rel="stylesheet" href="css/csspersonalizado.css">
-   
-	
+    <link rel="stylesheet" type="text/css" href="css/sweetalert.css">
+
+
+	<script src="js/sweetalert.min.js"></script>
 	<script src="js/jquery-2.1.3.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/validator.min.js"></script>

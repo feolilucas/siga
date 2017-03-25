@@ -11,7 +11,7 @@ $r = $aluno->mostrartodos();
 ?>
 
 
-<title>Avaliação Pedagógica</title>
+<title>Plano Terapeutico Psicológico</title>
 
 <body style="padding-top:60px;">
   <section style="width:60%" class="container">
@@ -29,10 +29,10 @@ $r = $aluno->mostrartodos();
             <h4 class="modal-title">Cadastro realizado</h4>
           </div>
           <div class="modal-body">
-            <p>Avaliação Pedagógica enviada com sucesso.</p>
+            <p>Parecer psicológico enviado com sucesso.</p>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal" onclick="location.href='http://localhost/siga/avaliacaopsicologica.php';">Fechar</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal" onclick="location.href='http://localhost/siga/parecerpsicologico.php';">Fechar</button>
           </div>
         </div>
       </div>
@@ -41,17 +41,23 @@ $r = $aluno->mostrartodos();
     <div>
       <!-- Nav tabs -->
       <ul class="nav nav-tabs " role="tablist">
-        <li role="presentation" class="active"><a href="#avaliacaopedagogica" aria-controls="avaliacaopedagogica" role="tab" data-toggle="tab">Avaliação Pedagógica</a></li>
+        <li role="presentation" class="active"><a href="#parecerpsicologico" aria-controls="parecerpsicologico" role="tab" data-toggle="tab">Plano Terapêutico Psicológico</a></li>
+
+
       </ul>
 
-
       <!-- Tab panes -->
+
       <div class="tab-content">
-        <div role="tabpanel" class="tab-pane active form-group panel panel-body" id="avaliacaopedagogica" style="border-color: #00688B;">
+        <div role="tabpanel" class="tab-pane active form-group panel panel-body" id="parecerpsicologico" style="border-color: #00688B;">
           <div style="padding-top:20px;">
+
             <form class="form-horizontal" action="" method="POST" data-toggle="validator">
+
               <div class="form-group panel panel-body">
+
                 <fieldset>
+
                   <div style="padding-left: 5%; padding-right: 5%;">
 
 
@@ -62,12 +68,14 @@ $r = $aluno->mostrartodos();
 
 
 
+
                    <div class="row">
                     <div class="col-md-12 form-group">
-                      <label for="avaliacaopedagogica" class="control-label">Avaliação Pedagógica</label>
-                      <textarea rows="7" id="avaliacaopedagogica" name="avaliacaopedagogica" class="form-control input-md" required></textarea>
+                      <label for="planoterapeutico" class="control-label">Plano Terapeutico</label>
+                      <textarea rows="7" id="planoterapeutico" name="planoterapeutico" class="form-control input-md" required></textarea>
                     </div>
                   </div>
+
 
                   <div class="row">
                     <div class="col-md-12 form-group">
@@ -76,10 +84,10 @@ $r = $aluno->mostrartodos();
                     </div>
                   </div>
 
+
                 </div>
+
               </fieldset>
-
-
 
               <!-- Button (Double) -->
               <br><br><br>
@@ -91,17 +99,15 @@ $r = $aluno->mostrartodos();
                 </div>
               </div>
 
-
             </div>
           </form>
         </div>
       </div>
     </div>
   </div>
-
 </section>
-
 </body>
+
 
 
 <?php  

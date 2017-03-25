@@ -29,28 +29,25 @@
   margin-left:0px !important;
 }
 
-.custab{
-  border: 1px solid #ccc;
-  padding: 5px;
-  margin: 5% 0;
-  box-shadow: 3px 3px 2px #ccc;
-  transition: 0.5s;
-}
-.custab:hover{
-  box-shadow: 3px 3px 0px transparent;
-  transition: 0.5s;
-}
-.clickable{
-  cursor: pointer;   
-}
+ #minhaDiv{
+      padding: 6px;
+      width:60%;
+      position: absolute;
+      top:200px;
+      z-index: 3;
+      left:301px;
 
-.panel-heading div {
-  margin-top: -18px;
-  font-size: 15px;
-}
-.panel-heading div span{
-  margin-left:5px;
-}
-.panel-body{
-  display: none;
-}
+      display: none;
+    }
+
+    .panel-heading{
+      background-color: #00688B!important;
+      border-color: #00688B!important;
+    }
+    .panel-primary{
+      border-color: #00688B!important;
+    }
+
+    .table{
+      width: 70%!important;
+    }

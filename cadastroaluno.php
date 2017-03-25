@@ -122,7 +122,7 @@ $r = $area->buscarAreas();
                     <label class="col-md-4 control-label" for="idConfirmar"></label>
                     <div class="col-md-8">
                       <button id="idConfirmar" name="idConfirmar" class="btn btn-success" type="submit">Confirmar</button>
-                      <button id="idCancelar" name="idCancelar" class="btn btn-danger">Cancelar</button>
+                    <button id="idCancelar" name="idCancelar" class="btn btn-danger" onclick="location.href='http://localhost/siga/';">Cancelar</button>
                     </div>
                   </div>
                 </div>
@@ -194,9 +194,11 @@ $r = $area->buscarAreas();
                     <label class="col-md-4 control-label" for="idConfirmar"></label>
                     <div class="col-md-8">
                       <button id="idConfirmar" name="idConfirmar" class="btn btn-success" type="submit">Confirmar</button>
-                      <button id="idCancelar" name="idCancelar" class="btn btn-danger">Cancelar</button>
+                      <button id="idCancelar" name="idCancelar" class="btn btn-danger" onclick="location.href='http://localhost/siga/';">Cancelar</button>
                     </div>
                   </div>
+
+
                 </div>
               </form>
             </div>
@@ -226,72 +228,6 @@ box-shadow:10px 10px 5px cadetblue;" class="alert alert-success"> <strong>Succes
 </script>
 </body>
 
-<script>
-  function formatar(mascara, documento){
-    var i = documento.value.length;
-    var saida = mascara.substring(0,1);
-    var texto = mascara.substring(i)
-
-    if (texto.substring(0,1) != saida){
-      documento.value += texto.substring(0,1);
-    }
-  }
-</script>
-<script>
-  function mascaraTEL(o,f){
-    v_obj=o
-    v_fun=f
-    setTimeout("execmascara()",1)
-  }
-  function execmascara(){
-    v_obj.value=v_fun(v_obj.value)
-  }
-  function mtel(v){
-    v=v.replace(/\D/g,"");             //Remove tudo o que não é dígito
-    v=v.replace(/^(\d{2})(\d)/g,"($1) $2"); //Coloca parênteses em volta dos dois primeiros dígitos
-    v=v.replace(/(\d)(\d{4})$/,"$1-$2");    //Coloca hífen entre o quarto e o quinto dígitos
-    return v;
-  }
-  function id( el ){
-    return document.getElementById( el );
-  }
-  window.onload = function(){
-    id('telefone').onkeyup = function(){
-      mascaraTEL( this, mtel );
-    }
-  }
-</script>
-<script type="text/javascript">
-  jQuery(function($){
-   $("#cep").change(function(){
-    var cep_code = $(this).val();
-    if( cep_code.length <= 0 ) return;
-    $.get("http://apps.widenet.com.br/busca-cep/api/cep.json", { code: cep_code },
-     function(result){
-      if( result.status!=1 ){
-       alert(result.message || "Houve um erro desconhecido");
-       return;
-     }
-     $("input#cep").val( result.code );
-     $("input#estado").val( result.state );
-     $("input#cidade").val( result.city );
-     $("input#bairro").val( result.district );
-     $("input#logradouro").val( result.address );
-     $("input#estado").val( result.state );
-   });
-  });
- });
-</script>
-<script>
-  function somenteNumeros(num) {
-    var er = /[^0-9.]/;
-    er.lastIndex = 0;
-    var campo = num;
-    if (er.test(campo.value)) {
-      campo.value = "";
-    }
-  }
-</script>
 
 <?php  
 include "rodape.php";

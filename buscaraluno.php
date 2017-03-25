@@ -8,9 +8,38 @@ $aluno = new aluno;
 
 $r = $aluno->mostrartodos();
 ?>
+
+<style>
+
+
+.custab{
+  border: 1px solid #ccc;
+  padding: 5px;
+  margin: 5% 0;
+  box-shadow: 3px 3px 2px #ccc;
+  transition: 0.5s;
+}
+.custab:hover{
+  box-shadow: 3px 3px 0px transparent;
+  transition: 0.5s;
+}
+.clickable{
+  cursor: pointer;   
+}
+
+.panel-heading div {
+  margin-top: -18px;
+  font-size: 15px;
+}
+.panel-heading div span{
+  margin-left:5px;
+}
+.panel-body{
+  display: none;
+}
+</style>
 <body style="padding-top:60px;">
 	
-
 	<div align="center" style="width:100%;" >
 		
 	<div style="width: 90%;">

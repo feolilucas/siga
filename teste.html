@@ -1,0 +1,34 @@
+<html>
+<head>
+	<style>
+		#Div_Flutuante{
+			font-weight: bold;
+			border: 2px solid #930000;
+			background-color:#FFDFDF;
+			padding: 6px;
+			width: 200px;
+			position: absolute;
+			top:200px;
+			z-index: 3;
+			font-size: 14px;
+			left:100px;
+		}
+		#Div_do_Flash{
+			background-color:#CCCCCC;
+			position: relative;
+			z-index: 0;
+		}
+	</style>
+</head>
+<body>
+	<div id="Div_Flutuante">Esse texto está dentro do div e em cima do objeto swf flash</div>
+	<div id="Div_do_Flash">
+		<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="500" height="400">
+			<param name="movie" value="CAMINHO" />
+			<param name="wmode" value="transparent" />
+			<param name="quality" value="high" />
+			<embed src="CAMINHO" wmode="transparent" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="500" height="400"></embed>
+		</object>
+	</div>
+</body>
+</html>

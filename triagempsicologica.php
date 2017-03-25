@@ -42,7 +42,7 @@ $r = $aluno->mostrartodos();
     <div>
       <!-- Nav tabs -->
       <ul class="nav nav-tabs " role="tablist">
-        <li role="presentation" class="active"><a href="#parecerpsicologico" aria-controls="parecerpsicologico" role="tab" data-toggle="tab">Parecer Psicológico</a></li>
+        <li role="presentation" class="active"><a href="#parecerpsicologico" aria-controls="parecerpsicologico" role="tab" data-toggle="tab">Triagem psicológica</a></li>
 
 
       </ul>
@@ -68,8 +68,8 @@ $r = $aluno->mostrartodos();
 
                     <div class="row">
                       <div class="col-md-12 form-group">
-                        <label for="parecerpsicologico" class="control-label">Parecer Psicológico</label>
-                        <textarea rows="7" id="parecerpsicologico" name="parecerpsicologico" class="form-control input-md" required></textarea>
+                        <label for="triagem" class="control-label">Triagem</label>
+                        <textarea rows="7" id="triagem" name="triagem" class="form-control input-md" required></textarea>
                       </div>
                     </div>
 

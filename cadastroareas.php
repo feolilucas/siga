@@ -65,7 +65,7 @@ $r = $area->buscarAreas();
                   <label class="col-md-4 control-label" for="idConfirmar"></label>
                   <div class="col-md-8">
                     <button id="idConfirmar" name="idConfirmar" class="btn btn-success" type="submit">Confirmar</button>
-                    <button id="idCancelar" name="idCancelar" class="btn btn-danger">Cancelar</button>
+                    <button id="idCancelar" name="idCancelar" class="btn btn-danger" onclick="location.href='http://localhost/siga/';">Cancelar</button>
                   </div>
                 </div>
               </div>
