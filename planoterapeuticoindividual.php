@@ -99,13 +99,11 @@ $r = $aluno->mostrartodos();
                 </div>
               </div>
             </div>
-          </form>
         </div>
       </div>
 
       <div role="tabpanel" class="tab-pane form-group panel panel-body" id="servicosocial" style="border-color: #00688B;">
         <div style="padding-top:20px;">
-          <form class="form-horizontal" action="" method="POST" data-toggle="validator">
             <div class="form-group panel panel-body">
               <fieldset>
                 <div style="padding-left: 5%; padding-right: 5%;" width: "80%;">
@@ -134,13 +132,11 @@ $r = $aluno->mostrartodos();
                 </div>
               </div>
             </div>
-          </form>
         </div>
       </div>
 
       <div role="tabpanel" class="tab-pane form-group panel panel-body" id="fonoaudiologia" style="border-color: #00688B;">
         <div style="padding-top:20px;">
-          <form class="form-horizontal" action="" method="POST" data-toggle="validator">
             <div class="form-group panel panel-body">
               <fieldset>
                 <div style="padding-left: 5%; padding-right: 5%;" width: "80%;">
@@ -169,13 +165,11 @@ $r = $aluno->mostrartodos();
                 </div>
               </div>
             </div>
-          </form>
         </div>
       </div>
 
       <div role="tabpanel" class="tab-pane form-group panel panel-body" id="psicologia" style="border-color: #00688B;">
         <div style="padding-top:20px;">
-          <form class="form-horizontal" action="" method="POST" data-toggle="validator">
             <div class="form-group panel panel-body">
               <fieldset>
                 <div style="padding-left: 5%; padding-right: 5%;" width: "80%;">
@@ -204,13 +198,11 @@ $r = $aluno->mostrartodos();
                 </div>
               </div>
             </div>
-          </form>
         </div>
       </div>
 
       <div role="tabpanel" class="tab-pane form-group panel panel-body" id="terapeutaocupacional" style="border-color: #00688B;">
         <div style="padding-top:20px;">
-          <form class="form-horizontal" action="" method="POST" data-toggle="validator">
             <div class="form-group panel panel-body">
               <fieldset>
                 <div style="padding-left: 5%; padding-right: 5%;" width: "80%;">
@@ -239,13 +231,11 @@ $r = $aluno->mostrartodos();
                 </div>
               </div>
             </div>
-          </form>
         </div>
       </div>
 
       <div role="tabpanel" class="tab-pane form-group panel panel-body" id="fisioterapia" style="border-color: #00688B;">
         <div style="padding-top:20px;">
-          <form class="form-horizontal" action="" method="POST" data-toggle="validator">
             <div class="form-group panel panel-body">
               <fieldset>
                 <div style="padding-left: 5%; padding-right: 5%;" width: "80%;">
@@ -274,13 +264,11 @@ $r = $aluno->mostrartodos();
                 </div>
               </div>
             </div>
-          </form>
         </div>
       </div>
 
       <div role="tabpanel" class="tab-pane form-group panel panel-body" id="nutricionista" style="border-color: #00688B;">
         <div style="padding-top:20px;">
-          <form class="form-horizontal" action="" method="POST" data-toggle="validator">
             <div class="form-group panel panel-body">
               <fieldset>
                 <div style="padding-left: 5%; padding-right: 5%;" width: "80%;">
@@ -309,13 +297,11 @@ $r = $aluno->mostrartodos();
                 </div>
               </div>
             </div>
-          </form>
         </div>
       </div>
 
       <div role="tabpanel" class="tab-pane form-group panel panel-body" id="dentista" style="border-color: #00688B;">
         <div style="padding-top:20px;">
-          <form class="form-horizontal" action="" method="POST" data-toggle="validator">
             <div class="form-group panel panel-body">
               <fieldset>
                 <div style="padding-left: 5%; padding-right: 5%;" width: "80%;">
