@@ -64,12 +64,11 @@
 			try
 			{
 				$query = $conexao->conn->prepare("insert into aluno(nome, datanascimento, datacadastro, sexo, nomepai, nomemae, idendereco,
-				cpf, nacionalidade, rg, dataemissaorg, deficiencia) values( :nome, :datanascimento, :datacadastro, :sexo, :nomepai, :nomemae, :idendereco,
+				cpf, nacionalidade, rg, dataemissaorg, deficiencia) values( :nome, :datanascimento, now(), :sexo, :nomepai, :nomemae, :idendereco,
 				:cpf, :nacionalidade, :rg, :dataemissaorg, :deficiencia);");
 				
 				$query->bindValue(":nome", $this->getNome());
 				$query->bindValue(":datanascimento", $this->getDatanascimento());
-				$query->bindValue(":datacadastro", $this->getDatacadastro());
 				$query->bindValue(":sexo", $this->getSexo());
 				$query->bindValue(":nomepai", $this->getNomepai());
 				$query->bindValue(":nomemae", $this->getNomemae());

@@ -7,6 +7,7 @@ require_once "classealuno.php";
 $permissoes = new permissoes;
 $endereco = new endereco;
 $usuario = new usuario;
+$aluno = new aluno;
 
 $id = $_GET['id'];
 
@@ -16,117 +17,145 @@ switch($id)
 
 		try
 		{
-			$usuario->setNome($_POST['nome']);
-			$usuario->setCpf($_POST['cpf']);
-			$usuario->setRg($_POST['rg']);
-			$usuario->setDatanascimento($_POST['datanascimento']);
-			$usuario->setTelefone($_POST['telefone']);
-			$usuario->setEmail($_POST['email']);
-			$endereco->setComplemento($_POST['complemento']);
-			$endereco->setNumero($_POST['numero']);
-			$endereco->setLogradouro($_POST['logradouro']);
-			$endereco->setReferencia($_POST['referencia']);
-			$endereco->setCep($_POST['cep']);
-			$endereco->setBairro($_POST['bairro']);
-			$endereco->setEstado($_POST['estado']);
-			$endereco->setCidade($_POST['cidade']);
-			$usuario->setUsuario($_POST['usuario']);
-			$usuario->setSenha($_POST['senha']);
-			$usuario->setIdarea($_POST['area']);
-			if(isset($_POST['administrativo']))
-			{
-				$permissoes->setAdministrativo($_POST['administrativo']);
-			}
-			else
-			{
-				$permissoes->setAdministrativo(0);
-			}
-			if(isset($_POST['planoterapeutico']))
-			{
-				$permissoes->setPlanoterapeutico($_POST['planoterapeutico']);
-			}
-			else
-			{
-				$permissoes->setPlanoterapeutico(0);
-			}
-			if(isset($_POST['psicologico']))
-			{
-				$permissoes->setPsicologico($_POST['psicologico']);
-			}
-			else
-			{
-				$permissoes->setPsicologico(0);
-			}
-			if(isset($_POST['neurologico']))
-			{
-				$permissoes->setNeurologico($_POST['neurologico']);
-			}
-			else
-			{
-				$permissoes->setNeurologico(0);
-			}
-			if(isset($_POST['fonoaudiologico']))
-			{
-				$permissoes->setFonoaudiologico($_POST['fonoaudiologico']);
-			}
-			else
-			{
-				$permissoes->setFonoaudiologico(0);
-			}
-			if(isset($_POST['terapiaocupacional']))
-			{
-				$permissoes->setTerapiaocupacional($_POST['terapiaocupacional']);
-			}
-			else
-			{
-				$permissoes->setTerapiaocupacional(0);
-			}
-			if(isset($_POST['pedagogico']))
-			{
-				$permissoes->setPedagogico($_POST['pedagogico']);
-			}
-			else
-			{
-				$permissoes->setPedagogico(0);
-			}
-			if(isset($_POST['social']))
-			{
-				$permissoes->setSocial($_POST['social']);
-			}
-			else
-			{
-				$permissoes->setSocial(0);
-			}
+				$usuario->setNome($_POST['nome']);
+				$usuario->setCpf($_POST['cpf']);
+				$usuario->setRg($_POST['rg']);
+				$usuario->setDatanascimento($_POST['datanascimento']);
+				$usuario->setTelefone($_POST['telefone']);
+				$usuario->setEmail($_POST['email']);
+				$endereco->setComplemento($_POST['complemento']);
+				$endereco->setNumero($_POST['numero']);
+				$endereco->setLogradouro($_POST['logradouro']);
+				$endereco->setReferencia($_POST['referencia']);
+				$endereco->setCep($_POST['cep']);
+				$endereco->setBairro($_POST['bairro']);
+				$endereco->setEstado($_POST['estado']);
+				$endereco->setCidade($_POST['cidade']);
+				$usuario->setUsuario($_POST['usuario']);
+				$usuario->setSenha($_POST['senha']);
+				$usuario->setIdarea($_POST['area']);
+				if(isset($_POST['administrativo']))
+				{
+					$permissoes->setAdministrativo($_POST['administrativo']);
+				}
+				else
+				{
+					$permissoes->setAdministrativo(0);
+				}
+				if(isset($_POST['planoterapeutico']))
+				{
+					$permissoes->setPlanoterapeutico($_POST['planoterapeutico']);
+				}
+				else
+				{
+					$permissoes->setPlanoterapeutico(0);
+				}
+				if(isset($_POST['psicologico']))
+				{
+					$permissoes->setPsicologico($_POST['psicologico']);
+				}
+				else
+				{
+					$permissoes->setPsicologico(0);
+				}
+				if(isset($_POST['neurologico']))
+				{
+					$permissoes->setNeurologico($_POST['neurologico']);
+				}
+				else
+				{
+					$permissoes->setNeurologico(0);
+				}
+				if(isset($_POST['fonoaudiologico']))
+				{
+					$permissoes->setFonoaudiologico($_POST['fonoaudiologico']);
+				}
+				else
+				{
+					$permissoes->setFonoaudiologico(0);
+				}
+				if(isset($_POST['terapiaocupacional']))
+				{
+					$permissoes->setTerapiaocupacional($_POST['terapiaocupacional']);
+				}
+				else
+				{
+					$permissoes->setTerapiaocupacional(0);
+				}
+				if(isset($_POST['pedagogico']))
+				{
+					$permissoes->setPedagogico($_POST['pedagogico']);
+				}
+				else
+				{
+					$permissoes->setPedagogico(0);
+				}
+				if(isset($_POST['social']))
+				{
+					$permissoes->setSocial($_POST['social']);
+				}
+				else
+				{
+					$permissoes->setSocial(0);
+				}
 
-			$permissoes->cadastrar();
-			$usuario->setIdpermissoes($permissoes->ultimoid());
+				$permissoes->cadastrar();
+				$per = $permissoes->ultimoid();
+				$usuario->setIdpermissoes($per['id']);
 
-			$endereco->cadastrar();
-			$usuario->setIdendereco($endereco->ultimoid());
-			$usuario->cadastrar($idpermissoes['id'], $idendereco['id']);
+				$endereco->cadastrar();
+				$end = $endereco->ultimoid();
+				$usuario->setIdendereco($end['id']);
 
-			$redirect = "http://localhost/siga/cadastrousuario.php?gravou=1";
-			header("location:$redirect");	
+				$usuario->cadastrar();
 
-		}
-		catch(PDOException $e)
-		{
-			echo $e->getMessage();
+				$redirect = "http://localhost/siga/cadastrousuario.php?gravou=1";
+				header("location:$redirect");	
 
-		}
+			}
+			catch(PDOException $e)
+			{
+				echo $e->getMessage();
+
+			}
 
 		break;
+
 		case 2: // cadastro de aluno
 
-		try
-		{
+			try
+			{
+				$aluno->setNome($_POST['nome']);
+				$aluno->setDatanascimento($_POST['datanascimento']);
+				$aluno->setRg($_POST['rg']);
+				$aluno->setCpf($_POST['cpf']);
+				$aluno->setDataemissaorg($_POST['dataemissaorg']);
+				$aluno->setNomepai($_POST['nomepai']);
+				$aluno->setNomemae($_POST['nomemae']);
+				$aluno->setDeficiencia($_POST['deficiencia']);
+				$endereco->setComplemento($_POST['complemento']);
+				$endereco->setNumero($_POST['numero']);
+				$endereco->setLogradouro($_POST['logradouro']);
+				$endereco->setReferencia($_POST['referencia']);
+				$endereco->setCep($_POST['cep']);
+				$endereco->setBairro($_POST['bairro']);
+				$endereco->setEstado($_POST['estado']);
+				$endereco->setCidade($_POST['cidade']);
 
-		}
-		catch(PDOException $e)
-		{
-			echo $e->getMessage();
+				$endereco->cadastrar();
+				$end = $endereco->ultimoid();
+				$aluno->setIdendereco($end['id']);
 
-		}
+				$aluno->cadastrar();
+				
+				
+				
+			}
+			catch(PDOException $e)
+			{
+				echo $e->getMessage();
+
+			}
 		break;
 		default:
 		break;

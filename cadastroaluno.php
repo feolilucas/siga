@@ -41,12 +41,13 @@ $r = $area->buscarAreas();
       </ul>
 
       <!-- Tab panes -->
+    <form class="form-horizontal" action="inserir.php?id=2" method="POST" data-toggle="validator" id="2">
 
       <div class="tab-content">
         <div role="tabpanel" class="tab-pane active form-group panel panel-body" id="dados_pessoais" style="border-color: #00688B;">
           <div style="padding-top:20px;">
 
-            <form class="form-horizontal" action="" method="POST" data-toggle="validator" id="2">
+            
 
               <div class="form-group panel panel-body">
 
@@ -90,14 +91,14 @@ $r = $area->buscarAreas();
                     <div class="row">
                       <div class="col-md-8 form-group">
                         <label for="nomepai" class="control-label">Nome do pai</label>
-                        <input id="nomepai" type="text" maxlength="200" name="nomepai" size="92" class="form-control input-md" required>
+                        <input id="nomepai" type="text" maxlength="200" name="nomepai" size="92" class="form-control input-md">
                       </div>
                     </div>
 
                     <div class="row">
                       <div class="col-md-8 form-group">
                         <label for="nomemae" class="control-label">Nome da mãe</label>
-                        <input id="nomemae" type="text" maxlength="200" name="nomemae" size="92" class="form-control input-md" required>
+                        <input id="nomemae" type="text" maxlength="200" name="nomemae" size="92" class="form-control input-md">
                       </div>
                     </div>
 
@@ -123,7 +124,6 @@ $r = $area->buscarAreas();
                     </div>
                   </div>
                 </div>
-              </form>
             </div>
           </div>
 
@@ -132,8 +132,7 @@ $r = $area->buscarAreas();
           <div role="tabpanel" class="tab-pane form-group panel panel-body" id="endereco" style="border-color: #00688B;">
             <div style="padding-top:20px;">
 
-              <form class="form-horizontal" action="" method="POST" data-toggle="validator" id="2">
-
+             
                 <div class="form-group panel panel-body">
 
                   <fieldset>
@@ -197,11 +196,12 @@ $r = $area->buscarAreas();
 
 
                 </div>
-              </form>
+             
             </div>
           </div>
           </div>
           </div>
+         </form>  
           </section>
         
 

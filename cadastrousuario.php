@@ -89,7 +89,7 @@ $r = $area->buscarAreas();
                       </div>
                       <div class="col-md-6 form-group">
                         <label for="email" class="control-label">E-mail</label>
-                        <input id="email" type="text" maxlength="10" size="19" name="email" class="form-control input-md" required>
+                        <input id="email" type="text" maxlength="200" size="19" name="email" class="form-control input-md" required>
                       </div>
                       </div>
 
