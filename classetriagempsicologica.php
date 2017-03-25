@@ -31,10 +31,9 @@
 			try
 			{	
 				$query = $conexao->conn->prepare("insert into triagempsicologica(idaluno, datacadastro, observacoesgerais, triagem)
-				values(:idaluno, :datacadastro, :observacoesgerais, :triagem)");
+				values(:idaluno, now(), :observacoesgerais, :triagem)");
 				
 				$query->bindValue(":idaluno", $this->getIdaluno());
-				$query->bindValue(":datacadastro", $this->getDatacadastro());
 				$query->bindValue(":observacoesgerais", $this->getObservacoesgerais());
 				$query->bindValue(":triagem", $this->getTriagem());
 				

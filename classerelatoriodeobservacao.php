@@ -39,10 +39,9 @@
 			try
 			{	
 				$query = $conexao->conn->prepare("insert into relatoriodeobservacao(idaluno, datacadastro, observacoesgerais, vidadiaria, vidapratica, habilidadesbasicas)
-				values(:idaluno, :datacadastro, :observacoesgerais, :vidadiaria, :vidapratica, :habilidadesbasicas)");
+				values(:idaluno, now(), :observacoesgerais, :vidadiaria, :vidapratica, :habilidadesbasicas)");
 				
 				$query->bindValue(":idaluno", $this->getIdaluno());
-				$query->bindValue(":datacadastro", $this->getDatacadastro());
 				$query->bindValue(":observacoesgerais", $this->getObservacoesgerais());
 				$query->bindValue(":vidadiaria", $this->getVidadiaria());
 				$query->bindValue(":vidapratica", $this->getVidapratica());

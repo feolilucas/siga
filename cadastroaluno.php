@@ -92,7 +92,7 @@ $r = $area->buscarAreas();
                         <select class="form-control" name="sexo" required>
                         <option></option>
                           <option value="Masculino">Masculino</option>
-                          <option value="Masculino">Feminino</option>                       
+                          <option value="Feminino">Feminino</option>                       
                        </select>
                      </div>
                    </div>
