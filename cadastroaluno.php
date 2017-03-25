@@ -85,7 +85,18 @@ $r = $area->buscarAreas();
                         <label for="dataemissaorg" class="control-label">Data de emissão do RG</label>
                         <input id="dataemissaorg" type="date" maxlength="10" size="19" name="dataemissaorg" class="form-control input-md">
                       </div>
-                    </div>        
+
+
+                         <div class="col-md-4 form-group">
+                        <label for="sexo" class="control-label">Sexo</label>
+                        <select class="form-control" name="sexo" required>
+                        <option></option>
+                          <option value="Masculino">Masculino</option>
+                          <option value="Masculino">Feminino</option>                       
+                       </select>
+                     </div>
+                   </div>
+                         
 
 
                     <div class="row">
@@ -106,7 +117,8 @@ $r = $area->buscarAreas();
                     <div class="row">
                       <div class="col-md-12 form-group">
                         <label for="deficiencia" class="control-label">Deficiencia</label>
-                        <textarea rows="5" id="deficiencia" name="deficiencia" class="form-control input-md" required>Informe a deficiência do aluno...</textarea>
+                        <textarea rows="5" id="deficiencia" name="deficiencia" class="form-control input-md" required></textarea>
+                        <span class="help-block">Informe a deficiência do aluno.</span> 
                       </div>
                     </div>
                   </div></fieldset>
