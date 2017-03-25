@@ -25,7 +25,7 @@
 							</ul>
 						</li>
 						<li class="dropdown">
-							<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Alunos<span class="caret"></span></a>
+							<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Administrativo<span class="caret"></span></a>
 							<ul class="dropdown-menu">
 								<li><a href="cadastroaluno.php">Cadastrar</a></li>
 								<li role="separator" class="divider"></li>
@@ -91,7 +91,7 @@
 						<li class="dropdown">
 							<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Terapia Ocupacional<span class="caret"></span></a>
 							<ul class="dropdown-menu">
-								<li><a href="#">Cadastrar</a></li>
+								<li><a href="relatorioobservacao.php">Cadastrar Relatório de Observação</a></li>
 								<li role="separator" class="divider"></li>
 								<li><a href="buscaraluno.php">Buscar</a></li>
 
