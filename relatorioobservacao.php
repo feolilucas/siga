@@ -29,10 +29,10 @@ $r = $aluno->mostrartodos();
             <h4 class="modal-title">Cadastro realizado</h4>
           </div>
           <div class="modal-body">
-            <p>Avaliação Pedagógica enviada com sucesso.</p>
+            <p>Relatório de observação enviado com sucesso.</p>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal" onclick="location.href='http://localhost/siga/avaliacaopsicologica.php';">Fechar</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal" onclick="location.href='http://localhost/siga/relatorioobservacao.php';">Fechar</button>
           </div>
         </div>
       </div>
@@ -115,6 +115,14 @@ $r = $aluno->mostrartodos();
 
 </body>
 
+
+<script>
+
+  if(window.location.href == "http://localhost/siga/relatorioobservacao.php?gravou=1"){
+   MostrarEsconderDiv('divSucesso');
+ };
+
+</script>
 
 <?php  
 include "rodape.php";

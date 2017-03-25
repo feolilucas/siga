@@ -218,7 +218,7 @@ box-shadow:10px 10px 5px cadetblue;" class="alert alert-success"> <strong>Succes
 
 <script>
 
-  if(window.location.href == "http://localhost/siga/cadastroaluno.php?gravou=3"){
+  if(window.location.href == "http://localhost/siga/cadastroaluno.php?gravou=1"){
    MostrarEsconderDiv('divSucesso');
  };
 

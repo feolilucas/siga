@@ -75,7 +75,7 @@ $r = $area->buscarAreas();
 
         <script>
 
-          if(window.location.href == "http://localhost/siga/cadastroareas.php?gravou=2"){
+          if(window.location.href == "http://localhost/siga/cadastroareas.php?gravou=1"){
            MostrarEsconderDiv('divSucesso');
          };
 

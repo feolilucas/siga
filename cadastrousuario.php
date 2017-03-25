@@ -8,6 +8,8 @@ $area = new area;
 $r = $area->buscarAreas();
 ?>
 <title>Cadastro de Usuário</title>
+
+
 <body style="padding-top:60px;">
   <section style="width:60%" class="container">
     <!-- Modal -->

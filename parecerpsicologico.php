@@ -104,7 +104,13 @@ $r = $aluno->mostrartodos();
     </div>
   </section>
 </body>
+<script>
 
+  if(window.location.href == "http://localhost/siga/parecerpsicologico.php?gravou=1"){
+   MostrarEsconderDiv('divSucesso');
+ };
+
+</script>
 
 
 <?php  

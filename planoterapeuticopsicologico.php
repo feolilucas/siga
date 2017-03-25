@@ -29,10 +29,10 @@ $r = $aluno->mostrartodos();
             <h4 class="modal-title">Cadastro realizado</h4>
           </div>
           <div class="modal-body">
-            <p>Parecer psicológico enviado com sucesso.</p>
+            <p>Plano terapeutico psicológico enviado com sucesso.</p>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal" onclick="location.href='http://localhost/siga/parecerpsicologico.php';">Fechar</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal" onclick="location.href='http://localhost/siga/planoterapeuticopsicologico.php';">Fechar</button>
           </div>
         </div>
       </div>
@@ -108,7 +108,13 @@ $r = $aluno->mostrartodos();
 </section>
 </body>
 
+<script>
 
+  if(window.location.href == "http://localhost/siga/planoterapeuticopsicologico.php?gravou=1"){
+   MostrarEsconderDiv('divSucesso');
+ };
+
+</script>
 
 <?php  
 include "rodape.php";
