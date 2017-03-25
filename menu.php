@@ -14,23 +14,152 @@
 			<ul class="nav navbar-nav">			
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
+
 						<li class="dropdown">
-							<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Cadastro de Aluno<span class="caret"></span></a>
+							<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Usuários<span class="caret"></span></a>
 							<ul class="dropdown-menu">
-								<li><a href="cadastro.aluno.php">Cadastrar</a></li>
-								<li><a href="buscar.aluno.php">Buscar</a></li>
+								<li><a href="cadastrousuario.php">Cadastrar</a></li>
 								<li role="separator" class="divider"></li>
-								<li><a href="relatorio.geral.php">Relatório Geral</a></li>
-								<li><a href="buscar.aluno.relatorio.individual.php">Relatório Individual</a></li>
+
+								<li><a href="buscarusuario.php">Buscar</a></li>
 							</ul>
 						</li>
 						<li class="dropdown">
-							<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Cadastro de Família<span class="caret"></span></a>
+							<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Alunos<span class="caret"></span></a>
 							<ul class="dropdown-menu">
-								<li><a href="resultado.aluno.familia.php?id=1">Cadastrar</a></li>
-								<li><a href="resultado.aluno.familia.php?id=2">Buscar</a></li>
+								<li><a href="cadastroaluno.php">Cadastrar</a></li>
+								<li role="separator" class="divider"></li>
+
+								<li><a href="buscaraluno.php">Buscar</a></li>
+								
+
 							</ul>
-						</li>						
+						</li>
+
+
+
+
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Plano Terapêutico<span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="planoterapeuticoindividual.php">Cadastrar</a></li>
+								<li role="separator" class="divider"></li>
+
+								<li><a href="buscaraluno.php">Buscar</a></li>
+							</ul>
+						</li>
+
+
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Psicológico<span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="parecerpsicologico.php">Cadastrar Parecer Psicológico</a></li>
+								<li><a href="triagempsicologica.php">Cadastrar Triagem Psicológica</a></li>
+								<li><a href="planoterapeuticopsicologico.php">Cadastrar Plano Terapeutico Psicológico</a></li>
+								<li><a href="anamnesepsicologica.php">Cadastrar Anamnese Psicológica</a></li>
+								<li role="separator" class="divider"></li>
+								<li><a href="buscaraluno.php">Buscar</a></li>
+								
+								
+
+							</ul>
+						</li>
+
+
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Neurológico<span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="#">Cadastrar</a></li>
+								<li role="separator" class="divider"></li>
+								<li><a href="buscaraluno.php">Buscar</a></li>
+
+
+							</ul>
+						</li>
+
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Fonoaudiológico<span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="#">Cadastrar</a></li>
+								<li role="separator" class="divider"></li>
+								<li><a href="buscaraluno.php">Buscar</a></li>
+
+
+							</ul>
+						</li>
+
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Terapia Ocupacional<span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="#">Cadastrar</a></li>
+								<li role="separator" class="divider"></li>
+								<li><a href="buscaraluno.php">Buscar</a></li>
+
+
+							</ul>
+						</li>
+
+
+
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pedagógico<span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="#">Cadastrar</a></li>
+								<li role="separator" class="divider"></li>
+								<li><a href="buscaraluno.php">Buscar</a></li>
+
+
+							</ul>
+						</li>
+
+
+
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Social<span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="#">Cadastrar</a></li>
+								<li role="separator" class="divider"></li>
+								<li><a href="buscaraluno.php">Buscar</a></li>
+							</ul>
+						</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 					</ul>						
 				</div>
 			</ul>						
