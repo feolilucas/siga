@@ -63,7 +63,7 @@ $r = $aluno->mostrartodos();
 															echo "<td>".$linha['datanascimento']."</td>";
 															echo "<td>".$linha['cpf']."</td>";
 															echo "<td>".$linha['rg']."</td>"; 
-															echo "<td class='text-center'><a class='btn btn-success btn-xs' href='#'><span class='glyphicon glyphicon-plus'></span>Selecionar</a></td>";
+															echo "<td class='text-center'><a class='btn btn-success btn-xs' href='#'><span class='glyphicon glyphicon-plus'></span> Selecionar</a></td>";
 															echo "</tr>";
 														}
 														?>
