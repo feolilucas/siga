@@ -3,11 +3,7 @@
 include "cabecalho.php";
 include "menu.php";
 
-require_once "classealuno.php";
 
-$aluno = new aluno;
-
-$r = $aluno->mostrartodos();
 ?>
 
 
@@ -49,7 +45,7 @@ $r = $aluno->mostrartodos();
       <div class="tab-content">
         <div role="tabpanel" class="tab-pane active form-group panel panel-body" id="avaliacaopedagogica" style="border-color: #00688B;">
           <div style="padding-top:20px;">
-            <form class="form-horizontal" action="" method="POST" data-toggle="validator">
+            <form class="form-horizontal" action="inserir.php?id=7" method="POST" data-toggle="validator">
               <div class="form-group panel panel-body">
                 <fieldset>
                   <div style="padding-left: 5%; padding-right: 5%;">
@@ -63,28 +59,28 @@ $r = $aluno->mostrartodos();
                     <div class="row">
                       <div class="col-md-12 form-group">
                         <label for="vidadiaria" class="control-label">Vida diária</label>
-                        <textarea rows="7" id="vidadiaria" name="vidadiaria" class="form-control input-md" required></textarea>
+                        <textarea rows="7" id="vidadiaria" name="vidadiaria" class="form-control input-md" ></textarea>
                       </div>
                     </div>
 
                     <div class="row">
                       <div class="col-md-12 form-group">
                         <label for="vidapratica" class="control-label">Vida prática</label>
-                        <textarea rows="4" id="vidapratica" name="vidapratica" class="form-control input-md" required></textarea>
+                        <textarea rows="4" id="vidapratica" name="vidapratica" class="form-control input-md" ></textarea>
                       </div>
                     </div>
 
                     <div class="row">
                       <div class="col-md-12 form-group">
                         <label for="habilidadesbasicas" class="control-label">Habilidades básicas</label>
-                        <textarea rows="4" id="habilidadesbasicas" name="habilidadesbasicas" class="form-control input-md" required></textarea>
+                        <textarea rows="4" id="habilidadesbasicas" name="habilidadesbasicas" class="form-control input-md" ></textarea>
                       </div>
                     </div>
 
                     <div class="row">
                       <div class="col-md-12 form-group">
                         <label for="observacoesgerais" class="control-label">Observações Gerais</label>
-                        <textarea rows="4" id="observacoesgerais" name="observacoesgerais" class="form-control input-md" required></textarea>
+                        <textarea rows="4" id="observacoesgerais" name="observacoesgerais" class="form-control input-md"></textarea>
                       </div>
                     </div>
 

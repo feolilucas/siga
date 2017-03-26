@@ -101,7 +101,7 @@
 				$query = $conexao->conn->prepare("insert into planoterapeuticoindividual(idaluno, datacadastro, observacoesgerais, servicosocial, objservicosocial, fonoaudiologia, objfonoaudiologia,
 				psicologia, objpsicologia, terapeutaocupacional, objterapeutaocupacional, fisioterapia, objfisioterapia, nutricionista, objnutricionista, dentista, objdentista,
 				diagnostico, etiologia, cid, dadosmedicos)
-				values(:idaluno, :now(), :observacoesgerais, :servicosocial, :objservicosocial, :fonoaudiologia, :objfonoaudiologia,
+				values(:idaluno, now(), :observacoesgerais, :servicosocial, :objservicosocial, :fonoaudiologia, :objfonoaudiologia,
 				:psicologia, :objpsicologia, :terapeutaocupacional, :objterapeutaocupacional, :fisioterapia, :objfisioterapia, :nutricionista, :objnutricionista, :dentista, :objdentista,
 				:diagnostico, :etiologia, :cid, :dadosmedicos )");
 				

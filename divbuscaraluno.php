@@ -4,6 +4,14 @@
       <h3 class="panel-title">Buscar aluno</h3>
     </div>
 
+    <?php
+      require_once "classealuno.php";
+
+      $aluno = new aluno;
+
+      $r = $aluno->mostrartodos();
+    ?>
+
     <section class="container">
       <div style="padding:30px;">
 

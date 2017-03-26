@@ -2,9 +2,7 @@
 /*include "session.php";*/
 include "cabecalho.php";
 include "menu.php";
-require_once "classealuno.php";
-$aluno = new aluno;
-$r = $aluno->mostrartodos();
+
 ?>
 <title>Plano Terapeutico Individual</title>
 
@@ -54,13 +52,20 @@ $r = $aluno->mostrartodos();
     <div class="tab-content">
       <div role="tabpanel" class="tab-pane active form-group panel panel-body" id="dadosdeficiencia" style="border-color: #00688B;">
         <div style="padding-top:20px;">
-          <form class="form-horizontal" action="" method="POST" data-toggle="validator">
+          <form class="form-horizontal" action="inserir.php?id=5" method="POST" data-toggle="validator">
             <div class="form-group panel panel-body">
               <fieldset>
                 <div style="padding-left: 5%; padding-right: 5%;">
                  <?php  
                  include "camposbuscaraluno.php";
                  ?>
+
+                  <div class="row">
+                      <div class="col-md-12 form-group">
+                        <label for="observacoesgerais" class="control-label">Observações Gerais</label>
+                        <textarea rows="4" id="observacoesgerais" name="observacoesgerais" class="form-control input-md" ></textarea>
+                      </div>
+                    </div>
 
                  <div class="row">
                   <div class="col-md-8 form-group">
@@ -82,11 +87,12 @@ $r = $aluno->mostrartodos();
                 </div>
                 <div class="row">
                   <div class="col-md-12 form-group">
-                    <label for="dadosmedicosrelevantes" class="control-label">Dados médicos relevantes</label>
-                    <textarea rows="2" id="dadosmedicosrelevantes" name="dadosmedicosrelevantes" class="form-control input-md" ></textarea>
+                    <label for="dadosmedicos" class="control-label">Dados médicos relevantes</label>
+                    <textarea rows="2" id="dadosmedicos" name="dadosmedicos" class="form-control input-md" ></textarea>
                   </div>
 
                 </div>
+              </div>
               </fieldset>
 
               <!-- Button (Double) -->
@@ -99,8 +105,7 @@ $r = $aluno->mostrartodos();
                 </div>
               </div>
             </div>
-        </div>
-      </div>
+        
 
       <div role="tabpanel" class="tab-pane form-group panel panel-body" id="servicosocial" style="border-color: #00688B;">
         <div style="padding-top:20px;">
@@ -117,9 +122,10 @@ $r = $aluno->mostrartodos();
 
                 <div class="row">
                   <div class="col-md-12 form-group">
-                    <label for="objetivoservicosocial" class="control-label">Objetivo</label>
-                    <textarea rows="4" id="objetivoservicosocial" name="objetivoservicosocial" class="form-control input-md" ></textarea>
+                    <label for="objservicosocial" class="control-label">Objetivo</label>
+                    <textarea rows="4" id="objservicosocial" name="objservicosocial" class="form-control input-md" ></textarea>
                   </div>
+                </div>
                 </div>
               </fieldset>
               <!-- Button (Double) -->
@@ -154,6 +160,7 @@ $r = $aluno->mostrartodos();
                     <textarea rows="4" id="objfonoaudiologia" name="objfonoaudiologia" class="form-control input-md" ></textarea>
                   </div>
                 </div>
+                </div>
               </fieldset>
               <!-- Button (Double) -->
               <br><br><br>
@@ -186,6 +193,7 @@ $r = $aluno->mostrartodos();
                     <label for="objpsicologia" class="control-label">Objetivo</label>
                     <textarea rows="4" id="objpsicologia" name="objpsicologia" class="form-control input-md" ></textarea>
                   </div>
+                </div>
                 </div>
               </fieldset>
               <!-- Button (Double) -->
@@ -220,6 +228,7 @@ $r = $aluno->mostrartodos();
                     <textarea rows="4" id="objterapeutaocupacional" name="objterapeutaocupacional" class="form-control input-md" ></textarea>
                   </div>
                 </div>
+                </div>
               </fieldset>
               <!-- Button (Double) -->
               <br><br><br>
@@ -252,6 +261,7 @@ $r = $aluno->mostrartodos();
                     <label for="objfisioterapia" class="control-label">Objetivo</label>
                     <textarea rows="4" id="objfisioterapia" name="objfisioterapia" class="form-control input-md" ></textarea>
                   </div>
+                </div>
                 </div>
               </fieldset>
               <!-- Button (Double) -->
@@ -286,6 +296,7 @@ $r = $aluno->mostrartodos();
                     <textarea rows="4" id="objnutricionista" name="objnutricionista" class="form-control input-md" ></textarea>
                   </div>
                 </div>
+                </div>
               </fieldset>
               <!-- Button (Double) -->
               <br><br><br>
@@ -319,6 +330,7 @@ $r = $aluno->mostrartodos();
                     <textarea rows="4" id="objdentista" name="objdentista" class="form-control input-md" ></textarea>
                   </div>
                 </div>
+                </div>
               </fieldset>
               <!-- Button (Double) -->
               <br><br><br>
@@ -330,10 +342,12 @@ $r = $aluno->mostrartodos();
                 </div>
               </div>
             </div>
-          </form>
-        </div>
+          </div>
+          </div>
+        </form>
       </div>
-
+    </div>
+</section>
     </body>
 <script>
 

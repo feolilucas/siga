@@ -1,11 +1,11 @@
    <div class="row">
 
     <div class="col-md-2 form-group">
-      <input type="text" name="idaluno" class="form-control input-md" id="idaluno" placeholder="ID" disabled required>
+      <input type="text" name="idaluno" class="form-control input-md" id="idaluno" placeholder="ID" readonly required>
     </div>
 
     <div class="col-md-7 form-group">
-      <input type="text" name="nomealuno" class="form-control input-md" id="nomealuno" placeholder="Nome" disabled required>
+      <input type="text" name="nomealuno" class="form-control input-md" id="nomealuno" placeholder="Nome" readonly required>
     </div>
 
     <div class="col-md-3 form-group">

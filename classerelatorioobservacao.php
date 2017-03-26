@@ -1,9 +1,9 @@
 <?php
 	require_once 'conexao.php';
 	
-	class relatoriodeobservacao
+	class relatorioobservacao
 	{
-		private $idrelatoriodeobservacao;
+		private $idrelatorioobservacao;
 		private $idaluno;
 		private $datacadastro;
 		private $observacoesgerais;
@@ -11,8 +11,8 @@
 		private $vidapratica;
 		private $habilidadesbasicas;
 
-		function setIdrelatoriodeobservacao($idrelatoriodeobservacao) { $this->idrelatoriodeobservacao = $idrelatoriodeobservacao; }
-		function getIdrelatoriodeobservacao() { return $this->idrelatoriodeobservacao; }
+		function setIdrelatorioobservacao($idrelatorioobservacao) { $this->idrelatorioobservacao = $idrelatorioobservacao; }
+		function getIdrelatorioobservacao() { return $this->idrelatorioobservacao; }
 		
 		function setIdaluno($idaluno) { $this->idaluno = $idaluno; }
 		function getIdaluno() { return $this->idaluno; }
@@ -38,7 +38,7 @@
 			
 			try
 			{	
-				$query = $conexao->conn->prepare("insert into relatoriodeobservacao(idaluno, datacadastro, observacoesgerais, vidadiaria, vidapratica, habilidadesbasicas)
+				$query = $conexao->conn->prepare("insert into relatorioobservacao(idaluno, datacadastro, observacoesgerais, vidadiaria, vidapratica, habilidadesbasicas)
 				values(:idaluno, now(), :observacoesgerais, :vidadiaria, :vidapratica, :habilidadesbasicas)");
 				
 				$query->bindValue(":idaluno", $this->getIdaluno());
@@ -63,10 +63,10 @@
 			
 			try
 			{	
-				$query = $conexao->conn->prepare("update relatoriodeobservacao set observacoesgerais = :observacoesgerais, vidadiaria = :vidadiaria, vidapratica = :vidapratica, habilidadesbasicas = :habilidadesbasicas 
-				where idrelatoriodeobservacao = :idrelatoriodeobservacao");
+				$query = $conexao->conn->prepare("update relatorioobservacao set observacoesgerais = :observacoesgerais, vidadiaria = :vidadiaria, vidapratica = :vidapratica, habilidadesbasicas = :habilidadesbasicas 
+				where idrelatorioobservacao = :idrelatorioobservacao");
 				
-				$query->bindValue(":idrelatoriodeobservacao", $this->getIdrelatoriodeobservacao());
+				$query->bindValue(":idrelatorioobservacao", $this->getIdrelatorioobservacao());
 				$query->bindValue(":observacoesgerais", $this->getObservacoesgerais());
 				$query->bindValue(":vidadiaria", $this->getVidadiaria());
 				$query->bindValue(":vidapratica", $this->getVidapratica());
@@ -88,9 +88,9 @@
 			
 			try
 			{	
-				$query = $conexao->conn->prepare("select *from relatoriodeobservacao where idrelatoriodeobservacao = :idrelatoriodeobservacao");
+				$query = $conexao->conn->prepare("select *from relatorioobservacao where idrelatorioobservacao = :idrelatorioobservacao");
 				
-				$query->bindValue(":idrelatoriodeobservacao", $this->getIdrelatoriodeobservacao());
+				$query->bindValue(":idrelatorioobservacao", $this->getIdrelatorioobservacao());
 				
 				$query->execute();	
 
@@ -112,7 +112,7 @@
 			
 			try
 			{	
-				$query = $conexao->conn->prepare("select *from relatoriodeobservacao where idaluno = :idaluno");
+				$query = $conexao->conn->prepare("select *from relatorioobservacao where idaluno = :idaluno");
 				
 				$query->bindValue(":idaluno", $this->getIdaluno());
 				
@@ -136,9 +136,9 @@
 			
 			try
 			{	
-				$query = $conexao->conn->prepare("delete from relatoriodeobservacao where idrelatoriodeobservacao = :idrelatoriodeobservacao");
+				$query = $conexao->conn->prepare("delete from relatorioobservacao where idrelatorioobservacao = :idrelatorioobservacao");
 				
-				$query->bindValue(":idrelatoriodeobservacao", $this->getIdrelatoriodeobservacao());
+				$query->bindValue(":idrelatorioobservacao", $this->getIdrelatorioobservacao());
 				
 				$query->execute();
 						

@@ -3,11 +3,6 @@
 include "cabecalho.php";
 include "menu.php";
 
-require_once "classealuno.php";
-
-$aluno = new aluno;
-
-$r = $aluno->mostrartodos();
 ?>
 
 
@@ -53,7 +48,7 @@ $r = $aluno->mostrartodos();
         <div role="tabpanel" class="tab-pane active form-group panel panel-body" id="parecerpsicologico" style="border-color: #00688B;">
           <div style="padding-top:20px;">
 
-            <form class="form-horizontal" action="" method="POST" data-toggle="validator">
+            <form class="form-horizontal" action="inserir.php?id=4" method="POST" data-toggle="validator">
 
               <div class="form-group panel panel-body">
 
@@ -77,7 +72,7 @@ $r = $aluno->mostrartodos();
                     <div class="row">
                       <div class="col-md-12 form-group">
                         <label for="observacoesgerais" class="control-label">Observações Gerais</label>
-                        <textarea rows="4" id="observacoesgerais" name="observacoesgerais" class="form-control input-md" required></textarea>
+                        <textarea rows="4" id="observacoesgerais" name="observacoesgerais" class="form-control input-md" ></textarea>
                       </div>
                     </div>
 

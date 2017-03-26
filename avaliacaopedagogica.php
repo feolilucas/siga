@@ -3,11 +3,6 @@
 include "cabecalho.php";
 include "menu.php";
 
-require_once "classealuno.php";
-
-$aluno = new aluno;
-
-$r = $aluno->mostrartodos();
 ?>
 
 
@@ -35,7 +30,7 @@ $r = $aluno->mostrartodos();
             <p>Avaliação Pedagógica enviada com sucesso.</p>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal" onclick="location.href='http://localhost/siga/avaliacaopsicologica.php';">Fechar</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal" onclick="location.href='http://localhost/siga/avaliacaopedagogica.php';">Fechar</button>
           </div>
         </div>
       </div>
@@ -52,18 +47,17 @@ $r = $aluno->mostrartodos();
       <div class="tab-content">
         <div role="tabpanel" class="tab-pane active form-group panel panel-body" id="avaliacaopedagogica" style="border-color: #00688B;">
           <div style="padding-top:20px;">
-            <form class="form-horizontal" action="" method="POST" data-toggle="validator">
+
+            <form class="form-horizontal" action="inserir.php?id=3" method="POST" data-toggle="validator">
               <div class="form-group panel panel-body">
                 <fieldset>
                   <div style="padding-left: 5%; padding-right: 5%;">
 
 
-                   <?php  
-                   include "camposbuscaraluno.php";
+                  <?php  
+                     include "camposbuscaraluno.php";
                    ?>
-
-
-
+                   
 
                    <div class="row">
                     <div class="col-md-12 form-group">
@@ -75,7 +69,7 @@ $r = $aluno->mostrartodos();
                   <div class="row">
                     <div class="col-md-12 form-group">
                       <label for="observacoesgerais" class="control-label">Observações Gerais</label>
-                      <textarea rows="4" id="observacoesgerais" name="observacoesgerais" class="form-control input-md" required></textarea>
+                      <textarea rows="4" id="observacoesgerais" name="observacoesgerais" class="form-control input-md" ></textarea>
                     </div>
                   </div>
 
@@ -93,19 +87,25 @@ $r = $aluno->mostrartodos();
                   <button id="idCancelar" name="idCancelar" class="btn btn-danger" onclick="location.href='http://localhost/siga/';">Cancelar</button>
                 </div>
               </div>
-
-
+              </div>
+            </form>
             </div>
-          </form>
+          
         </div>
       </div>
     </div>
-  </div>
+  
 
 </section>
 
 </body>
+<script>
 
+  if(window.location.href == "http://localhost/siga/avaliacaopedagogica.php?gravou=1"){
+   MostrarEsconderDiv('divSucesso');
+ };
+
+</script>
 
 <?php  
 include "rodape.php";
