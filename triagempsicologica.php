@@ -6,7 +6,7 @@ include "menu.php";
 ?>
 
 
-<title>Parecer Psicológico</title>
+<title>Triagem Psicológico</title>
 
 <body style="padding-top:60px;">
   <section style="width:60%" class="container">

@@ -7,7 +7,7 @@ include "menu.php";
 ?>
 
 
-<title>Avaliação Pedagógica</title>
+<title>Relatório de Observação</title>
 
 <body style="padding-top:60px;">
   <section style="width:60%" class="container">

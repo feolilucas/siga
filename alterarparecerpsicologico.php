@@ -1,21 +1,18 @@
 <?php  
+/*include "session.php";*/
 include "cabecalho.php";
 include "menu.php";
 
 ?>
 
 
-<title>Avaliação Pedagógica</title>
-
-
-
+<title>Alterar Parecer Psicológico</title>
 
 <body style="padding-top:60px;">
   <section style="width:60%" class="container">
 
-    <?php  
-    include "divbuscaraluno.php";
-    ?>
+  
+
 
     <!-- Modal -->
     <div class="modal fade in" id="divSucesso" role="dialog" style="display:none; position: absolute;top: 20%;">
@@ -23,13 +20,13 @@ include "menu.php";
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title">Cadastro realizado</h4>
+            <h4 class="modal-title">Alteração realizada</h4>
           </div>
           <div class="modal-body">
-            <p>Avaliação Pedagógica enviada com sucesso.</p>
+            <p>Parecer psicológico alterado com sucesso.</p>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal" onclick="location.href='http://localhost/siga/avaliacaopedagogica.php';">Fechar</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal" onclick="location.href='http://localhost/siga/alterarparecerpsicologico.php';">Fechar</button>
           </div>
         </div>
       </div>
@@ -38,32 +35,37 @@ include "menu.php";
     <div>
       <!-- Nav tabs -->
       <ul class="nav nav-tabs " role="tablist">
-        <li role="presentation" class="active"><a href="#avaliacaopedagogica" aria-controls="avaliacaopedagogica" role="tab" data-toggle="tab">Avaliação Pedagógica</a></li>
+        <li role="presentation" class="active"><a href="#parecerpsicologico" aria-controls="parecerpsicologico" role="tab" data-toggle="tab">Parecer Psicológico</a></li>
+
+
       </ul>
 
-
       <!-- Tab panes -->
+
       <div class="tab-content">
-        <div role="tabpanel" class="tab-pane active form-group panel panel-body" id="avaliacaopedagogica" style="border-color: #00688B;">
+        <div role="tabpanel" class="tab-pane active form-group panel panel-body" id="parecerpsicologico" style="border-color: #00688B;">
           <div style="padding-top:20px;">
 
-            <form class="form-horizontal" action="inserir.php?id=3" method="POST" data-toggle="validator">
+            <form class="form-horizontal" action="inserir.php?id=4" method="POST" data-toggle="validator">
+
               <div class="form-group panel panel-body">
+
                 <fieldset>
+
                   <div style="padding-left: 5%; padding-right: 5%;">
 
 
                     <?php  
-                    include "camposbuscaraluno.php";
+                    include "camposexibiraluno.php";
                     ?>
-                    
 
                     <div class="row">
                       <div class="col-md-12 form-group">
-                        <label for="avaliacaopedagogica" class="control-label">Avaliação Pedagógica</label>
-                        <textarea rows="7" id="avaliacaopedagogica" name="avaliacaopedagogica" class="form-control input-md" required></textarea>
+                        <label for="parecerpsicologico" class="control-label">Parecer Psicológico</label>
+                        <textarea rows="7" id="parecerpsicologico" name="parecerpsicologico" class="form-control input-md" required></textarea>
                       </div>
                     </div>
+
 
                     <div class="row">
                       <div class="col-md-12 form-group">
@@ -72,10 +74,10 @@ include "menu.php";
                       </div>
                     </div>
 
+
                   </div>
+
                 </fieldset>
-
-
 
                 <!-- Button (Double) -->
                 <br><br><br>
@@ -86,25 +88,23 @@ include "menu.php";
                     <button id="idCancelar" name="idCancelar" class="btn btn-danger" onclick="location.href='http://localhost/siga/';">Cancelar</button>
                   </div>
                 </div>
+
               </div>
             </form>
           </div>
-          
         </div>
       </div>
     </div>
-    
-
   </section>
-
 </body>
 <script>
 
-  if(window.location.href == "http://localhost/siga/avaliacaopedagogica.php?gravou=1"){
+  if(window.location.href == "http://localhost/siga/alterarparecerpsicologico.php?gravou=1"){
    MostrarEsconderDiv('divSucesso');
  };
 
 </script>
+
 
 <?php  
 include "rodape.php";
