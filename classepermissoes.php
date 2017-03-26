@@ -1,4 +1,6 @@
 <?php
+	
+	require_once "conexao.php";
 	class permissoes
 	{
 		private $idpermissoes;

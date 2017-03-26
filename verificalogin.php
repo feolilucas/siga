@@ -21,6 +21,7 @@
 		unset ($_SESSION['senha']);
 		unset ($_SESSION['idUsuario']);
 		unset ($_SESSION['nome']);
+		unset ($_SESSION['idpermissoes']);
 		header('location:telalogin.php');
 	}
 	else if(($r['usuario'] == $login) and ($r['senha'] == $senha))
@@ -29,7 +30,8 @@
 		$_SESSION['nome'] = $r['nome'];
 		$_SESSION['login'] = $login;
 		$_SESSION['senha'] = $senha;
-		$_SESSION['idUsuario'] = $r['idUsuario'];
+		$_SESSION['idUsuario'] = $r['idusuario'];
+		$_SESSION['idpermissoes'] = $r['idpermissoes'];
 		header('location:index.php');
 	}
 	else
@@ -39,6 +41,7 @@
 		unset ($_SESSION['senha']);
 		unset ($_SESSION['idUsuario']);
 		unset ($_SESSION['nome']);
+		unset ($_SESSION['idpermissoes']);
 		header('location:telalogin.php');
 	}
 	

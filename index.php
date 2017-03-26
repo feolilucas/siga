@@ -1,6 +1,5 @@
 <?php
 include "cabecalho.php";
-include "session.php";
 include "menu.php";
 ?>
 <title>SIGA APAE</title>
