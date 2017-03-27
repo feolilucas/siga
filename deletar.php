@@ -66,7 +66,8 @@ switch($id)
 			{
 				$avaliacaopedagogica->setIdavaliacaopedagogica($_GET['idformulario']);
 				$avaliacaopedagogica->deletar();
-			
+				$redirect = "http://localhost/siga/buscaraluno.php?id=3&deletou=1";
+				header("location:$redirect");	
 				
 			}
 			catch(PDOException $e)
@@ -81,6 +82,8 @@ switch($id)
 			{
 				$parecerpsicologico->setIdparecerpsicologico($_GET['idformulario']);
 				$parecerpsicologico->deletar();
+				$redirect = "http://localhost/siga/buscaraluno.php?id=4&deletou=1";
+				header("location:$redirect");	
 				
 			}
 			catch(PDOException $e)
@@ -95,6 +98,9 @@ switch($id)
 			{
 				$planoterapeuticoindividual->setIdplanoterapeuticoindividual($_GET['idformulario']);
 				$planoterapeuticoindividual->deletar();
+				$redirect = "http://localhost/siga/buscaraluno.php?id=5&deletou=1";
+				header("location:$redirect");	
+				
 				
 				
 			}
@@ -110,6 +116,9 @@ switch($id)
 			{
 				$planoterapeuticopsicologico->setIdplanoterapeuticopsicologico($_GET['idformulario']);
 				$planoterapeuticopsicologico->deletar();
+				$redirect = "http://localhost/siga/buscaraluno.php?id=6&deletou=1";
+				header("location:$redirect");	
+				
 				
 			}
 			catch(PDOException $e)
@@ -124,6 +133,9 @@ switch($id)
 			{
 				$relatorioobservacao->setIdrelatorioobservacao($_GET['idformulario']);
 				$relatorioobservacao->deletar();
+				$redirect = "http://localhost/siga/buscaraluno.php?id=7&deletou=1";
+				header("location:$redirect");	
+				
 				
 				
 			}
@@ -138,7 +150,10 @@ switch($id)
 			try
 			{
 				$triagempsicologica->setIdtriagempsicologica($_GET['idformulario']);
-				$triagempsicologica->deletar();	
+				$triagempsicologica->deletar();
+				$redirect = "http://localhost/siga/buscaraluno.php?id=8&deletou=1";
+				header("location:$redirect");	
+					
 			}
 			catch(PDOException $e)
 			{

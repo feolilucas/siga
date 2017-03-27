@@ -15,23 +15,6 @@ include "menu.php";
     ?>
 
 
-    <!-- Modal -->
-    <div class="modal fade in" id="divSucesso" role="dialog" style="display:none; position: absolute;top: 20%;">
-      <div class="modal-dialog modal-sm">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title">Cadastro realizado</h4>
-          </div>
-          <div class="modal-body">
-            <p>Parecer psicológico enviado com sucesso.</p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal" onclick="location.href='http://localhost/siga/parecerpsicologico.php';">Fechar</button>
-          </div>
-        </div>
-      </div>
-    </div>
 
     <div>
       <!-- Nav tabs -->
@@ -98,13 +81,14 @@ include "menu.php";
     </div>
   </section>
 </body>
-<script>
 
-  if(window.location.href == "http://localhost/siga/parecerpsicologico.php?gravou=1"){
-   MostrarEsconderDiv('divSucesso');
- };
+    <script>
 
-</script>
+      if(window.location.href == "http://localhost/siga/parecerpsicologico.php?gravou=1"){
+        swal("Cadastrado!", "O registro foi inserido com sucesso!", "success");
+      };
+
+    </script>
 
 
 <?php  

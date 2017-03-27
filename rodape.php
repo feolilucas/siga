@@ -1,26 +1,27 @@
-<script>
-function deletar(){
-swal({
-  title: "Voce tem certeza?",
-  text: "Esta ação não pode ser desfeita.",
-  type: "warning",
-  showCancelButton: true,
-  confirmButtonColor: "#DD6B55",
-  confirmButtonText: "Sim, excluir.",
-  cancelButtonText: "Não, cancelar.",
-  closeOnConfirm: false,
-  closeOnCancel: false
-},
-function(isConfirm){
-  if (isConfirm) {
-    swal("Excluido!", "O registro foi excluido.", "success");
-  } else {
-    swal("Cancelado", "Nada foi excluido.", "error");
-  }
-});
-};
-</script>
 
+<script>
+  function deletar(id, idformulario){
+    swal({
+      title: "Voce tem certeza?",
+      text: "Esta ação não pode ser desfeita.",
+      type: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#DD6B55",
+      confirmButtonText: "Sim, excluir.",
+      cancelButtonText: "Não, cancelar.",
+      closeOnConfirm: false,
+      closeOnCancel: false
+    },
+    function(isConfirm){
+      if (isConfirm) {
+        window.location="deletar.php?id="+id+"&idformulario="+idformulario; 
+
+      } else {
+        swal("Cancelado", "Nada foi excluido.", "error");
+      }
+    });
+  };
+</script>
 
 
 <script>
@@ -149,15 +150,15 @@ function(isConfirm){
 
 <script>
  $(document).on("click", ".getaluno", function(){
-        var nome = $(this).parent().parent().find(".colunanome").text();
-        var id = $(this).parent().parent().find(".colunaid").text();
+  var nome = $(this).parent().parent().find(".colunanome").text();
+  var id = $(this).parent().parent().find(".colunaid").text();
 
-        document.getElementById("idaluno").value = id;
-        document.getElementById("nomealuno").value = nome;
-    });
+  document.getElementById("idaluno").value = id;
+  document.getElementById("nomealuno").value = nome;
+});
 </script>
 
 <div style="background: #e7e7E8;height: 30px; text-align:center;width: 100%; line-height:30px;" class="navbar-fixed-bottom">
-SIGA APAE - Sistema de Gestão das Áreas Técnicas da APAE.</div>
+  SIGA APAE - Sistema de Gestão das Áreas Técnicas da APAE.</div>
 
-</html>
+  </html>

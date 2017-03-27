@@ -11,23 +11,7 @@ $r = $area->buscarAreas();
 
 <body style="padding-top:60px;">
   <section style="width:60%" class="container">
-    <!-- Modal -->
-    <div class="modal fade in" id="divSucesso" role="dialog" style="display:none; position: absolute;top: 20%;">
-      <div class="modal-dialog modal-sm">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title">Cadastro realizado</h4>
-          </div>
-          <div class="modal-body">
-            <p>Usuário cadastrado com sucesso.</p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal" onclick="location.href='http://localhost/siga/cadastrousuario.php';">Fechar</button>
-          </div>
-        </div>
-      </div>
-    </div>
+  
 
     <div>
       <!-- Nav tabs -->
@@ -311,18 +295,14 @@ $r = $area->buscarAreas();
                     </form>
 
 
-<!--<div id="divSucesso" style="width: 500px;height: 200px;display: none;position: absolute;top: 20%;left: 32%;
-box-shadow:10px 10px 5px cadetblue;" class="alert alert-success"> <strong>Success!</strong> Indicates a successful or positive action.
-  <button style="position: absolute;top: 40%;left: 32%;" id="idOkMsg" name="OkMsg" class="btn btn-success" onclick="location.href='http://localhost/siga/cadastrousuario.php';">Confirmar</button>
-</div>--> 
 
-<script>
+    <script>
 
-  if(window.location.href == "http://localhost/siga/cadastrousuario.php?gravou=1"){
-   MostrarEsconderDiv('divSucesso');
- };
+      if(window.location.href == "http://localhost/siga/cadastrousuario.php?gravou=1"){
+        swal("Cadastrado!", "O registro foi inserido com sucesso!", "success");
+      };
 
-</script>
+    </script>
 </body>
 
 <?php  

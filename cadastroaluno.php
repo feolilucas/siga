@@ -10,25 +10,7 @@ $r = $area->buscarAreas();
 
 <body style="padding-top:60px;">
   <section style="width:60%" class="container">
- 
-
-    <!-- Modal -->
-    <div class="modal fade in" id="divSucesso" role="dialog" style="display:none; position: absolute;top: 20%;">
-      <div class="modal-dialog modal-sm">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title">Cadastro realizado</h4>
-          </div>
-          <div class="modal-body">
-            <p>Aluno cadastrado com sucesso.</p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal" onclick="location.href='http://localhost/siga/cadastroaluno.php';">Fechar</button>
-          </div>
-        </div>
-      </div>
-    </div>
+   
 
     <div>
       <!-- Nav tabs -->
@@ -40,13 +22,13 @@ $r = $area->buscarAreas();
       </ul>
 
       <!-- Tab panes -->
-    <form class="form-horizontal" action="inserir.php?id=2" method="POST" data-toggle="validator" id="2">
+      <form class="form-horizontal" action="inserir.php?id=2" method="POST" data-toggle="validator" id="2">
 
-      <div class="tab-content">
-        <div role="tabpanel" class="tab-pane active form-group panel panel-body" id="dados_pessoais" style="border-color: #00688B;">
-          <div style="padding-top:20px;">
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane active form-group panel panel-body" id="dados_pessoais" style="border-color: #00688B;">
+            <div style="padding-top:20px;">
 
-            
+              
 
               <div class="form-group panel panel-body">
 
@@ -86,16 +68,16 @@ $r = $area->buscarAreas();
                       </div>
 
 
-                         <div class="col-md-4 form-group">
+                      <div class="col-md-4 form-group">
                         <label for="sexo" class="control-label">Sexo</label>
                         <select class="form-control" name="sexo" required>
-                        <option></option>
+                          <option></option>
                           <option value="Masculino">Masculino</option>
                           <option value="Feminino">Feminino</option>                       
-                       </select>
-                     </div>
-                   </div>
-                         
+                        </select>
+                      </div>
+                    </div>
+                    
 
 
                     <div class="row">
@@ -131,19 +113,19 @@ $r = $area->buscarAreas();
                     <label class="col-md-4 control-label" for="idConfirmar"></label>
                     <div class="col-md-8">
                       <button id="idConfirmar" name="idConfirmar" class="btn btn-success" type="submit">Confirmar</button>
-                    <button id="idCancelar" name="idCancelar" class="btn btn-danger" onclick="location.href='http://localhost/siga/';">Cancelar</button>
+                      <button id="idCancelar" name="idCancelar" class="btn btn-danger" onclick="location.href='http://localhost/siga/';">Cancelar</button>
                     </div>
                   </div>
                 </div>
+              </div>
             </div>
-          </div>
 
 
 
-          <div role="tabpanel" class="tab-pane form-group panel panel-body" id="endereco" style="border-color: #00688B;">
-            <div style="padding-top:20px;">
+            <div role="tabpanel" class="tab-pane form-group panel panel-body" id="endereco" style="border-color: #00688B;">
+              <div style="padding-top:20px;">
 
-             
+               
                 <div class="form-group panel panel-body">
 
                   <fieldset>
@@ -207,36 +189,26 @@ $r = $area->buscarAreas();
 
 
                 </div>
-             
+                
+              </div>
             </div>
           </div>
-          </div>
-          </div>
-         </form>  
-          </section>
-        
+        </div>
+      </form>  
+    </section>
 
 
 
+    <script>
+
+      if(window.location.href == "http://localhost/siga/cadastroaluno.php?gravou=1"){
+        swal("Cadastrado!", "O registro foi inserido com sucesso!", "success");
+      };
+
+    </script>
+  </body>
 
 
-
-
-<!--<div id="divSucesso" style="width: 500px;height: 200px;display: none;position: absolute;top: 20%;left: 32%;
-box-shadow:10px 10px 5px cadetblue;" class="alert alert-success"> <strong>Success!</strong> Indicates a successful or positive action.
-  <button style="position: absolute;top: 40%;left: 32%;" id="idOkMsg" name="OkMsg" class="btn btn-success" onclick="location.href='http://localhost/siga/cadastrousuario.php';">Confirmar</button>
-</div>--> 
-
-<script>
-
-  if(window.location.href == "http://localhost/siga/cadastroaluno.php?gravou=1"){
-   MostrarEsconderDiv('divSucesso');
- };
-
-</script>
-</body>
-
-
-<?php  
-include "rodape.php";
-?>
+  <?php  
+  include "rodape.php";
+  ?>

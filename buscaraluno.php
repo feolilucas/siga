@@ -141,6 +141,36 @@ else
 			</div>
 		</div>
 	</section>
+
+
+
+
+<script>
+
+  if(window.location.href == "http://localhost/siga/buscaraluno.php?id=3&deletou=1"){
+	swal("Excluido!", "O registro foi excluido com sucesso!", "success");
+ };
+
+  if(window.location.href == "http://localhost/siga/buscaraluno.php?id=4&deletou=1"){
+	swal("Excluido!", "O registro foi excluido com sucesso!", "success");
+ };
+  if(window.location.href == "http://localhost/siga/buscaraluno.php?id=5&deletou=1"){
+	swal("Excluido!", "O registro foi excluido com sucesso!", "success");
+ };
+  if(window.location.href == "http://localhost/siga/buscaraluno.php?id=6&deletou=1"){
+	swal("Excluido!", "O registro foi excluido com sucesso!", "success");
+ };
+  if(window.location.href == "http://localhost/siga/buscaraluno.php?id=7&deletou=1"){
+	swal("Excluido!", "O registro foi excluido com sucesso!", "success");
+ };
+  if(window.location.href == "http://localhost/siga/buscaraluno.php?id=8&deletou=1"){
+	swal("Excluido!", "O registro foi excluido com sucesso!", "success");
+ };
+
+</script>
+
+
+
 </body>
 <?php  
 include "rodape.php";

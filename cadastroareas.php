@@ -9,24 +9,7 @@ $r = $area->buscarAreas();
  <title>Cadastro de Áreas Técnicas</title>
 <body style="padding-top:60px;">
   <section style="width:60%" class="container">
-    <!-- Modal -->
-    <div class="modal fade in" id="divSucesso" role="dialog" style="display:none; position: absolute;top: 20%;">
-      <div class="modal-dialog modal-sm">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title">Cadastro realizado</h4>
-          </div>
-          <div class="modal-body">
-            <p>Área cadastrada com sucesso.</p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal" onclick="location.href='http://localhost/siga/cadastroareas.php';">Fechar</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
+ 
     <div>
       <!-- Nav tabs -->
       <ul class="nav nav-tabs " role="tablist">
@@ -72,13 +55,14 @@ $r = $area->buscarAreas();
           </div>
         </div>
 
-        <script>
+       
+    <script>
 
-          if(window.location.href == "http://localhost/siga/cadastroareas.php?gravou=1"){
-           MostrarEsconderDiv('divSucesso');
-         };
+      if(window.location.href == "http://localhost/siga/cadastroareas.php?gravou=1"){
+        swal("Cadastrado!", "O registro foi inserido com sucesso!", "success");
+      };
 
-       </script>
+    </script>
 
      </body>
      <?php  

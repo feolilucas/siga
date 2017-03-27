@@ -1,10 +1,7 @@
 <?php  
 include "cabecalho.php";
 include "menu.php";
-
-
 ?>
-
 
 <title>Relatório de Observação</title>
 
@@ -15,23 +12,6 @@ include "menu.php";
     include "divbuscaraluno.php";
     ?>
 
-    <!-- Modal -->
-    <div class="modal fade in" id="divSucesso" role="dialog" style="display:none; position: absolute;top: 20%;">
-      <div class="modal-dialog modal-sm">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title">Cadastro realizado</h4>
-          </div>
-          <div class="modal-body">
-            <p>Relatório de observação enviado com sucesso.</p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal" onclick="location.href='http://localhost/siga/relatorioobservacao.php';">Fechar</button>
-          </div>
-        </div>
-      </div>
-    </div>
 
     <div>
       <!-- Nav tabs -->
@@ -86,8 +66,6 @@ include "menu.php";
                   </div>
                 </fieldset>
 
-
-
                 <!-- Button (Double) -->
                 <br><br><br>
                 <div class="form-group">
@@ -105,17 +83,15 @@ include "menu.php";
         </div>
       </div>
     </div>
-
   </section>
-
 </body>
 
 
 <script>
 
   if(window.location.href == "http://localhost/siga/relatorioobservacao.php?gravou=1"){
-   MostrarEsconderDiv('divSucesso');
- };
+    swal("Cadastrado!", "O registro foi inserido com sucesso!", "success");
+  };
 
 </script>
 
