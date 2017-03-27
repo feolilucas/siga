@@ -105,7 +105,7 @@ else
 																					<a class='btn btn-info btn-xs' href='alteraravaliacaopedagogica.php?id=".$linha['idavaliacaopedagogica']."'>
 																						<span class='glyphicon glyphicon-edit'></span> Alterar</a>
 
-																						<a class='btn btn-danger btn-xs' href='deletar.php?id=3&idformulario=".$linha['idavaliacaopedagogica']."'>
+																						<a class='btn btn-danger btn-xs' href='deletar.php?id=3&idformulario=".$linha['idavaliacaopedagogica']."onClick='deletar();'>
 																						<span class='glyphicon glyphicon-remove'></span> Deletar</a>
 																					</td>";										
 																		}
