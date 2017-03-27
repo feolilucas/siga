@@ -43,7 +43,7 @@ $r = $area->buscarAreas();
                       </div>
                       <div class="col-md-4 form-group">
                         <label for="datanascimento" class="control-label">Nascimento</label>
-                        <input type="date" id="datanascimento" name="datanascimento" class="form-control input-md" size="10" maxlength="10" required>
+                        <input type="text" id="datanascimento" name="datanascimento" class="form-control input-md" size="10" maxlength="10" required>
                       </div>
                     </div>
 
@@ -52,19 +52,19 @@ $r = $area->buscarAreas();
 
                       <div class="col-md-6 form-group">
                         <label for="rg" class="control-label">RG</label>
-                        <input id="rg" type="text" maxlength="10" size="19" name="rg" class="form-control input-md" onkeyup="somenteNumeros(this);">
+                        <input id="rg" type="text" maxlength="10" size="19" name="rg" class="form-control input-md">
                         <span class="help-block">Somente números</span> 
                       </div>
                       <div class="col-md-6 form-group">
                         <label for="cpf" class="control-label">CPF</label>
-                        <input type="text" name="cpf" maxlength="14" OnKeyPress="formatar('###.###.###-##', this)" class="form-control input-md" id="cpf">
+                        <input type="text" name="cpf" maxlength="14" class="form-control input-md" id="cpf">
                       </div>
                     </div>
 
                     <div class="row">
                       <div class="col-md-4 form-group">
                         <label for="dataemissaorg" class="control-label">Data de emissão do RG</label>
-                        <input id="dataemissaorg" type="date" maxlength="10" size="19" name="dataemissaorg" class="form-control input-md">
+                        <input id="dataemissaorg" type="text" maxlength="10" size="19" name="dataemissaorg" class="form-control input-md">
                       </div>
 
 
@@ -133,7 +133,7 @@ $r = $area->buscarAreas();
                       <div class="row">
                         <div class="col-md-4 form-group">
                           <label for="cep" class="control-label">CEP</label>
-                          <input name="cep" type="text" id="cep" value="" OnKeyPress="formatar('#####-###', this)" size="10" maxlength="9"  class="form-control input-md" required>
+                          <input name="cep" type="text" id="cep" value=""  size="10" maxlength="9"  class="form-control input-md" required>
                         </div>
                       </div>
                       <div class="row">

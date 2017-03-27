@@ -18,5 +18,7 @@
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/validator.min.js"></script>
 	<script src="js/funcoes.js"></script>
+	<script src="js/jquery.maskedinput.js"></script>
+
 
 </head>

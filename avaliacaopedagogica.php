@@ -102,7 +102,9 @@ include "menu.php";
 <script>
 
   if(window.location.href == "http://localhost/siga/avaliacaopedagogica.php?gravou=1"){
-   MostrarEsconderDiv('divSucesso');
+  
+        swal("Cadastrado!", "O registro foi inserido com sucesso!", "success");
+ 
  };
 
 </script>
