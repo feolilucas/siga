@@ -43,7 +43,7 @@ include "menu.php";
       <li role="presentation"><a href="#psicologia" aria-controls="psicologia" role="tab" data-toggle="tab">Psicologia</a></li>
       <li role="presentation"><a href="#terapeutaocupacional" aria-controls="terapeutaocupacional" role="tab" data-toggle="tab">T.O.</a></li>
       <li role="presentation"><a href="#fisioterapia" aria-controls="fisioterapia" role="tab" data-toggle="tab">Fisioterapia</a></li>
-      <li role="presentation"><a href="#nutricionista" aria-controls="nutricionista" role="tab" data-toggle="tab">Nutricionista</a></li>
+      <li role="presentation"><a href="#nutricionista" aria-controls="nutricionista" role="tab" data-toggle="tab">Nutrição</a></li>
       <li role="presentation"><a href="#dentista" aria-controls="dentista" role="tab" data-toggle="tab">Dentista</a></li>
     </ul>
 

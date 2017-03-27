@@ -19,7 +19,7 @@ $id = $_GET['id'];
 			width:100%!important;
 		}
 	</style>
-	<section style="width:60%" class="container">
+	<section style="width:80%" class="container">
 		<div>
 			<!-- Nav tabs -->
 			<ul class="nav nav-tabs " role="tablist">
