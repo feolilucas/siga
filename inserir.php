@@ -22,7 +22,14 @@ $planoterapeuticopsicologico = new planoterapeuticopsicologico;
 $relatorioobservacao = new relatorioobservacao;
 $triagempsicologica = new triagempsicologica;
 
-$id = $_GET['id'];
+if(!isset($_GET['id'])){
+
+	echo '<script>location.href="index.php";</script>';
+}
+else
+{
+	$id = $_GET['id'];
+}
 
 switch($id)
 {
@@ -318,6 +325,7 @@ switch($id)
 			}
 		break;
 		default:
+			echo '<script>location.href="index.php";</script>';
 		break;
 	}
 

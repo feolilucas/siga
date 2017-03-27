@@ -22,8 +22,15 @@ $planoterapeuticopsicologico = new planoterapeuticopsicologico;
 $relatorioobservacao = new relatorioobservacao;
 $triagempsicologica = new triagempsicologica;
 
-$id = $_GET['id'];
-$idaluno = $_GET['idaluno'];
+if((!isset($_GET['id'])) or (!isset($_GET['idaluno']))){
+
+	echo '<script>location.href="index.php";</script>';
+}
+else
+{
+	$id = $_GET['id'];
+	$idaluno = $_GET['idaluno'];
+}
 
 switch($id)
 {

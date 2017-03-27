@@ -128,7 +128,7 @@
 			{
 				$query = $conexao->conn->prepare("select idaluno, nome, datanascimento, datacadastro, sexo, nomepai, nomemae,
 				e.logradouro, e.numero, e.complemento, e. bairro, e.referencia, e.cidade, e.estado, e.cep,
-				cpf, nacionalidade, rg, dataemissaorg, deficiencia from aluno as a inner join endereco as e on a.idendereco = e.idendereco where idaluno = :idaluno;");
+				cpf, nacionalidade, rg, dataemissaorg, deficiencia from aluno as a inner join endereco as e on a.idendereco = e.idendereco where idaluno = :idaluno and status = 1;");
 				
 				$query->bindValue(":idaluno", $this->getIdaluno());
 			
@@ -153,7 +153,7 @@
 			{
 				$query = $conexao->conn->prepare("select idaluno, nome, datanascimento, datacadastro, sexo, nomepai, nomemae,
 				e.logradouro, e.numero, e.complemento, e. bairro, e.referencia, e.cidade, e.estado, e.cep,
-				cpf, nacionalidade, rg, dataemissaorg, deficiencia from aluno as a inner join endereco as e on a.idendereco = e.idendereco;");
+				cpf, nacionalidade, rg, dataemissaorg, deficiencia from aluno as a inner join endereco as e on a.idendereco = e.idendereco where status = 1");
 				
 				$query->execute();
 				
@@ -174,7 +174,7 @@
 			
 			try
 			{
-				$query = $conexao->conn->prepare("delete from aluno where idaluno = :idaluno;");
+				$query = $conexao->conn->prepare("update aluno set status = 0 where idaluno = :idaluno;");
 				
 				$query->bindValue(":idaluno", $this->getIdaluno());
 			

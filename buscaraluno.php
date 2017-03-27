@@ -8,7 +8,15 @@ $aluno = new aluno;
 
 $r = $aluno->mostrartodos();
 
-$id = $_GET['id'];
+if(!isset($_GET['id'])){
+
+	echo '<script>location.href="index.php";</script>';
+}
+else
+{
+	$id = $_GET['id'];
+}
+
 ?>
 
 <title>Buscar aluno</title>
@@ -113,7 +121,7 @@ $id = $_GET['id'];
 																			</td>";																	
 																break;															
 																default:
-																	
+																	echo '<script>location.href="index.php";</script>';
 																break;
 															}
 															

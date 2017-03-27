@@ -3,6 +3,7 @@ include "cabecalho.php";
 include "menu.php";
 
 require_once "classearea.php";
+
 $area = new area;
 $r = $area->buscarAreas();
 ?>
