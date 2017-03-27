@@ -1,5 +1,4 @@
 <?php  
-/*include "session.php";*/
 include "cabecalho.php";
 include "menu.php";
 
@@ -35,7 +34,7 @@ include "menu.php";
     <div>
       <!-- Nav tabs -->
       <ul class="nav nav-tabs " role="tablist">
-        <li role="presentation" class="active"><a href="#parecerpsicologico" aria-controls="parecerpsicologico" role="tab" data-toggle="tab">Parecer Psicológico</a></li>
+        <li role="presentation" class="active"><a href="#parecerpsicologico" aria-controls="parecerpsicologico" role="tab" data-toggle="tab">Alterar Parecer Psicológico</a></li>
 
 
       </ul>

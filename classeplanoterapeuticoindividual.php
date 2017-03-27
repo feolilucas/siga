@@ -147,7 +147,7 @@
 				psicologia = :psicologia, objpsicologia = :objpsicologia, terapeutaocupacional = :terapeutaocupacional, objterapeutaocupacional = :objterapeutaocupacional,
 				fisioterapia = :fisioterapia, objfisioterapia = :objfisioterapia, nutricionista = :nutricionista, objnutricionista = :objnutricionista, 
 				dentista = :dentista, objdentista = :objdentista, diagnostico = :diagnostico, etiologia = :etiologia, cid = :cid, dadosmedicos = :dadosmedicos 
-				where idplanoterapeuticoindividual = :idplanoterapeuticoindividual )");
+				where idplanoterapeuticoindividual = :idplanoterapeuticoindividual ");
 				
 				$query->bindValue(":idplanoterapeuticoindividual", $this->getIdplanoterapeuticoindividual());
 				$query->bindValue(":observacoesgerais", $this->getObservacoesgerais());
@@ -187,7 +187,7 @@
 			try
 			{	
 				$query = $conexao->conn->prepare("select *from planoterapeuticoindividual 
-				where idplanoterapeuticoindividual = :idplanoterapeuticoindividual )");
+				where idplanoterapeuticoindividual = :idplanoterapeuticoindividual ");
 				
 				$query->bindValue(":idplanoterapeuticoindividual", $this->getIdplanoterapeuticoindividual());
 				
@@ -212,7 +212,7 @@
 			try
 			{	
 				$query = $conexao->conn->prepare("select *from planoterapeuticoindividual 
-				where idaluno = :idaluno )");
+				where idaluno = :idaluno ");
 				
 				$query->bindValue(":idaluno", $this->getIdaluno());
 				
@@ -237,7 +237,7 @@
 			try
 			{	
 				$query = $conexao->conn->prepare("delete from planoterapeuticoindividual 
-				where idplanoterapeuticoindividual = :idplanoterapeuticoindividual )");
+				where idplanoterapeuticoindividual = :idplanoterapeuticoindividual ");
 				
 				$query->bindValue(":idplanoterapeuticoindividual", $this->getIdplanoterapeuticoindividual());
 				

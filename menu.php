@@ -93,42 +93,35 @@ $arraypermissoes = $permissoes->mostrar();
 								<ul class="dropdown-menu">
 									<li><a href="cadastrousuario.php">Cadastrar</a></li>
 									<li role="separator" class="divider"></li>
-
 									<li><a href="buscarusuario.php">Buscar</a></li>
-
-									<li><a href="alterarusuario.php">Alterar</a></li>
 								</ul>
 							</li>
 
-							<?php
+						<?php
 						}
 						if(($arraypermissoes['administrativo'] == 1))
 						{
 							?>
 							<li class="dropdown">
 								<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Administrativo<span class="caret"></span></a>
-								<ul class="dropdown-menu">
-
-
+								<ul class="dropdown-menu">								
 									<li class="dropdown dropdown-submenu"> 
 										<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa "></i>Aluno</a> 
 										<ul class="dropdown-menu">
 											<li class="last"><a href="cadastroaluno.php">Cadastrar</a></li>
 											<li role="separator" class="divider"></li>
-
-											<li class="last"><a href="buscaraluno.php">Buscar</a></li>
-
-											<li class="last"><a href="buscaraluno.php">Alterar</a></li>
-
-
+											<li class="last"><a href="buscaraluno.php?id=2">Buscar</a></li>
 										</ul> 
 									</li>
+						
+									<li class="dropdown dropdown-submenu"> 
+										<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa "></i>Relatórios</a> 
+										<ul class="dropdown-menu">
+											<li class="last"><a href="#">Relatório X</a></li>
+											<li class="last"><a href="#">Relatório Y</a></li>
+										</ul> 
+									</li>									
 								</ul>
-
-
-
-
-
 							</li>
 
 							<?php
@@ -141,13 +134,14 @@ $arraypermissoes = $permissoes->mostrar();
 							<li class="dropdown">
 								<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Plano Terapêutico Individual<span class="caret"></span></a>
 								<ul class="dropdown-menu">
-									<li><a href="planoterapeuticoindividual.php">Cadastrar</a></li>
-									<li role="separator" class="divider"></li>
-
-									<li><a href="buscaraluno.php">Buscar</a></li>
-
-									<li><a href="buscaraluno.php">Alterar</a></li>
-
+									<li class="dropdown dropdown-submenu"> 
+										<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa "></i>Plano Terapêutico</a> 
+										<ul class="dropdown-menu">
+											<li class="last"><a href="planoterapeuticoindividual.php">Cadastrar</a></li>
+											<li role="separator" class="divider"></li>
+											<li class="last"><a href="buscaraluno.php?id=5">Buscar</a></li>
+										</ul> 
+									</li>									
 								</ul>
 							</li>
 
@@ -165,9 +159,7 @@ $arraypermissoes = $permissoes->mostrar();
 										<ul class="dropdown-menu">
 											<li class="last"><a href="parecerpsicologico.php">Cadastrar</a></li>
 											<li role="separator" class="divider"></li>
-											<li class="last"><a href="buscaraluno.php">Buscar</a></li>
-											<li class="last"><a href="alterarparecerpsicologico.php">Alterar</a></li>
-
+											<li class="last"><a href="buscaraluno.php?id=4">Buscar</a></li>
 										</ul> 
 									</li>
 									<li class="dropdown dropdown-submenu"> 
@@ -175,16 +167,14 @@ $arraypermissoes = $permissoes->mostrar();
 										<ul class="dropdown-menu">
 											<li class="last"><a href="triagempsicologica.php">Cadastrar</a></li>
 											<li role="separator" class="divider"></li>
-											<li class="last"><a href="buscaraluno.php">Buscar</a></li>
-											<li class="last"><a href="alterarptriagempsicologica.php">Alterar</a></li>			                        </ul> 
+											<li class="last"><a href="buscaraluno.php?id=8">Buscar</a></li>			                        </ul> 
 										</li>
 										<li class="dropdown dropdown-submenu"> 
 											<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa "></i>Plano Terapeutico Psicológico</a> 
 											<ul class="dropdown-menu">
 												<li class="last"><a href="planoterapeuticopsicologico.php">Cadastrar</a></li>
 												<li role="separator" class="divider"></li>
-												<li class="last"><a href="buscaraluno.php">Buscar</a></li>
-												<li class="last"><a href="alterarplanoterapeuticopsicologico.php">Alterar</a></li>
+												<li class="last"><a href="buscaraluno.php?id=6">Buscar</a></li>	
 											</ul> 
 										</li>
 										<li class="dropdown dropdown-submenu"> 
@@ -193,8 +183,6 @@ $arraypermissoes = $permissoes->mostrar();
 												<li class="last"><a href="#">Cadastrar</a></li>
 												<li role="separator" class="divider"></li>
 												<li class="last"><a href="buscaraluno.php">Buscar</a></li>
-												<li class="last"><a href="#">Alterar</a></li>
-
 											</ul> 
 										</li>
 									</ul>
@@ -208,12 +196,14 @@ $arraypermissoes = $permissoes->mostrar();
 								<li class="dropdown">
 									<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Neurológico<span class="caret"></span></a>
 									<ul class="dropdown-menu">
-										<li><a href="#">Cadastrar</a></li>
-										<li role="separator" class="divider"></li>
-										<li><a href="buscaraluno.php">Buscar</a></li>
-										<li> <a href="#">Alterar</a></li>
-
-
+										<li class="dropdown dropdown-submenu"> 
+											<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa "></i>Avaliação Fisioterápica</a> 
+											<ul class="dropdown-menu">
+												<li class="last"><a href="#">Cadastrar</a></li>
+												<li role="separator" class="divider"></li>
+												<li class="last"><a href="buscaraluno.php">Buscar</a></li>
+											</ul> 
+										</li>				
 									</ul>
 								</li>
 								<?php
@@ -225,14 +215,30 @@ $arraypermissoes = $permissoes->mostrar();
 								<li class="dropdown">
 									<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Fonoaudiológico<span class="caret"></span></a>
 									<ul class="dropdown-menu">
-										<li><a href="#">Cadastrar</a></li>
-										<li role="separator" class="divider"></li>
-										<li><a href="buscaraluno.php">Buscar</a></li>
-										<li><a href="buscaraluno.php">Alterar</a></li>
-
-
-
-
+										<li class="dropdown dropdown-submenu"> 
+											<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa "></i>Triagem Fonoaudiológica</a> 
+											<ul class="dropdown-menu">
+												<li class="last"><a href="#">Cadastrar</a></li>
+												<li role="separator" class="divider"></li>
+												<li class="last"><a href="buscaraluno.php">Buscar</a></li>
+											</ul> 
+										</li>
+										<li class="dropdown dropdown-submenu"> 
+											<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa "></i>Avaliação - Estimulação Precoce</a> 
+											<ul class="dropdown-menu">
+												<li class="last"><a href="#">Cadastrar</a></li>
+												<li role="separator" class="divider"></li>
+												<li class="last"><a href="buscaraluno.php">Buscar</a></li>
+											</ul> 
+										</li>
+										<li class="dropdown dropdown-submenu"> 
+											<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa "></i>Avaliação Fonoaudiológica</a> 
+											<ul class="dropdown-menu">
+												<li class="last"><a href="#">Cadastrar</a></li>
+												<li role="separator" class="divider"></li>
+												<li class="last"><a href="buscaraluno.php">Buscar</a></li>
+											</ul> 
+										</li>
 									</ul>
 								</li>
 								<?php
@@ -244,28 +250,15 @@ $arraypermissoes = $permissoes->mostrar();
 								<li class="dropdown">
 									<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Terapia Ocupacional<span class="caret"></span></a>
 									<ul class="dropdown-menu">
-
-
-
-
-
-
 										<li class="dropdown dropdown-submenu"> 
 											<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa "></i>Relatório de Observação</a> 
 											<ul class="dropdown-menu">
 												<li class="last"><a href="relatorioobservacao.php">Cadastrar</a></li>
 												<li role="separator" class="divider"></li>
-												<li class="last"><a href="buscaraluno.php">Buscar</a></li>
-
-
-												<li class="last"><a href="alterarrelatorioobservacao.php">Alterar</a></li>
-
+												<li class="last"><a href="buscaraluno.php?id=7">Buscar</a></li>
 											</ul> 
 										</li>
 									</ul>
-
-
-
 								</li>
 
 								<?php
@@ -277,14 +270,14 @@ $arraypermissoes = $permissoes->mostrar();
 								<li class="dropdown">
 									<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pedagógico<span class="caret"></span></a>
 									<ul class="dropdown-menu">
-										<li><a href="#">Cadastrar</a></li>
-										<li role="separator" class="divider"></li>
-										<li><a href="buscaraluno.php">Buscar</a></li>
-										<li><a href="buscaraluno.php">Alterar</a></li>
-
-
-
-
+										<li class="dropdown dropdown-submenu"> 
+											<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa "></i>Avaliação Pedagógica</a> 
+											<ul class="dropdown-menu">
+												<li class="last"><a href="avaliacaopedagogica.php">Cadastrar</a></li>
+												<li role="separator" class="divider"></li>
+												<li class="last"><a href="buscaraluno.php?id=3">Buscar</a></li>
+											</ul> 
+										</li>
 									</ul>
 								</li>
 
@@ -297,11 +290,22 @@ $arraypermissoes = $permissoes->mostrar();
 								<li class="dropdown">
 									<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Social<span class="caret"></span></a>
 									<ul class="dropdown-menu">
-										<li><a href="#">Cadastrar</a></li>
-										<li role="separator" class="divider"></li>
-										<li><a href="buscaraluno.php">Buscar</a></li>
-										<li><a href="buscaraluno.php">Alterar</a></li>
-
+										<li class="dropdown dropdown-submenu"> 
+											<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa "></i>Formulário de Identificação</a> 
+											<ul class="dropdown-menu">
+												<li class="last"><a href="#">Cadastrar</a></li>
+												<li role="separator" class="divider"></li>
+												<li class="last"><a href="buscaraluno.php">Buscar</a></li>
+											</ul> 
+										</li>
+										<li class="dropdown dropdown-submenu"> 
+											<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa "></i>Entrevista Inicial</a> 
+											<ul class="dropdown-menu">
+												<li class="last"><a href="#">Cadastrar</a></li>
+												<li role="separator" class="divider"></li>
+												<li class="last"><a href="buscaraluno.php">Buscar</a></li>
+											</ul> 
+										</li>
 									</ul>
 								</li>
 								<?php

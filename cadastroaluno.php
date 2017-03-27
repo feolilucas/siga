@@ -1,5 +1,4 @@
 <?php  
-/*include "session.php";*/
 include "cabecalho.php";
 include "menu.php";
 

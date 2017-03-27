@@ -7,6 +7,8 @@ require_once "classealuno.php";
 $aluno = new aluno;
 
 $r = $aluno->mostrartodos();
+
+$id = $_GET['id'];
 ?>
 
 <title>Buscar aluno</title>
@@ -63,7 +65,58 @@ $r = $aluno->mostrartodos();
 															echo "<td>".$linha['datanascimento']."</td>";
 															echo "<td>".$linha['cpf']."</td>";
 															echo "<td>".$linha['rg']."</td>"; 
-															echo "<td class='text-center'><a class='btn btn-success btn-xs' href='#'><span class='glyphicon glyphicon-plus'></span> Selecionar</a></td>";
+
+															switch ($id) {
+																case 2: //Aluno
+																	echo "<td class='text-center'>
+																				<a class='btn btn-info btn-xs' href='alteraraluno.php?id=".$linha['idaluno']."'>
+																				<span class='glyphicon glyphicon-edit'></span> Alterar</a>
+
+																				<a class='btn btn-danger btn-xs' href='deletar.php?id=2&idaluno=".$linha['idaluno']."'>
+																				<span class='glyphicon glyphicon-remove'></span> Deletar</a>
+																			</td>";																	
+																break;
+																case 3: // avaliacaopedagogica
+																	echo "<td class='text-center'>
+																				<a class='btn btn-success btn-xs' href='resultadobusca.php?id=3&idaluno=".$linha['idaluno']."'>
+																				<span class='glyphicon glyphicon-edit'></span> Selecionar</a>														
+																			</td>";																	
+																break;	
+																case 4: // parecerpsicologico
+																	echo "<td class='text-center'>
+																				<a class='btn btn-success btn-xs' href='resultadobusca.php?id=4&idaluno=".$linha['idaluno']."'>
+																				<span class='glyphicon glyphicon-edit'></span> Selecionar</a>														
+																			</td>";																	
+																break;
+																case 5: // planoterapeuticoindividual
+																	echo "<td class='text-center'>
+																				<a class='btn btn-success btn-xs' href='resultadobusca.php?id=5&idaluno=".$linha['idaluno']."'>
+																				<span class='glyphicon glyphicon-edit'></span> Selecionar</a>														
+																			</td>";																	
+																break;
+																case 6: // planoterapeuticopsicologico
+																	echo "<td class='text-center'>
+																				<a class='btn btn-success btn-xs' href='resultadobusca.php?id=6&idaluno=".$linha['idaluno']."'>
+																				<span class='glyphicon glyphicon-edit'></span> Selecionar</a>														
+																			</td>";																	
+																break;	
+																case 7: // relatorioobservacao
+																	echo "<td class='text-center'>
+																				<a class='btn btn-success btn-xs' href='resultadobusca.php?id=7&idaluno=".$linha['idaluno']."'>
+																				<span class='glyphicon glyphicon-edit'></span> Selecionar</a>														
+																			</td>";																	
+																break;	
+																case 8: // triagempsicologica
+																	echo "<td class='text-center'>
+																				<a class='btn btn-success btn-xs' href='resultadobusca.php?id=8&idaluno=".$linha['idaluno']."'>
+																				<span class='glyphicon glyphicon-edit'></span> Selecionar</a>														
+																			</td>";																	
+																break;															
+																default:
+																	
+																break;
+															}
+															
 															echo "</tr>";
 														}
 														?>

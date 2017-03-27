@@ -38,7 +38,7 @@ include "menu.php";
     <div>
       <!-- Nav tabs -->
       <ul class="nav nav-tabs " role="tablist">
-        <li role="presentation" class="active"><a href="#avaliacaopedagogica" aria-controls="avaliacaopedagogica" role="tab" data-toggle="tab">Avaliação Pedagógica</a></li>
+        <li role="presentation" class="active"><a href="#avaliacaopedagogica" aria-controls="avaliacaopedagogica" role="tab" data-toggle="tab">Alterar Avaliação Pedagógica</a></li>
       </ul>
 
 
