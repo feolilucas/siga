@@ -2,7 +2,10 @@
 include "cabecalho.php";
 include "menu.php";
 
-
+if(($arraypermissoes['planoterapeutico'] == 0))
+{
+  echo '<script>location.href="index.php";</script>';
+}
 ?>
 <title>Alterar Plano Terapeutico Individual</title>
 

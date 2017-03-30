@@ -1,4 +1,4 @@
-<?php
+	<?php
 require_once "classepermissoes.php";
 require_once "classeendereco.php";
 require_once "classeusuario.php";

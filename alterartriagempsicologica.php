@@ -2,6 +2,10 @@
 include "cabecalho.php";
 include "menu.php";
 
+if(($arraypermissoes['psicologico'] == 0))
+{
+    echo '<script>location.href="index.php";</script>';
+}
 ?>
 
 

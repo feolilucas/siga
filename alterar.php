@@ -22,15 +22,8 @@ $planoterapeuticopsicologico = new planoterapeuticopsicologico;
 $relatorioobservacao = new relatorioobservacao;
 $triagempsicologica = new triagempsicologica;
 
-if((!isset($_GET['id'])) or (!isset($_GET['idaluno']))){
 
-	echo '<script>location.href="index.php";</script>';
-}
-else
-{
 	$id = $_GET['id'];
-	$idaluno = $_GET['idaluno'];
-}
 
 switch($id)
 {
@@ -66,9 +59,12 @@ switch($id)
 
 			try
 			{
+				$avaliacaopedagogica->setIdavaliacaopedagogica($_GET['idformulario']);
+				$avaliacaopedagogica->setAvaliacaopedagogica($_POST['avaliacaopedagogica']);
+				$avaliacaopedagogica->setObservacoesgerais($_POST['observacoesgerais']);
 
-			
-				
+				$avaliacaopedagogica->alterar();
+								
 			}
 			catch(PDOException $e)
 			{
@@ -80,8 +76,12 @@ switch($id)
 
 			try
 			{
-				
-				
+				$parecerpsicologico->setIdparecerpsicologico($_GET['idformulario']);
+				$parecerpsicologico->setParecerpsicologico($_POST['parecerpsicologico']);
+				$parecerpsicologico->setObservacoesgerais($_POST['observacoesgerais']);
+
+				$parecerpsicologico->alterar();
+					
 			}
 			catch(PDOException $e)
 			{

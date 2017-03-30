@@ -2,6 +2,10 @@
 include "cabecalho.php";
 include "menu.php";
 
+if(($arraypermissoes['administrativo'] == 0))
+{
+    echo '<script>location.href="index.php";</script>';
+}
 require_once "classearea.php";
 $area = new area;
 $r = $area->buscarAreas();

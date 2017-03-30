@@ -3,6 +3,12 @@ include "cabecalho.php";
 include "menu.php";
 require_once "classearea.php";
 
+if(($arraypermissoes['administrativo'] == 0) or ($arraypermissoes['planoterapeutico'] ==0) or ($arraypermissoes['psicologico'] == 0) or
+              ($arraypermissoes['neurologico'] == 0) or ($arraypermissoes['fonoaudiologico'] == 0) or ($arraypermissoes['terapiaocupacional'] == 0) or 
+              ($arraypermissoes['pedagogico'] == 0) or ($arraypermissoes['social'] == 0))
+            {
+                echo '<script>location.href="index.php";</script>';
+            }
 
 $area = new area;
 $r = $area->buscarAreas();
