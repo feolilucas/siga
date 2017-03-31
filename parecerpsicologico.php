@@ -85,14 +85,20 @@ if(($arraypermissoes['psicologico'] == 0))
     </div>
   </section>
 </body>
-
-    <script>
-
-      if(window.location.href == "http://localhost/siga/parecerpsicologico.php?gravou=1"){
-        swal("Cadastrado!", "O registro foi inserido com sucesso!", "success");
-      };
-
-    </script>
+<script>
+  if(window.location.href == "http://localhost/siga/parecerpsicologico.php?gravou=1"){
+    $(document).ready(function() {
+      swal({ 
+        title: "Sucesso",
+        text: "O registro foi inserido com sucesso.",
+        type: "success" 
+      },
+      function(){
+        window.location.href = 'parecerpsicologico.php';
+      });
+    });
+  };
+</script>
 
 
 <?php  

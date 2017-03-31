@@ -21,24 +21,6 @@ if(($arraypermissoes['pedagogico'] == 0))
     include "divbuscaraluno.php";
     ?>
 
-    <!-- Modal -->
-    <div class="modal fade in" id="divSucesso" role="dialog" style="display:none; position: absolute;top: 20%;">
-      <div class="modal-dialog modal-sm">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title">Cadastro realizado</h4>
-          </div>
-          <div class="modal-body">
-            <p>Avaliação Pedagógica enviada com sucesso.</p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal" onclick="location.href='http://localhost/siga/avaliacaopedagogica.php';">Fechar</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <div>
       <!-- Nav tabs -->
       <ul class="nav nav-tabs " role="tablist">
@@ -102,15 +84,23 @@ if(($arraypermissoes['pedagogico'] == 0))
   </section>
 
 </body>
+
+
 <script>
-
   if(window.location.href == "http://localhost/siga/avaliacaopedagogica.php?gravou=1"){
-  
-        swal("Cadastrado!", "O registro foi inserido com sucesso!", "success");
- 
- };
-
+    $(document).ready(function() {
+      swal({ 
+        title: "Sucesso",
+        text: "O registro foi inserido com sucesso.",
+        type: "success" 
+      },
+      function(){
+        window.location.href = 'avaliacaopedagogica.php';
+      });
+    });
+  };
 </script>
+
 
 <?php  
 include "rodape.php";

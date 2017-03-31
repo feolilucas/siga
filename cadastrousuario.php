@@ -305,13 +305,20 @@ $r = $area->buscarAreas();
 
 
 
-    <script>
-
-      if(window.location.href == "http://localhost/siga/cadastrousuario.php?gravou=1"){
-        swal("Cadastrado!", "O registro foi inserido com sucesso!", "success");
-      };
-
-    </script>
+<script>
+  if(window.location.href == "http://localhost/siga/cadastrousuario.php?gravou=1"){
+    $(document).ready(function() {
+      swal({ 
+        title: "Sucesso",
+        text: "O registro foi inserido com sucesso.",
+        type: "success" 
+      },
+      function(){
+        window.location.href = 'cadastrousuario.php';
+      });
+    });
+  };
+</script>
 </body>
 
 <?php  

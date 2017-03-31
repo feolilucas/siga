@@ -317,19 +317,21 @@ $r = $area->buscarAreas();
 
                     </form>
 
-
-<!--<div id="divSucesso" style="width: 500px;height: 200px;display: none;position: absolute;top: 20%;left: 32%;
-box-shadow:10px 10px 5px cadetblue;" class="alert alert-success"> <strong>Success!</strong> Indicates a successful or positive action.
-  <button style="position: absolute;top: 40%;left: 32%;" id="idOkMsg" name="OkMsg" class="btn btn-success" onclick="location.href='http://localhost/siga/cadastrousuario.php';">Confirmar</button>
-</div>--> 
-
 <script>
-
   if(window.location.href == "http://localhost/siga/alterarusuario.php?gravou=1"){
-   MostrarEsconderDiv('divSucesso');
- };
-
+    $(document).ready(function() {
+      swal({ 
+        title: "Sucesso",
+        text: "Cadastro alterado com sucesso.",
+        type: "success" 
+      },
+      function(){
+        window.location.href = 'alterarusuario.php';
+      });
+    });
+  };
 </script>
+
 </body>
 
 <?php  

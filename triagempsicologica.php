@@ -63,11 +63,25 @@ if(($arraypermissoes['psicologico'] == 0))
     </div>
   </section>
 </body>
+
 <script>
   if(window.location.href == "http://localhost/siga/triagempsicologica.php?gravou=1"){
-    swal("Cadastrado!", "O registro foi inserido com sucesso!", "success");
+    $(document).ready(function() {
+      swal({ 
+        title: "Sucesso",
+        text: "O registro foi inserido com sucesso.",
+        type: "success" 
+      },
+      function(){
+        window.location.href = 'triagempsicologica.php';
+      });
+    });
   };
 </script>
+
+
+
+
 <?php  
 include "rodape.php";
 ?>

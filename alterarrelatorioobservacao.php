@@ -18,24 +18,6 @@ if(($arraypermissoes['terapiaocupacional'] == 0))
   <section style="width:60%" class="container">
 
 
-    <!-- Modal -->
-    <div class="modal fade in" id="divSucesso" role="dialog" style="display:none; position: absolute;top: 20%;">
-      <div class="modal-dialog modal-sm">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title">Alteração Realizada</h4>
-          </div>
-          <div class="modal-body">
-            <p>Relatório de observação alterado com sucesso.</p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal" onclick="location.href='http://localhost/siga/alterarrelatorioobservacao.php';">Fechar</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <div>
       <!-- Nav tabs -->
       <ul class="nav nav-tabs " role="tablist">
@@ -115,11 +97,18 @@ if(($arraypermissoes['terapiaocupacional'] == 0))
 
 
 <script>
-
   if(window.location.href == "http://localhost/siga/alterarrelatorioobservacao.php?gravou=1"){
-   MostrarEsconderDiv('divSucesso');
- };
-
+    $(document).ready(function() {
+      swal({ 
+        title: "Sucesso",
+        text: "Cadastro alterado com sucesso.",
+        type: "success" 
+      },
+      function(){
+        window.location.href = 'alterarrelatorioobservacao.php';
+      });
+    });
+  };
 </script>
 
 <?php  

@@ -64,6 +64,12 @@ switch($id)
 				$avaliacaopedagogica->setObservacoesgerais($_POST['observacoesgerais']);
 
 				$avaliacaopedagogica->alterar();
+
+
+			$redirect = "http://localhost/siga/alteraravaliacaopedagogica.php?gravou=1";
+			header("location:$redirect");	
+
+
 								
 			}
 			catch(PDOException $e)
@@ -81,6 +87,10 @@ switch($id)
 				$parecerpsicologico->setObservacoesgerais($_POST['observacoesgerais']);
 
 				$parecerpsicologico->alterar();
+
+				$redirect = "http://localhost/siga/alterarparecerpsicologico.php?gravou=1";
+				header("location:$redirect");	
+
 					
 			}
 			catch(PDOException $e)
