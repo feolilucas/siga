@@ -1,3 +1,6 @@
+
+
+
 <script>
   if(window.location.href == <?php echo "'".$url."?gravou=1"."'"; ?>){
     $(document).ready(function() {
@@ -27,6 +30,26 @@
     });
   };
 </script>
+
+
+<script>
+
+//Nao funciona
+  if(window.location.href == <?php echo "'".$url."?id=1"."&"."deletou=1"."'"; ?>){
+    $(document).ready(function() {
+      swal({ 
+        title: "Sucesso",
+        text: "Cadastro alterado com sucesso.",
+        type: "success" 
+      },
+      function(){
+        window.location.href = <?php echo "'".$pagina."'"; ?>;
+      });
+    });
+  };
+</script>
+
+
 
 
 
