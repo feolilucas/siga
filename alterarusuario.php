@@ -317,20 +317,7 @@ $r = $area->buscarAreas();
 
                     </form>
 
-<script>
-  if(window.location.href == "http://localhost/siga/alterarusuario.php?gravou=1"){
-    $(document).ready(function() {
-      swal({ 
-        title: "Sucesso",
-        text: "Cadastro alterado com sucesso.",
-        type: "success" 
-      },
-      function(){
-        window.location.href = 'alterarusuario.php';
-      });
-    });
-  };
-</script>
+
 
 </body>
 

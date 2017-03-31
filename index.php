@@ -4,8 +4,6 @@ include "menu.php";
 ?>
 <title>SIGA APAE</title>
 <body style="padding-top:60px;">
-	
-	
 
 
 </body>

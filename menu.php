@@ -1,6 +1,4 @@
 
-
-
 <?php
 
 include "session.php";
@@ -11,14 +9,6 @@ $permissoes = new permissoes;
 
 $permissoes->setIdpermissoes($_SESSION['idpermissoes']);
 $arraypermissoes = $permissoes->mostrar();
-
-
-
-
-
-
-
-
 
 ?>
 
@@ -91,6 +81,7 @@ $arraypermissoes = $permissoes->mostrar();
 					<ul class="nav navbar-nav">
 
 						<?php
+
 						if(($arraypermissoes['administrativo'] == 1) and ($arraypermissoes['planoterapeutico'] == 1) and ($arraypermissoes['psicologico'] == 1) and
 							($arraypermissoes['neurologico'] == 1) and ($arraypermissoes['fonoaudiologico'] == 1) and ($arraypermissoes['terapiaocupacional'] == 1) and 
 							($arraypermissoes['pedagogico'] == 1) and ($arraypermissoes['social'] == 1))

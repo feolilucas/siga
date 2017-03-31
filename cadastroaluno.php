@@ -204,20 +204,7 @@ $r = $area->buscarAreas();
 
 
 
-<script>
-  if(window.location.href == "http://localhost/siga/cadastroaluno.php?gravou=1"){
-    $(document).ready(function() {
-      swal({ 
-        title: "Sucesso",
-        text: "O registro foi inserido com sucesso.",
-        type: "success" 
-      },
-      function(){
-        window.location.href = 'cadastroaluno.php';
-      });
-    });
-  };
-</script>
+
 
 </body>
 

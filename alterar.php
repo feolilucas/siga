@@ -66,7 +66,7 @@ switch($id)
 				$avaliacaopedagogica->alterar();
 
 
-			$redirect = "http://localhost/siga/alteraravaliacaopedagogica.php?gravou=1";
+			$redirect = "http://localhost/siga/alteraravaliacaopedagogica.php?alterou=1";
 			header("location:$redirect");	
 
 
@@ -88,7 +88,7 @@ switch($id)
 
 				$parecerpsicologico->alterar();
 
-				$redirect = "http://localhost/siga/alterarparecerpsicologico.php?gravou=1";
+				$redirect = "http://localhost/siga/alterarparecerpsicologico.php?alterou=1";
 				header("location:$redirect");	
 
 					

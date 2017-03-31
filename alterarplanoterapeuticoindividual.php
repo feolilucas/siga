@@ -339,20 +339,7 @@ if(($arraypermissoes['planoterapeutico'] == 0))
 
 
 
-<script>
-  if(window.location.href == "http://localhost/siga/alterarplanoterapeuticoindividual.php?gravou=1"){
-    $(document).ready(function() {
-      swal({ 
-        title: "Sucesso",
-        text: "Cadastro alterado com sucesso.",
-        type: "success" 
-      },
-      function(){
-        window.location.href = 'alterarplanoterapeuticoindividual.php';
-      });
-    });
-  };
-</script>
+
 
 
 

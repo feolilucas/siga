@@ -104,20 +104,7 @@ $r2 = $aluno->mostrarum();
 </section>
 
 </body>
-<script>
-if(window.location.href == "http://localhost/siga/alteraravaliacaopedagogica.php?gravou=1"){
-    $(document).ready(function() {
-      swal({ 
-        title: "Sucesso",
-        text: "Cadastro alterado com sucesso.",
-        type: "success" 
-      },
-      function(){
-        window.location.href = 'alteraravaliacaopedagogica.php';
-      });
-    });
-  };
-</script>
+
 
 <?php  
 include "rodape.php";

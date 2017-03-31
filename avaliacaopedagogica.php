@@ -86,20 +86,7 @@ if(($arraypermissoes['pedagogico'] == 0))
 </body>
 
 
-<script>
-  if(window.location.href == "http://localhost/siga/avaliacaopedagogica.php?gravou=1"){
-    $(document).ready(function() {
-      swal({ 
-        title: "Sucesso",
-        text: "O registro foi inserido com sucesso.",
-        type: "success" 
-      },
-      function(){
-        window.location.href = 'avaliacaopedagogica.php';
-      });
-    });
-  };
-</script>
+
 
 
 <?php  
