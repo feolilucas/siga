@@ -14,7 +14,7 @@ if(($arraypermissoes['pedagogico'] == 0))
 
 
 
-<body style="padding-top:60px;">
+<body style="padding-top:60px; padding-bottom: 30px;">
   <section style="width:60%" class="container">
 
     <?php  

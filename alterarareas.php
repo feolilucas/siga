@@ -11,7 +11,7 @@ $area = new area;
 $r = $area->buscarAreas();
 ?>
  <title>Alterar Áreas Técnicas</title>
-<body style="padding-top:60px;">
+<body style="padding-top:60px; padding-bottom: 30px;">
   <section style="width:60%" class="container">
     <!-- Modal -->
     <div class="modal fade in" id="divSucesso" role="dialog" style="display:none; position: absolute;top: 20%;">

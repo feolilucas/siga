@@ -21,7 +21,7 @@ else
 
 <title>Buscar aluno</title>
 
-<body style="padding-top:60px;">
+<body style="padding-top:60px; padding-bottom: 30px;">
 	<style>
 		#dev-table{
 			width:100%!important;

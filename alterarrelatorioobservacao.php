@@ -28,7 +28,7 @@ $r2 = $aluno->mostrarum();
 
 <title>Alterar Relatório de Observação</title>
 
-<body style="padding-top:60px;">
+<body style="padding-top:60px; padding-bottom: 30px;">
   <section style="width:60%" class="container">
 
 

@@ -26,7 +26,7 @@ $r2 = $aluno->mostrarum();
 
 <title>Alterar Triagem Psicológica</title>
 
-<body style="padding-top:60px;">
+<body style="padding-top:60px; padding-bottom: 30px;">
   <section style="width:60%" class="container">
 
 

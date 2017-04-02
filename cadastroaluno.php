@@ -13,7 +13,7 @@ $r = $area->buscarAreas();
 ?>
 <title>Cadastro de Alunos</title>
 
-<body style="padding-top:60px; padding-bottom: 40px;">
+<body style="padding-top:60px; padding-bottom: 30px;">
   <section style="width:60%" class="container">
    
 

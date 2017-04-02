@@ -6,7 +6,7 @@ include "menu.php";
 <body style="padding-top:60px;">
 
 
-</body>
+</body style="padding-top: 60px; padding-bottom: 30px;">
 <?php  
 include "rodape.php";
 ?>
