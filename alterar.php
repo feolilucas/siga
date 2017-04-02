@@ -23,7 +23,7 @@ $relatorioobservacao = new relatorioobservacao;
 $triagempsicologica = new triagempsicologica;
 
 
-	$id = $_GET['id'];
+$id = $_GET['id'];
 
 switch($id)
 {
@@ -66,7 +66,7 @@ switch($id)
 				$avaliacaopedagogica->alterar();
 
 
-			$redirect = "http://localhost/siga/alteraravaliacaopedagogica.php?alterou=1";
+			$redirect = "http://localhost/siga/index.php?alterou=1";
 			header("location:$redirect");	
 
 
@@ -88,7 +88,7 @@ switch($id)
 
 				$parecerpsicologico->alterar();
 
-				$redirect = "http://localhost/siga/alterarparecerpsicologico.php?alterou=1";
+				$redirect = "http://localhost/siga/index.php?alterou=1";
 				header("location:$redirect");	
 
 					
@@ -103,8 +103,32 @@ switch($id)
 
 			try
 			{
-				
-				
+				$planoterapeuticoindividual->setIdplanoterapeuticoindividual($_GET['idformulario']);
+				$planoterapeuticoindividual->setObservacoesgerais($_POST['observacoesgerais']);
+				$planoterapeuticoindividual->setDiagnostico($_POST['diagnostico']);
+				$planoterapeuticoindividual->setCid($_POST['cid']);
+				$planoterapeuticoindividual->setDadosmedicos($_POST['dadosmedicos']);
+				$planoterapeuticoindividual->setEtiologia($_POST['etiologia']);
+				$planoterapeuticoindividual->setObjservicosocial($_POST['objservicosocial']);
+				$planoterapeuticoindividual->setServicosocial($_POST['servicosocial']);
+				$planoterapeuticoindividual->setFonoaudiologia($_POST['fonoaudiologia']);
+				$planoterapeuticoindividual->setObjfonoaudiologia($_POST['objfonoaudiologia']);
+				$planoterapeuticoindividual->setPsicologia($_POST['psicologia']);
+				$planoterapeuticoindividual->setObjpsicologia($_POST['objpsicologia']);
+				$planoterapeuticoindividual->setTerapeutaocupacional($_POST['terapeutaocupacional']);
+				$planoterapeuticoindividual->setObjterapeutaocupacional($_POST['objterapeutaocupacional']);
+				$planoterapeuticoindividual->setFisioterapia($_POST['fisioterapia']);
+				$planoterapeuticoindividual->setObjfisioterapia($_POST['objfisioterapia']);
+				$planoterapeuticoindividual->setNutricionista($_POST['nutricionista']);
+				$planoterapeuticoindividual->setObjnutricionista($_POST['objnutricionista']);
+				$planoterapeuticoindividual->setDentista($_POST['dentista']);
+				$planoterapeuticoindividual->setObjdentista($_POST['objdentista']);
+
+				$planoterapeuticoindividual->alterar();
+
+				$redirect = "http://localhost/siga/index.php?alterou=1";
+				header("location:$redirect");
+
 			}
 			catch(PDOException $e)
 			{
@@ -116,8 +140,14 @@ switch($id)
 
 			try
 			{
+				$planoterapeuticopsicologico->setIdplanoterapeuticopsicologico($_GET['idformulario']);
+				$planoterapeuticopsicologico->setPlanoterapeutico($_POST['planoterapeutico']);
+				$planoterapeuticopsicologico->setObservacoesgerais($_POST['observacoesgerais']);
+
+				$planoterapeuticopsicologico->alterar();
 				
-				
+				$redirect = "http://localhost/siga/index.php?alterou=1";
+				header("location:$redirect");
 			}
 			catch(PDOException $e)
 			{
@@ -130,7 +160,16 @@ switch($id)
 			try
 			{
 			
-				
+				$relatorioobservacao->setIdrelatorioobservacao($_GET['idformulario']);
+				$relatorioobservacao->setObservacoesgerais($_POST['observacoesgerais']);
+				$relatorioobservacao->setVidadiaria($_POST['vidadiaria']);
+				$relatorioobservacao->setVidapratica($_POST['vidapratica']);
+				$relatorioobservacao->setHabilidadesbasicas($_POST['habilidadesbasicas']);
+
+				$relatorioobservacao->alterar();
+
+				$redirect = "http://localhost/siga/index.php?alterou=1";
+				header("location:$redirect");
 			}
 			catch(PDOException $e)
 			{
@@ -142,7 +181,14 @@ switch($id)
 
 			try
 			{
-				
+				$triagempsicologica->setIdtriagempsicologica($_GET['idformulario']);
+				$triagempsicologica->setTriagem($_POST['triagem']);
+				$triagempsicologica->setObservacoesgerais($_POST['observacoesgerais']);
+
+				$triagempsicologica->alterar();
+
+				$redirect = "http://localhost/siga/index.php?alterou=1";
+				header("location:$redirect");
 				
 			}
 			catch(PDOException $e)

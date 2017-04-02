@@ -6,6 +6,21 @@ if(($arraypermissoes['psicologico'] == 0))
 {
     echo '<script>location.href="index.php";</script>';
 }
+
+require_once "classeplanoterapeuticopsicologico.php";
+require_once "classealuno.php";
+
+$planoterapeuticopsicologico = new planoterapeuticopsicologico;
+$aluno = new aluno;
+
+$idformulario = $_GET['id'];
+$planoterapeuticopsicologico->setIdplanoterapeuticopsicologico($idformulario);
+
+$r = $planoterapeuticopsicologico->mostrarum();
+
+$aluno->setIdaluno($r['idaluno']);
+
+$r2 = $aluno->mostrarum();
 ?>
 
 
@@ -28,7 +43,7 @@ if(($arraypermissoes['psicologico'] == 0))
         <div role="tabpanel" class="tab-pane active form-group panel panel-body" id="parecerpsicologico" style="border-color: #00688B;">
           <div style="padding-top:20px;">
 
-            <form class="form-horizontal" action="inserir.php?id=6" method="POST" data-toggle="validator">
+            <form class="form-horizontal" action="alterar.php?id=6&idformulario=<?php echo $idformulario; ?>" method="POST" data-toggle="validator">
 
               <div class="form-group panel panel-body">
 
@@ -37,18 +52,26 @@ if(($arraypermissoes['psicologico'] == 0))
                   <div style="padding-left: 5%; padding-right: 5%;">
 
 
-                   <?php  
-                   include "camposexibiraluno.php";
-                   ?>
+                   <div class="row">
 
+                      <div class="col-md-2 form-group">
+                        <label for="idaluno" class="control-label">ID do Aluno</label>
 
+                        <input type="text" name="idaluno" class="form-control input-md" id="idaluno" value="<?php echo $r2['idaluno'];?>" readonly required>
+                      </div>
 
+                      <div class="col-md-10 form-group">
+                            <label for="nomealuno" class="control-label">Nome do Aluno</label>
+
+                        <input type="text" name="nomealuno" class="form-control input-md" id="nomealuno" value="<?php echo $r2['nome'];?>" readonly required>
+                      </div>
+                  </div>
 
 
                    <div class="row">
                     <div class="col-md-12 form-group">
                       <label for="planoterapeutico" class="control-label">Plano Terapeutico</label>
-                      <textarea rows="7" id="planoterapeutico" name="planoterapeutico" class="form-control input-md" required></textarea>
+                      <textarea rows="7" id="planoterapeutico" name="planoterapeutico" class="form-control input-md" required><?php echo $r['planoterapeutico']?></textarea>
                     </div>
                   </div>
 
@@ -56,7 +79,7 @@ if(($arraypermissoes['psicologico'] == 0))
                   <div class="row">
                     <div class="col-md-12 form-group">
                       <label for="observacoesgerais" class="control-label">Observações Gerais</label>
-                      <textarea rows="4" id="observacoesgerais" name="observacoesgerais" class="form-control input-md" ></textarea>
+                      <textarea rows="4" id="observacoesgerais" name="observacoesgerais" class="form-control input-md" ><?php echo $r['observacoesgerais']?></textarea>
                     </div>
                   </div>
 

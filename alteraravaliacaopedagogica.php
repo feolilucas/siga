@@ -13,13 +13,16 @@ require_once "classealuno.php";
 $avaliacaopedagogica = new avaliacaopedagogica;
 $aluno = new aluno;
 
-$idformulario = $_GET['id'];
-$avaliacaopedagogica->setIdavaliacaopedagogica($idformulario);
-$r = $avaliacaopedagogica->mostrarum();
 
-$aluno->setIdaluno($r['idaluno']);
+  $idformulario = $_GET['id'];
+  $avaliacaopedagogica->setIdavaliacaopedagogica($idformulario);
+  $r = $avaliacaopedagogica->mostrarum();
 
-$r2 = $aluno->mostrarum();
+  $aluno->setIdaluno($r['idaluno']);
+
+  $r2 = $aluno->mostrarum();
+
+
 ?>
 
 
