@@ -59,15 +59,16 @@ $r = $area->buscarAreas();
 
 
                     <div class="row">
-                     <div class="col-md-6 form-group">
-                        <label for="rg" class="control-label">RG</label>
-                        <input id="rg" type="text" maxlength="10" size="19" name="rg" class="form-control input-md" required>
-                        <span class="help-block">Somente números</span> 
-                      </div>
+                     
                       <div class="col-md-6 form-group">
 
                         <label for="cpf" class="control-label">CPF</label>
                         <input type="text" name="cpf" maxlength="14" class="form-control input-md" id="cpf" required>
+                      </div>
+                      <div class="col-md-6 form-group">
+                        <label for="rg" class="control-label">RG</label>
+                        <input id="rg" type="text" maxlength="10" size="19" name="rg" class="form-control input-md" required>
+                        <span class="help-block">Somente números</span> 
                       </div>
                      
                     </div>
@@ -265,7 +266,7 @@ $r = $area->buscarAreas();
                                 Neurológico</p>
                               </div>
                               <div class="checkbox form-group col-md-6">
-                                <p><br>
+                                <p>
                                   <input type="checkbox" name="fonoaudiologico" value="1">
                                   Fonoaudiológico</p>
                                   <p>

@@ -15,7 +15,7 @@
 		{
 			return $this->idendereco;
 		}
-		public function setIdenderece($idendereco)
+		public function setIdendereco($idendereco)
 		{
 			$this->idendereco = $idendereco;
 		}

@@ -80,7 +80,7 @@ else
 																				<a class='btn btn-info btn-xs' href='alteraraluno.php?id=".$linha['idaluno']."'>
 																				<span class='glyphicon glyphicon-edit'></span> Alterar</a>
 
-																				<a class='btn btn-danger btn-xs' href='deletar.php?id=2&idaluno=".$linha['idaluno']."'>
+																				<a class='btn btn-danger btn-xs' onClick='deletaraluno(2,".$linha['idaluno'].");'>
 																				<span class='glyphicon glyphicon-remove'></span> Deletar</a>
 																			</td>";																	
 																break;
@@ -146,6 +146,10 @@ else
 
 
 <script>
+
+if(window.location.href == "http://localhost/siga/buscaraluno.php?id=2&deletou=1"){
+	swal("Excluido!", "O registro foi excluido com sucesso!", "success");
+ };
 
   if(window.location.href == "http://localhost/siga/buscaraluno.php?id=3&deletou=1"){
 	swal("Excluido!", "O registro foi excluido com sucesso!", "success");

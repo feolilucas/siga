@@ -191,8 +191,8 @@
 			
 			try
 			{	
-				$query = $conexao->conn->prepare("select u.nome, rg, cpf, datanascimento, e.logradouro, e.numero, e.complemento, e. bairro, e.referencia, e.cidade, e.estado, e.cep,
-				a.nome as area, email, telefone from usuario as u inner join area as a on u.idarea = a.idarea 
+				$query = $conexao->conn->prepare("select u.idusuario, u.nome, rg, cpf, date_format(datanascimento, '%d/%m/%Y') as datanascimento, e.logradouro, e.numero, e.complemento, e. bairro, e.referencia, e.cidade, e.estado, e.cep,
+				a.nome as area, email, telefone, u.senha, u.usuario, u.idpermissoes, u.idendereco from usuario as u inner join area as a on u.idarea = a.idarea 
 				inner join endereco as e on u.idendereco = e.idendereco where idusuario = :idusuario;");
 				
 				$query->bindValue(":idusuario", $this->getIdusuario());
@@ -218,7 +218,7 @@
 			
 			try
 			{	
-				$query = $conexao->conn->prepare("select select u.nome, rg, cpf, datanascimento, e.logradouro, e.numero, e.complemento, e. bairro, e.referencia, e.cidade, e.estado, e.cep,
+				$query = $conexao->conn->prepare("select u.idusuario, u.nome, rg, cpf, date_format(datanascimento, '%d/%m/%Y') as datanascimento, e.logradouro, e.numero, e.complemento, e. bairro, e.referencia, e.cidade, e.estado, e.cep,
 				a.nome as area, email, telefone from usuario as u inner join area as a on u.idarea = a.idarea 
 				inner join endereco as e on u.idendereco = e.idendereco;");
 				
@@ -291,7 +291,7 @@
 			try
 			{	
 				$query = $conexao->conn->prepare("update usuario set nome = :nome, rg = :rg, cpf = :cpf, datanascimento =  :datanascimento,
-				email = :email, telefone = :telefone where idusuario = :idusuario");
+				email = :email, telefone = :telefone, idarea = :idarea, senha = :senha, usuario = :usuario where idusuario = :idusuario");
 				
 				$query->bindValue(":idusuario", $this->getIdusuario());
 				$query->bindValue(":nome", $this->getNome());
@@ -300,7 +300,10 @@
 				$query->bindValue(":datanascimento", $this->getDatanascimento());
 				$query->bindValue(":email", $this->getEmail());
 				$query->bindValue(":telefone", $this->getTelefone());
-				
+				$query->bindValue(":idarea", $this->getIdarea());
+				$query->bindValue(":senha", $this->getSenha());
+				$query->bindValue(":usuario", $this->getUsuario());
+
 				$query->execute();
 						
 			}

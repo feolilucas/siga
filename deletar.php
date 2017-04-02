@@ -37,14 +37,17 @@ switch($id)
 
 		try
 		{
-				
+			$usuario->setIdusuario($_GET['idusuario']);
+			$usuario->deletar();	
 
-			}
-			catch(PDOException $e)
-			{
-				echo $e->getMessage();
+			$redirect = "http://localhost/siga/buscarusuario.php?&deletou=1";
+			header("location:$redirect");
+		}
+		catch(PDOException $e)
+		{
+			echo $e->getMessage();
 
-			}
+		}
 
 		break;
 
@@ -52,7 +55,10 @@ switch($id)
 			try
 			{
 				$aluno->setIdaluno($_GET['idaluno']);
-				$aluno->deletar();		
+				$aluno->deletar();	
+
+				$redirect = "http://localhost/siga/buscaraluno.php?id=2&deletou=1";
+				header("location:$redirect");	
 			}
 			catch(PDOException $e)
 			{
