@@ -16,12 +16,6 @@ if(($arraypermissoes['planoterapeutico'] == 0))
    include "divbuscaraluno.php";
    ?>
 
-
-
-
-
-
-
   <div>
     <!-- Nav tabs -->
     <ul class="nav nav-tabs " role="tablist">
@@ -84,15 +78,15 @@ if(($arraypermissoes['planoterapeutico'] == 0))
                 </div>
               </fieldset>
 
-              <!-- Button (Double) -->
-              <br><br><br>
-              <div class="form-group">
-                <label class="col-md-4 control-label" for="idConfirmar"></label>
-                <div class="col-md-8">
-                  <button id="idConfirmar" name="idConfirmar" class="btn btn-success" type="submit">Confirmar</button>
-                  <button id="idCancelar" name="idCancelar" class="btn btn-danger" onclick="location.href='http://localhost/siga/';">Cancelar</button>
+        <!-- Button (Double) -->
+                <br><br><br>
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="idConfirmar"></label>
+                  <div class="col-md-8">
+                    <button id="idConfirmar" name="idConfirmar" class="btn btn-success" type="submit">Confirmar</button>
+                    <button type="reset" id="idCancelar" name="idCancelar" class="btn btn-danger" onclick="location.href='http://localhost/siga/';">Cancelar</button>
+                  </div>
                 </div>
-              </div>
             </div>
 
           </div>

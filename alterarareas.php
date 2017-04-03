@@ -13,23 +13,7 @@ $r = $area->buscarAreas();
  <title>Alterar Áreas Técnicas</title>
 <body style="padding-top:60px; padding-bottom: 30px;">
   <section style="width:60%" class="container">
-    <!-- Modal -->
-    <div class="modal fade in" id="divSucesso" role="dialog" style="display:none; position: absolute;top: 20%;">
-      <div class="modal-dialog modal-sm">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title">Alteração realizada</h4>
-          </div>
-          <div class="modal-body">
-            <p>Área alterada com sucesso.</p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal" onclick="location.href='http://localhost/siga/alterarareas.php';">Fechar</button>
-          </div>
-        </div>
-      </div>
-    </div>
+  
 
     <div>
       <!-- Nav tabs -->
@@ -62,13 +46,13 @@ $r = $area->buscarAreas();
 
                   </div>
                 </fieldset>
-                <!-- Button (Double) -->
+                  <!-- Button (Double) -->
                 <br><br><br>
                 <div class="form-group">
                   <label class="col-md-4 control-label" for="idConfirmar"></label>
                   <div class="col-md-8">
                     <button id="idConfirmar" name="idConfirmar" class="btn btn-success" type="submit">Confirmar</button>
-                    <button id="idCancelar" name="idCancelar" class="btn btn-danger" onclick="location.href='http://localhost/siga/';">Cancelar</button>
+                    <button type="reset" id="idCancelar" name="idCancelar" class="btn btn-danger" onclick="location.href='http://localhost/siga/';">Cancelar</button>
                   </div>
                 </div>
               </div>
@@ -76,13 +60,6 @@ $r = $area->buscarAreas();
           </div>
         </div>
 
-        <script>
-
-          if(window.location.href == "http://localhost/siga/cadastroareas.php?gravou=1"){
-           MostrarEsconderDiv('divSucesso');
-         };
-
-       </script>
 
      </body>
      <?php  

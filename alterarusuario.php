@@ -3,11 +3,11 @@ include "cabecalho.php";
 include "menu.php";
 
 if(($arraypermissoes['administrativo'] == 0) or ($arraypermissoes['planoterapeutico'] ==0) or ($arraypermissoes['psicologico'] == 0) or
-              ($arraypermissoes['neurologico'] == 0) or ($arraypermissoes['fonoaudiologico'] == 0) or ($arraypermissoes['terapiaocupacional'] == 0) or 
-              ($arraypermissoes['pedagogico'] == 0) or ($arraypermissoes['social'] == 0))
-            {
-                echo '<script>location.href="index.php";</script>';
-            }
+  ($arraypermissoes['neurologico'] == 0) or ($arraypermissoes['fonoaudiologico'] == 0) or ($arraypermissoes['terapiaocupacional'] == 0) or 
+  ($arraypermissoes['pedagogico'] == 0) or ($arraypermissoes['social'] == 0))
+{
+  echo '<script>location.href="index.php";</script>';
+}
 
 require_once "classearea.php";
 require_once "classeusuario.php";
@@ -86,7 +86,7 @@ $resppermissoes = $permissoes->mostrar();
                       </div>
                       <div class="col-md-3 form-group">
                         <label for="datanascimento" class="control-label">Nascimento</label>                      
-                         <input type="text" id="datanascimento" name="datanascimento" value="<?php echo $r['datanascimento'] ?>" class="form-control input-md" size="8" maxlength="10" required>
+                        <input type="text" id="datanascimento" name="datanascimento" value="<?php echo $r['datanascimento'] ?>" class="form-control input-md" size="8" maxlength="10" required>
                       </div>
                     </div>
 
@@ -114,7 +114,7 @@ $resppermissoes = $permissoes->mostrar();
                         <label for="email" class="control-label">E-mail</label>
                         <input id="email" type="text" maxlength="200" size="19" name="email" value="<?php echo $r['email'] ?>" class="form-control input-md" required>
                       </div>
-                      </div>
+                    </div>
 
                   </div>
                 </fieldset>
@@ -124,7 +124,7 @@ $resppermissoes = $permissoes->mostrar();
                   <label class="col-md-4 control-label" for="idConfirmar"></label>
                   <div class="col-md-8">
                     <button id="idConfirmar" name="idConfirmar" class="btn btn-success" type="submit">Confirmar</button>
-                    <button id="idCancelar" name="idCancelar" class="btn btn-danger" onclick="location.href='http://localhost/siga/';">Cancelar</button>
+                    <button type="reset" id="idCancelar" name="idCancelar" class="btn btn-danger" onclick="location.href='http://localhost/siga/';">Cancelar</button>
                   </div>
                 </div>
               </div>
@@ -196,7 +196,7 @@ $resppermissoes = $permissoes->mostrar();
                   <label class="col-md-4 control-label" for="idConfirmar"></label>
                   <div class="col-md-8">
                     <button id="idConfirmar" name="idConfirmar" class="btn btn-success" type="submit">Confirmar</button>
-                    <button id="idCancelar" name="idCancelar" class="btn btn-danger" onclick="location.href='http://localhost/siga/';">Cancelar</button>
+                    <button type="reset" id="idCancelar" name="idCancelar" class="btn btn-danger" onclick="location.href='http://localhost/siga/';">Cancelar</button>
                   </div>
                 </div>
               </div>
@@ -242,7 +242,7 @@ $resppermissoes = $permissoes->mostrar();
                     <label class="col-md-4 control-label" for="idConfirmar"></label>
                     <div class="col-md-8">
                       <button id="idConfirmar" name="idConfirmar" class="btn btn-success" type="submit">Confirmar</button>
-                      <button id="idCancelar" name="idCancelar" class="btn btn-danger" onclick="location.href='http://localhost/siga/';">Cancelar</button>
+                      <button type="reset" id="idCancelar" name="idCancelar" class="btn btn-danger" onclick="location.href='http://localhost/siga/';">Cancelar</button>
                     </div>
                   </div>
                 </div>
@@ -267,199 +267,200 @@ $resppermissoes = $permissoes->mostrar();
                         <select class="form-control" name="area">
                           <?php
                           foreach($resparea as $linha){
-                              if($linha['nome'] == $r['area'])
-                              {
-                                  echo "<option selected value='".$linha['idarea']."'>".$linha['nome']."</option>";
-                              }
-                              else
-                              {
-                                  echo "<option value='".$linha['idarea']."'>".$linha['nome']."</option>";
-                              }
-                         }
-                         ?>
-                       </select>
-                     </div>
-                   </div>
-                 </fieldset>
+                            if($linha['nome'] == $r['area'])
+                            {
+                              echo "<option selected value='".$linha['idarea']."'>".$linha['nome']."</option>";
+                            }
+                            else
+                            {
+                              echo "<option value='".$linha['idarea']."'>".$linha['nome']."</option>";
+                            }
+                          }
+                          ?>
+                        </select>
+                      </div>
+                    </div>
+                  </fieldset>
 
 
 
-                 <fieldset>
-                  <div style="padding-left: 5%; padding-right: 5%;" width: "80%;">
-                    <legend>Permissões</legend>
-                    <div class="row">
-                      <div class="checkbox form-group col-md-6">
-                        
-                        <?php
+                  <fieldset>
+                    <div style="padding-left: 5%; padding-right: 5%;" width: "80%;">
+                      <legend>Permissões</legend>
+                      <div class="row">
+                        <div class="checkbox form-group col-md-6">
+                          
+                          <?php
                           if($resppermissoes['administrativo'] == 1)
                           {
                             ?>  
-                                <p><input checked type="checkbox" name="administrativo" value="1">Administrativo</p>
+                            <p><input checked type="checkbox" name="administrativo" value="1">Administrativo</p>
 
                             <?php
                           }
                           else
                           {
                             ?>
-                                <p><input type="checkbox" name="administrativo" value="1">Administrativo</p>
+                            <p><input type="checkbox" name="administrativo" value="1">Administrativo</p>
 
                             <?php
                           }
-                        ?>
+                          ?>
 
-                        <?php
+                          <?php
                           if($resppermissoes['planoterapeutico'] == 1)
                           {
                             ?>  
-                                <p><input checked type="checkbox" name="planoterapeutico" value="1">Plano Terapêutico</p>
+                            <p><input checked type="checkbox" name="planoterapeutico" value="1">Plano Terapêutico</p>
 
                             <?php
                           }
                           else
                           {
                             ?>
-                                <p><input type="checkbox" name="planoterapeutico" value="1">Plano Terapêutico</p>
+                            <p><input type="checkbox" name="planoterapeutico" value="1">Plano Terapêutico</p>
 
                             <?php
                           }
-                        ?>
-                         
-                        <?php
-                        if($resppermissoes['psicologico'] == 1)
-                        {
-                          ?>  
-                              <p><input checked type="checkbox" name="psicologico" value="1">Psicológico</p>
-
-                          <?php
-                        }
-                        else
-                        {
                           ?>
-                             <p><input type="checkbox" name="psicologico" value="1">Psicológico</p>
-
+                          
                           <?php
-                        }
-                        ?>
+                          if($resppermissoes['psicologico'] == 1)
+                          {
+                            ?>  
+                            <p><input checked type="checkbox" name="psicologico" value="1">Psicológico</p>
 
-                        <?php
-                        if($resppermissoes['neurologico'] == 1)
-                        {
-                          ?>  
-                              <p><input checked="" type="checkbox" name="neurologico" value="1">Neurológico</p>
+                            <?php
+                          }
+                          else
+                          {
+                            ?>
+                            <p><input type="checkbox" name="psicologico" value="1">Psicológico</p>
 
-                          <?php
-                        }
-                        else
-                        {
+                            <?php
+                          }
                           ?>
-                             <p><input type="checkbox" name="neurologico" value="1">Neurológico</p>
 
                           <?php
-                        }
-                        ?> 
-                                                              
+                          if($resppermissoes['neurologico'] == 1)
+                          {
+                            ?>  
+                            <p><input checked="" type="checkbox" name="neurologico" value="1">Neurológico</p>
+
+                            <?php
+                          }
+                          else
+                          {
+                            ?>
+                            <p><input type="checkbox" name="neurologico" value="1">Neurológico</p>
+
+                            <?php
+                          }
+                          ?> 
+                          
+                        </div>
+
+                        <div class="checkbox form-group col-md-6">
+
+                          <?php
+                          if($resppermissoes['fonoaudiologico'] == 1)
+                          {
+                            ?>  
+                            <p><input checked type="checkbox" name="fonoaudiologico" value="1">Fonoaudiológico</p>
+
+                            <?php
+                          }
+                          else
+                          {
+                            ?>
+                            <p><input type="checkbox" name="fonoaudiologico" value="1">Fonoaudiológico</p>
+
+                            <?php
+                          }
+                          ?> 
+
+                          <?php
+                          if($resppermissoes['terapiaocupacional'] == 1)
+                          {
+                            ?>  
+                            <p><input checked type="checkbox" name="terapiaocupacional" value="1">Terapia Ocupacional</p>
+
+                            <?php
+                          }
+                          else
+                          {
+                            ?>
+                            <p><input type="checkbox" name="terapiaocupacional" value="1">Terapia Ocupacional</p>
+
+                            <?php
+                          }
+                          ?> 
+
+                          <?php
+                          if($resppermissoes['pedagogico'] == 1)
+                          {
+                            ?>  
+                            <p><input checked type="checkbox" name="pedagogico" value="1">Pedagógico</p>
+                            <?php
+                          }
+                          else
+                          {
+                            ?>
+                            <p><input type="checkbox" name="pedagogico" value="1">Pedagógico</p>
+
+                            <?php
+                          }
+                          ?> 
+                          
+                          <?php
+                          if($resppermissoes['social'] == 1)
+                          {
+                            ?>  
+                            <p><input checked type="checkbox" name="social" value="1">Social</p>
+                            <?php
+                          }
+                          else
+                          {
+                            ?>
+                            <p><input type="checkbox" name="social" value="1">Social</p>
+
+                            <?php
+                          }
+                          ?>       
+                          
+                          
+                          
+                        </div>
                       </div>
+                    </div>
+                  </fieldset>
 
-                      <div class="checkbox form-group col-md-6">
-
-                        <?php
-                        if($resppermissoes['fonoaudiologico'] == 1)
-                        {
-                          ?>  
-                               <p><input checked type="checkbox" name="fonoaudiologico" value="1">Fonoaudiológico</p>
-
-                          <?php
-                        }
-                        else
-                        {
-                          ?>
-                              <p><input type="checkbox" name="fonoaudiologico" value="1">Fonoaudiológico</p>
-
-                          <?php
-                        }
-                        ?> 
-
-                        <?php
-                        if($resppermissoes['terapiaocupacional'] == 1)
-                        {
-                          ?>  
-                                <p><input checked type="checkbox" name="terapiaocupacional" value="1">Terapia Ocupacional</p>
-
-                          <?php
-                        }
-                        else
-                        {
-                          ?>
-                               <p><input type="checkbox" name="terapiaocupacional" value="1">Terapia Ocupacional</p>
-
-                          <?php
-                        }
-                        ?> 
-
-                        <?php
-                        if($resppermissoes['pedagogico'] == 1)
-                        {
-                          ?>  
-                                <p><input checked type="checkbox" name="pedagogico" value="1">Pedagógico</p>
-                          <?php
-                        }
-                        else
-                        {
-                          ?>
-                               <p><input type="checkbox" name="pedagogico" value="1">Pedagógico</p>
-
-                          <?php
-                        }
-                        ?> 
-                        
-                        <?php
-                        if($resppermissoes['social'] == 1)
-                        {
-                          ?>  
-                                <p><input checked type="checkbox" name="social" value="1">Social</p>
-                          <?php
-                        }
-                        else
-                        {
-                          ?>
-                               <p><input type="checkbox" name="social" value="1">Social</p>
-
-                          <?php
-                        }
-                        ?>       
-                                 
-                                    
-                                    
+                  <!-- Button (Double) -->
+                  <br><br><br>
+                  <div class="form-group">
+                    <label class="col-md-4 control-label" for="idConfirmar"></label>
+                    <div class="col-md-8">
+                      <button id="idConfirmar" name="idConfirmar" class="btn btn-success" type="submit">Confirmar</button>
+                      <button type="reset" id="idCancelar" name="idCancelar" class="btn btn-danger" onclick="location.href='http://localhost/siga/';">Cancelar</button>
+                    </div>
                   </div>
+
+                  
+
+                  <br>
                 </div>
               </div>
             </fieldset>
+          </div>
+        </div>
+      </div>
 
-                                <!-- Button (Double) -->
-                                <br><br><br>
-                                <div class="form-group">
-                                  <label class="col-md-4 control-label" for="idConfirmar"></label>
-                                  <div class="col-md-8">
-                                    <button id="idConfirmar" name="idConfirmar" class="btn btn-success" type="submit">Confirmar</button>
-                                    <button id="idCancelar" name="idCancelar" class="btn btn-danger" onclick="location.href='http://localhost/siga/';">Cancelar</button>                                    </div>
-                                  </div>
-
-                                  
-
-                                  <br>
-                                </div>
-                              </div>
-                            </fieldset>
-                          </div>
-                        </div>
-                      </div>
-
-                    </form>
+    </form>
 
 
 
-</body>
+  </body>
 
-<?php  
-include "rodape.php";
-?>
+  <?php  
+  include "rodape.php";
+  ?>

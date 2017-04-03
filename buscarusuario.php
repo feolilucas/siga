@@ -101,18 +101,6 @@ $r = $usuario->mostrartodos();
 	</section>
 
 
-
-
-<script>
-
-  if(window.location.href == "http://localhost/siga/buscarusuario.php?&deletou=1"){
-	swal("Excluido!", "O registro foi excluido com sucesso!", "success");
- };
-
-</script>
-
-
-
 </body>
 <?php  
 include "rodape.php";

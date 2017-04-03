@@ -63,11 +63,11 @@ $r2 = $aluno->mostrarum();
                       </div>
 
                       <div class="col-md-10 form-group">
-                            <label for="nomealuno" class="control-label">Nome do Aluno</label>
+                        <label for="nomealuno" class="control-label">Nome do Aluno</label>
 
                         <input type="text" name="nomealuno" class="form-control input-md" id="nomealuno" value="<?php echo $r2['nome'];?>" readonly required>
                       </div>
-                  </div>
+                    </div>
 
                     <div class="row">
                       <div class="col-md-12 form-group">
@@ -110,7 +110,7 @@ $r2 = $aluno->mostrarum();
                   <label class="col-md-4 control-label" for="idConfirmar"></label>
                   <div class="col-md-8">
                     <button id="idConfirmar" name="idConfirmar" class="btn btn-success" type="submit">Confirmar</button>
-                    <button id="idCancelar" name="idCancelar" class="btn btn-danger" onclick="location.href='http://localhost/siga/';">Cancelar</button>
+                    <button type="reset" id="idCancelar" name="idCancelar" class="btn btn-danger" onclick="location.href='http://localhost/siga/';">Cancelar</button>
                   </div>
                 </div>
               </div>
