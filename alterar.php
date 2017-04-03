@@ -123,6 +123,8 @@ switch($id)
 				$endereco->alterar();
 
 				$usuario->alterar();
+					$redirect = "http://localhost/siga/index.php?alterou=1";
+			header("location:$redirect");
 
 				
 			}
@@ -164,6 +166,8 @@ switch($id)
 				$endereco->alterar();
 
 				$aluno->alterar();
+					$redirect = "http://localhost/siga/index.php?alterou=1";
+			header("location:$redirect");
 
 			}
 			catch(PDOException $e)
