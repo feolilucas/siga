@@ -20,6 +20,7 @@
 </head>
 
 <?php 
+$servidor = "http://".$_SERVER['SERVER_NAME'];
 $url = "http://".$_SERVER['SERVER_NAME'].$_SERVER['PHP_SELF'];
 $pagina = $_SERVER['PHP_SELF'];
 

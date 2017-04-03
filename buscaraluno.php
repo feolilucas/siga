@@ -49,7 +49,7 @@ else
 														<input type="text" class="form-control" id="dev-table-filter" data-action="filter" data-filters="#dev-table" placeholder="Filtrar alunos" />
 													</div>
 													<div class="panel-body col-md-5 form-group">
-														<button type="button" class="btn-toggle btn btn-danger" onclick="location.href='http://localhost/siga/';">Cancelar</button>
+														<?php include "botaocancelar.php"; ?>
 													</div>
 												</div>
 												<table class="table table-hover" id="dev-table">

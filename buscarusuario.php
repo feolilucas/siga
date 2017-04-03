@@ -3,11 +3,11 @@ include "cabecalho.php";
 include "menu.php";
 
 if(($arraypermissoes['administrativo'] == 0) or ($arraypermissoes['planoterapeutico'] ==0) or ($arraypermissoes['psicologico'] == 0) or
-              ($arraypermissoes['neurologico'] == 0) or ($arraypermissoes['fonoaudiologico'] == 0) or ($arraypermissoes['terapiaocupacional'] == 0) or 
-              ($arraypermissoes['pedagogico'] == 0) or ($arraypermissoes['social'] == 0))
-            {
-                echo '<script>location.href="index.php";</script>';
-            }
+	($arraypermissoes['neurologico'] == 0) or ($arraypermissoes['fonoaudiologico'] == 0) or ($arraypermissoes['terapiaocupacional'] == 0) or 
+	($arraypermissoes['pedagogico'] == 0) or ($arraypermissoes['social'] == 0))
+{
+	echo '<script>location.href="index.php";</script>';
+}
 
 require_once "classeusuario.php";
 
@@ -46,7 +46,8 @@ $r = $usuario->mostrartodos();
 														<input type="text" class="form-control" id="dev-table-filter" data-action="filter" data-filters="#dev-table" placeholder="Filtrar alunos" />
 													</div>
 													<div class="panel-body col-md-5 form-group">
-														<button type="button" class="btn-toggle btn btn-danger" onclick="location.href='http://localhost/siga/';">Cancelar</button>
+														<?php include "botaocancelar.php"; ?>
+
 													</div>
 												</div>
 												<table class="table table-hover" id="dev-table">
@@ -75,33 +76,33 @@ $r = $usuario->mostrartodos();
 
 															
 															echo "<td class='text-center'>
-																		<a class='btn btn-info btn-xs' href='alterarusuario.php?id=".$linha['idusuario']."'>
-																		<span class='glyphicon glyphicon-edit'></span> Alterar</a>
+															<a class='btn btn-info btn-xs' href='alterarusuario.php?id=".$linha['idusuario']."'>
+																<span class='glyphicon glyphicon-edit'></span> Alterar</a>
 
-																		<a class='btn btn-danger btn-xs' onClick='deletarusuario(1,".$linha['idusuario'].");'>
-																		<span class='glyphicon glyphicon-remove'></span> Deletar</a>
-																	</td>";																	
+																<a class='btn btn-danger btn-xs' onClick='deletarusuario(1,".$linha['idusuario'].");'>
+																	<span class='glyphicon glyphicon-remove'></span> Deletar</a>
+																</td>";																	
 																
-															
-															echo "</tr>";
-														}
-														?>
-													</tbody>
-												</table>
+																
+																echo "</tr>";
+															}
+															?>
+														</tbody>
+													</table>
+												</div>
 											</div>
 										</div>
-									</div>
-								</fieldset>
-							</div>
-						</form>
+									</fieldset>
+								</div>
+							</form>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-	</section>
+		</section>
 
 
-</body>
-<?php  
-include "rodape.php";
-?>
+	</body>
+	<?php  
+	include "rodape.php";
+	?>
