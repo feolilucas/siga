@@ -126,8 +126,8 @@
 			
 			try
 			{
-				$query = $conexao->conn->prepare("select idaluno, nome, date_format(datanascimento, '%d/%m/%Y') as datanascimento, datacadastro, sexo, nomepai, nomemae,
-				e.logradouro, e.numero, e.complemento, e. bairro, e.referencia, e.cidade, e.estado, e.cep,
+				$query = $conexao->conn->prepare("select idaluno, nome, datanascimento, datacadastro, sexo, nomepai, nomemae,
+				e.logradouro, e.numero, e.complemento, e. bairro, e.referencia, e.cidade, e.estado, e.cep, e.idendereco,
 				cpf, nacionalidade, rg, dataemissaorg, deficiencia from aluno as a inner join endereco as e on a.idendereco = e.idendereco where idaluno = :idaluno and status = 1;");
 				
 				$query->bindValue(":idaluno", $this->getIdaluno());
@@ -151,7 +151,7 @@
 			
 			try
 			{
-				$query = $conexao->conn->prepare("select idaluno, nome, date_format(datanascimento, '%d/%m/%Y') as datanascimento, datacadastro, sexo, nomepai, nomemae,
+				$query = $conexao->conn->prepare("select idaluno, nome, datanascimento, datacadastro, sexo, nomepai, nomemae,
 				e.logradouro, e.numero, e.complemento, e. bairro, e.referencia, e.cidade, e.estado, e.cep,
 				cpf, nacionalidade, rg, dataemissaorg, deficiencia from aluno as a inner join endereco as e on a.idendereco = e.idendereco where status = 1");
 				

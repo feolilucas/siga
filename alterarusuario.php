@@ -70,21 +70,22 @@ $resppermissoes = $permissoes->mostrar();
                       </div>
                       <div class="col-md-3 form-group">
                         <label for="datanascimento" class="control-label">Nascimento</label>                      
-                        <input type="text" id="datanascimento" name="datanascimento" value="<?php echo $r['datanascimento'] ?>" class="form-control input-md" size="8" maxlength="10" required>
+                        <input type="date" id="datanascimento" name="datanascimento" value="<?php echo $r['datanascimento'] ?>" class="form-control input-md" size="8" maxlength="10" required>
                       </div>
                     </div>
 
 
                     <div class="row">
-                      <div class="col-md-6 form-group">
-                        
-                        <label for="cpf" class="control-label">CPF</label>
-                        <input type="text" name="cpf" maxlength="14" value="<?php echo $r['cpf'] ?>" class="form-control input-md" id="cpf" required>
-                      </div>
+                      
                       <div class="col-md-6 form-group">
                         <label for="rg" class="control-label">RG</label>
                         <input id="rg" type="text" maxlength="10" size="19" name="rg" class="form-control input-md" value="<?php echo $r['rg'] ?>" onkeyup="somenteNumeros(this);" required>
                         <span class="help-block">Somente números</span> 
+                      </div>
+                      <div class="col-md-6 form-group">
+                        
+                        <label for="cpf" class="control-label">CPF</label>
+                        <input type="text" name="cpf" maxlength="14" value="<?php echo $r['cpf'] ?>" class="form-control input-md" id="cpf" required>
                       </div>
                     </div>
 

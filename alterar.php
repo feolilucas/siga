@@ -139,7 +139,32 @@ switch($id)
 			try
 			{
 				
-				
+				$aluno->setIdaluno($_GET['idaluno']);
+				$aluno->setNome($_POST['nome']);
+				$aluno->setDatanascimento($_POST['datanascimento']);
+				$aluno->setSexo($_POST['sexo']);
+				$aluno->setRg($_POST['rg']);
+				$aluno->setCpf($_POST['cpf']);
+				$aluno->setDataemissaorg($_POST['dataemissaorg']);
+				$aluno->setNomepai($_POST['nomepai']);
+				$aluno->setNomemae($_POST['nomemae']);
+				$aluno->setDeficiencia($_POST['deficiencia']);
+				$endereco->setComplemento($_POST['complemento']);
+				$endereco->setNumero($_POST['numero']);
+				$endereco->setLogradouro($_POST['logradouro']);
+				$endereco->setReferencia($_POST['referencia']);
+				$endereco->setCep($_POST['cep']);
+				$endereco->setBairro($_POST['bairro']);
+				$endereco->setEstado($_POST['estado']);
+				$endereco->setCidade($_POST['cidade']);
+
+				$respaluno = $aluno->mostrarum($_GET['idaluno']);
+	
+				$endereco->setIdendereco($respaluno['idendereco']);
+				$endereco->alterar();
+
+				$aluno->alterar();
+
 			}
 			catch(PDOException $e)
 			{
