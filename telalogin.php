@@ -22,8 +22,9 @@
 
 <body>
 	<div class="wrapper">
-		<form class="form-signin" method="post" action="verificalogin.php" id="login">       
-			<h2 class="form-signin-heading">Login</h2>
+		<form class="form-signin" method="post" action="verificalogin.php" id="login"> 
+			<h2 align="center"> Sistema de Gestão das Áreas Técnicas da APAE  </h4>    
+			<h3 class="form-signin-heading">Login</h2>
 			<input pattern="[a-z\s]+$" id="login" type="text" class="form-control" name="login" placeholder="Usuário" required autofocus />
 			<input id="senha" type="password" class="form-control" name="senha" placeholder="Senha" required />      
 			<button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>   
