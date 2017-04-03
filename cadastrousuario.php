@@ -189,8 +189,8 @@ $r = $area->buscarAreas();
                   <div class="row">
                     <div class="col-md-6 form-group">
                       <label for="usuario" class="control-label">Nome de usuário</label>
-                      <input type="text" size="22" name="usuario" class="form-control input-md" data-minlength="6" required>
-                      <span class="help-block">O nome de usuário deve ter no minimo (6) dígitos</span> </div>
+                      <input pattern="[a-z\s]+$" id="usuario" type="text" size="22" name="usuario" class="form-control input-md" data-minlength="6" required>
+                      <span class="help-block">O nome de usuário deve ter no minimo (6) caracteres. Somente letras.</span> </div>
                     </div>
                     <div class="row">
                       <div class="col-md-6 form-group">
