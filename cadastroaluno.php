@@ -42,13 +42,13 @@ $r = $area->buscarAreas();
                   <div style="padding-left: 5%; padding-right: 5%;">
 
                     <div class="row">
-                      <div class="col-md-8 form-group">
+                      <div class="col-md-9 form-group">
                         <label for="nome" class="control-label">Nome</label>
                         <input id="nome" type="text" maxlength="200" name="nome" size="92" class="form-control input-md" required>
                       </div>
-                      <div class="col-md-4 form-group">
+                      <div class="col-md-3 form-group">
                         <label for="datanascimento" class="control-label">Nascimento</label>
-                        <input type="text" id="datanascimento" name="datanascimento" class="form-control input-md" size="10" maxlength="10" required>
+                        <input type="date" id="datanascimento" name="datanascimento" class="form-control input-md" size="10" maxlength="10" required>
                       </div>
                     </div>
 
@@ -69,7 +69,7 @@ $r = $area->buscarAreas();
                     <div class="row">
                       <div class="col-md-4 form-group">
                         <label for="dataemissaorg" class="control-label">Data de emissão do RG</label>
-                        <input id="dataemissaorg" type="text" maxlength="10" size="19" name="dataemissaorg" class="form-control input-md">
+                        <input id="dataemissaorg" type="date" maxlength="10" size="19" name="dataemissaorg" class="form-control input-md">
                       </div>
 
 
