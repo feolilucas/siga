@@ -116,7 +116,7 @@ $arraypermissoes = $permissoes->mostrar();
 									<li class="dropdown dropdown-submenu"> 
 										<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa "></i>Relatórios</a> 
 										<ul class="dropdown-menu">
-											<li class="last"><a href="#">Relatório X</a></li>
+											<li class="last"><a href="relatoriogeralaluno.php">Relatório Geral</a></li>
 											<li class="last"><a href="#">Relatório Y</a></li>
 										</ul> 
 									</li>									
