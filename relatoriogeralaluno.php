@@ -130,6 +130,7 @@ $r = $aluno->mostrartodos();
 <body style="padding-top:60px; padding-bottom: 30px;">
 	<section style="width:60%" class="container">
 		<div style="background-color: white;">
+			<br><br><h2 align="center">Relatório Geral - Alunos</h2><br>
 			<div id="chart_div" style="width: 90%; height: 500px;"></div>
 			<div id="barras" style="width: 90%; height: 500px;"></div>
 			<div align="center">

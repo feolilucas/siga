@@ -91,8 +91,9 @@ $arraypermissoes = $permissoes->mostrar();
 								<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Usuários<span class="caret"></span></a>
 								<ul class="dropdown-menu">
 									<li><a href="cadastrousuario.php">Cadastrar</a></li>
-									<li role="separator" class="divider"></li>
 									<li><a href="buscarusuario.php">Buscar</a></li>
+									<li role="separator" class="divider"></li>
+									<li><a href="relatoriousuario.php">Relatório</a></li>
 								</ul>
 							</li>
 
@@ -117,6 +118,7 @@ $arraypermissoes = $permissoes->mostrar();
 										<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa "></i>Relatórios</a> 
 										<ul class="dropdown-menu">
 											<li class="last"><a href="relatoriogeralaluno.php">Relatório Geral</a></li>
+											<li class="last"><a href="relatorioareas.php">Relatório Áreas</a></li>
 											<!--<li class="last"><a href="#">Relatório Y</a></li> -->
 										</ul> 
 									</li>									

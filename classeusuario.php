@@ -219,7 +219,7 @@
 			try
 			{	
 				$query = $conexao->conn->prepare("select u.idusuario, u.nome, rg, cpf, datanascimento, e.logradouro, e.numero, e.complemento, e. bairro, e.referencia, e.cidade, e.estado, e.cep,
-				a.nome as area, email, telefone from usuario as u inner join area as a on u.idarea = a.idarea 
+				a.nome as area, email, u.idpermissoes, u.usuario, telefone from usuario as u inner join area as a on u.idarea = a.idarea 
 				inner join endereco as e on u.idendereco = e.idendereco;");
 				
 				$query->execute();
