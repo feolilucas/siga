@@ -43,6 +43,47 @@
 				echo $e->getMessage();
 			}
 		}
+
+		public function cadastrar()
+		{
+			$conexao = new conexao();
+			
+			try
+			{	
+				$query = $conexao->conn->prepare("insert into area(nome) values(:nome);");
+				$query->bindValue(":nome", $this->getNome());
+				
+				$query->execute();	
+						
+			}
+			catch(PDOException $e)
+			{
+				echo $e->getMessage();
+			}
+		}
+
+		public function deletar()
+		{
+			$conexao = new conexao();
+			require_once "classeusuario.php";
+			
+			$usuario = new usuario;
+			try
+			{	
+				$usuario->setIdarea($this->getIdarea());
+				$usuario->areanull();
+
+				$query = $conexao->conn->prepare("delete from area where idarea = :idarea;");
+				$query->bindValue(":idarea", $this->getIdarea());
+				
+				$query->execute();	
+						
+			}
+			catch(PDOException $e)
+			{
+				echo $e->getMessage();
+			}
+		}
 	}
 	
 

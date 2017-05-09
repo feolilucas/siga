@@ -9,8 +9,9 @@ require_once "classeplanoterapeuticoindividual.php";
 require_once "classeplanoterapeuticopsicologico.php";
 require_once "classerelatorioobservacao.php";
 require_once "classetriagempsicologica.php";
+require_once "classearea.php";
 
-
+$area = new area;
 $permissoes = new permissoes;
 $endereco = new endereco;
 $usuario = new usuario;
@@ -160,6 +161,23 @@ switch($id)
 				$redirect = "http://localhost/siga/buscaraluno.php?id=8&deletou=1";
 				header("location:$redirect");	
 					
+			}
+			catch(PDOException $e)
+			{
+				echo $e->getMessage();
+
+			}
+		break;
+
+		case 9: // deletar area
+
+			try
+			{
+				$area->setIdarea($_GET['idarea']);
+				$area->deletar();
+
+				$redirect = "http://localhost/siga/cadastroareas.php?deletou=9";
+				header("location:$redirect");					
 			}
 			catch(PDOException $e)
 			{

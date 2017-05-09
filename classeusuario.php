@@ -184,6 +184,33 @@
 			
 		}
 		
+		public function mostrarum2()
+		{
+	
+			$conexao = new conexao();
+			
+			try
+			{	
+				$query = $conexao->conn->prepare("select u.idusuario, u.nome, rg, cpf, datanascimento, e.logradouro, e.numero, e.complemento, e. bairro, e.referencia, e.cidade, e.estado, e.cep,
+				idarea as area, email, telefone, u.senha, u.usuario, u.idpermissoes, u.idendereco from usuario as u
+				inner join endereco as e on u.idendereco = e.idendereco where idusuario = :idusuario;");
+				
+				$query->bindValue(":idusuario", $this->getIdusuario());
+				
+				$query->execute();
+
+				$r = $query->fetch();				
+
+				return $r;
+						
+			}
+			catch(PDOException $e)
+			{
+				echo $e->getMessage();
+			}
+			
+		}
+
 		public function mostrarum()
 		{
 	
@@ -199,9 +226,21 @@
 				
 				$query->execute();
 
-				$r = $query->fetch();	
+				$r = $query->fetch();
 
-				return $r;
+				$r2 = $this->mostrarum2();
+
+				if(empty($r))
+				{
+					$result = $r2;
+				}
+				else
+				{
+					$result = $r;
+				}
+							
+
+				return $result;
 						
 			}
 			catch(PDOException $e)
@@ -211,6 +250,30 @@
 			
 		}
 		
+		public function mostrartodos2()
+		{
+	
+			$conexao = new conexao();
+			
+			try
+			{	
+				$query = $conexao->conn->prepare("select u.idusuario, u.nome, rg, cpf, datanascimento, e.logradouro, e.numero, e.complemento, e. bairro, e.referencia, e.cidade, e.estado, e.cep,idarea as area, email, u.idpermissoes, u.usuario, telefone from usuario as u
+				inner join endereco as e on u.idendereco = e.idendereco where idarea is null;");
+				
+				$query->execute();
+
+				$r = $query->fetchAll();				
+
+				return $r;
+						
+			}
+			catch(PDOException $e)
+			{
+				echo $e->getMessage();
+			}
+			
+		} 
+
 		public function mostrartodos()
 		{
 	
@@ -224,9 +287,12 @@
 				
 				$query->execute();
 
-				$r = $query->fetchAll();	
+				$r = $query->fetchAll();
 
-				return $r;
+				$r2 = $this->mostrartodos2();
+				$result = array_merge($r, $r2);	
+
+				return $result;
 						
 			}
 			catch(PDOException $e)
@@ -324,6 +390,26 @@
 				$query = $conexao->conn->prepare("delete from usuario where idusuario = :idusuario;");
 				
 				$query->bindValue(":idusuario", $this->getIdusuario());
+				
+				$query->execute();						
+			}
+			catch(PDOException $e)
+			{
+				echo $e->getMessage();
+			}
+			
+		}
+
+		public function areanull()
+		{
+	
+			$conexao = new conexao();
+			
+			try
+			{	
+				$query = $conexao->conn->prepare("update usuario set idarea = null where idarea = :idarea;");
+				
+				$query->bindValue(":idarea", $this->getIdarea());
 				
 				$query->execute();						
 			}
