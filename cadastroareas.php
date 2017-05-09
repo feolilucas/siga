@@ -25,9 +25,7 @@ $r = $area->buscarAreas();
        
 
         <section class="container">
-          
-
-            <form class="form-horizontal" action="inserir.php?id=9" method="POST" data-toggle="validator">
+           <form class="form-horizontal" action="inserir.php?id=9" method="POST" data-toggle="validator">
 
               <div class="form-group panel-body">
 

@@ -121,7 +121,15 @@ $arraypermissoes = $permissoes->mostrar();
 											<li class="last"><a href="relatorioareas.php">Relatório Áreas</a></li>
 											<!--<li class="last"><a href="#">Relatório Y</a></li> -->
 										</ul> 
-									</li>									
+									</li>
+
+
+
+										<li class="last"><a href="cadastroareas.php">Áreas Técnicas</a></li>
+
+
+
+
 								</ul>
 							</li>
 
