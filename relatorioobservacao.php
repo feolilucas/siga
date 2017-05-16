@@ -2,7 +2,7 @@
 include "cabecalho.php";
 include "menu.php";
 
-if(($arraypermissoes['terapiaocupacional'] == 0))
+if(($arraypermissoes['terapiaocupacional'] == 0) and ($_SESSION['admin'] == 0))
 {
   echo '<script>location.href="index.php";</script>';
 

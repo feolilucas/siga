@@ -16,6 +16,7 @@
 		private $senha;
 		private $idusuario;
 		private $idarea;
+		private $administrador;
 		
 		public function getIdarea()
 		{
@@ -124,6 +125,16 @@
 		{
 			$this->senha = $senha;
 		}
+
+		public function getAdministrador()
+		{
+			return $this->administrador;
+		}
+		public function setAdministrador($administrador
+			)
+		{
+			$this->administrador = $administrador;
+		}
 		
 		
 		public function verificaUsuarioSenha()
@@ -159,8 +170,8 @@
 			try
 			{	
 				$query = $conexao->conn->prepare("insert into usuario(nome, rg, cpf, datanascimento, usuario, 
-				senha, idendereco, idarea, idpermissoes, email, telefone) values(:nome, :rg, :cpf, :datanascimento, :usuario, 
-				:senha, :idendereco, :idarea, :idpermissoes, :email, :telefone)");
+				senha, idendereco, idarea, idpermissoes, email, telefone, administrador) values(:nome, :rg, :cpf, :datanascimento, :usuario, 
+				:senha, :idendereco, :idarea, :idpermissoes, :email, :telefone, :administrador)");
 				
 				$query->bindValue(":nome", $this->getNome());
 				$query->bindValue(":rg", $this->getRg());
@@ -173,6 +184,7 @@
 				$query->bindValue(":idpermissoes", $this->getIdpermissoes());
 				$query->bindValue(":email", $this->getEmail());
 				$query->bindValue(":telefone", $this->getTelefone());
+				$query->bindValue(":administrador", $this->getAdministrador());
 				
 				$query->execute();		
 						
@@ -192,7 +204,7 @@
 			try
 			{	
 				$query = $conexao->conn->prepare("select u.idusuario, u.nome, rg, cpf, datanascimento, e.logradouro, e.numero, e.complemento, e. bairro, e.referencia, e.cidade, e.estado, e.cep,
-				idarea as area, email, telefone, u.senha, u.usuario, u.idpermissoes, u.idendereco from usuario as u
+				idarea as area, email, telefone, u.senha, u.usuario, u.idpermissoes, u.idendereco, u.administrador from usuario as u
 				inner join endereco as e on u.idendereco = e.idendereco where idusuario = :idusuario;");
 				
 				$query->bindValue(":idusuario", $this->getIdusuario());
@@ -219,7 +231,7 @@
 			try
 			{	
 				$query = $conexao->conn->prepare("select u.idusuario, u.nome, rg, cpf, datanascimento, e.logradouro, e.numero, e.complemento, e. bairro, e.referencia, e.cidade, e.estado, e.cep,
-				a.nome as area, email, telefone, u.senha, u.usuario, u.idpermissoes, u.idendereco from usuario as u inner join area as a on u.idarea = a.idarea 
+				a.nome as area, email, telefone, u.senha, u.usuario, u.idpermissoes, u.idendereco, u.administrador from usuario as u inner join area as a on u.idarea = a.idarea 
 				inner join endereco as e on u.idendereco = e.idendereco where idusuario = :idusuario;");
 				
 				$query->bindValue(":idusuario", $this->getIdusuario());
@@ -257,7 +269,7 @@
 			
 			try
 			{	
-				$query = $conexao->conn->prepare("select u.idusuario, u.nome, rg, cpf, datanascimento, e.logradouro, e.numero, e.complemento, e. bairro, e.referencia, e.cidade, e.estado, e.cep,idarea as area, email, u.idpermissoes, u.usuario, telefone from usuario as u
+				$query = $conexao->conn->prepare("select u.idusuario, u.nome, rg, cpf, datanascimento, e.logradouro, e.numero, e.complemento, e. bairro, e.referencia, e.cidade, e.estado, e.cep,idarea as area, email, u.idpermissoes, u.usuario, u.administrador, telefone from usuario as u
 				inner join endereco as e on u.idendereco = e.idendereco where idarea is null;");
 				
 				$query->execute();
@@ -282,7 +294,7 @@
 			try
 			{	
 				$query = $conexao->conn->prepare("select u.idusuario, u.nome, rg, cpf, datanascimento, e.logradouro, e.numero, e.complemento, e. bairro, e.referencia, e.cidade, e.estado, e.cep,
-				a.nome as area, email, u.idpermissoes, u.usuario, telefone from usuario as u inner join area as a on u.idarea = a.idarea 
+				a.nome as area, email, u.idpermissoes, u.usuario, u.administrador, telefone from usuario as u inner join area as a on u.idarea = a.idarea 
 				inner join endereco as e on u.idendereco = e.idendereco;");
 				
 				$query->execute();
@@ -357,7 +369,7 @@
 			try
 			{	
 				$query = $conexao->conn->prepare("update usuario set nome = :nome, rg = :rg, cpf = :cpf, datanascimento =  :datanascimento,
-				email = :email, telefone = :telefone, idarea = :idarea, senha = :senha, usuario = :usuario where idusuario = :idusuario");
+				email = :email, telefone = :telefone, administrador = :administrador, idarea = :idarea, senha = :senha, usuario = :usuario where idusuario = :idusuario");
 				
 				$query->bindValue(":idusuario", $this->getIdusuario());
 				$query->bindValue(":nome", $this->getNome());
@@ -369,6 +381,7 @@
 				$query->bindValue(":idarea", $this->getIdarea());
 				$query->bindValue(":senha", $this->getSenha());
 				$query->bindValue(":usuario", $this->getUsuario());
+				$query->bindValue(":administrador", $this->getAdministrador());
 
 				$query->execute();
 						

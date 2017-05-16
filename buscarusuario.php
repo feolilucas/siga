@@ -2,9 +2,7 @@
 include "cabecalho.php";
 include "menu.php";
 
-if(($arraypermissoes['administrativo'] == 0) or ($arraypermissoes['planoterapeutico'] ==0) or ($arraypermissoes['psicologico'] == 0) or
-	($arraypermissoes['neurologico'] == 0) or ($arraypermissoes['fonoaudiologico'] == 0) or ($arraypermissoes['terapiaocupacional'] == 0) or 
-	($arraypermissoes['pedagogico'] == 0) or ($arraypermissoes['social'] == 0))
+if(($_SESSION['admin'] == 0))
 {
 	echo '<script>location.href="index.php";</script>';
 }

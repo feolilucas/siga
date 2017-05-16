@@ -82,9 +82,7 @@ $arraypermissoes = $permissoes->mostrar();
 
 						<?php
 
-						if(($arraypermissoes['administrativo'] == 1) and ($arraypermissoes['planoterapeutico'] == 1) and ($arraypermissoes['psicologico'] == 1) and
-							($arraypermissoes['neurologico'] == 1) and ($arraypermissoes['fonoaudiologico'] == 1) and ($arraypermissoes['terapiaocupacional'] == 1) and 
-							($arraypermissoes['pedagogico'] == 1) and ($arraypermissoes['social'] == 1))
+						if(($_SESSION['admin'] == 1))
 						{
 							?>
 							<li class="dropdown">
@@ -99,7 +97,7 @@ $arraypermissoes = $permissoes->mostrar();
 
 							<?php
 						}
-						if(($arraypermissoes['administrativo'] == 1))
+						if(($arraypermissoes['administrativo'] == 1) or ($_SESSION['admin'] == 1))
 						{
 							?>
 							<li class="dropdown">
@@ -135,7 +133,7 @@ $arraypermissoes = $permissoes->mostrar();
 
 							<?php
 						}
-						if(($arraypermissoes['planoterapeutico'] == 1))
+						if(($arraypermissoes['planoterapeutico'] == 1) or ($_SESSION['admin'] == 1))
 						{
 							?>
 
@@ -156,7 +154,7 @@ $arraypermissoes = $permissoes->mostrar();
 
 							<?php
 						}
-						if(($arraypermissoes['psicologico'] == 1))
+						if(($arraypermissoes['psicologico'] == 1) or ($_SESSION['admin'] == 1))
 						{
 							?>
 
@@ -199,7 +197,7 @@ $arraypermissoes = $permissoes->mostrar();
 
 								<?php
 							}
-							if(($arraypermissoes['neurologico'] == 1))
+							if(($arraypermissoes['neurologico'] == 1) or ($_SESSION['admin'] == 1))
 							{
 								?>
 								<li class="dropdown">
@@ -217,7 +215,7 @@ $arraypermissoes = $permissoes->mostrar();
 								</li>
 								<?php
 							}
-							if(($arraypermissoes['fonoaudiologico'] == 1))
+							if(($arraypermissoes['fonoaudiologico'] == 1) or ($_SESSION['admin'] == 1))
 							{
 								?>
 
@@ -252,7 +250,7 @@ $arraypermissoes = $permissoes->mostrar();
 								</li>
 								<?php
 							}
-							if(($arraypermissoes['terapiaocupacional'] == 1))
+							if(($arraypermissoes['terapiaocupacional'] == 1) or ($_SESSION['admin'] == 1))
 							{
 								?>
 
@@ -272,7 +270,7 @@ $arraypermissoes = $permissoes->mostrar();
 
 								<?php
 							}
-							if(($arraypermissoes['pedagogico'] == 1))
+							if(($arraypermissoes['pedagogico'] == 1) or ($_SESSION['admin'] == 1))
 							{
 								?>
 
@@ -292,7 +290,7 @@ $arraypermissoes = $permissoes->mostrar();
 
 								<?php
 							}
-							if(($arraypermissoes['social'] == 1))
+							if(($arraypermissoes['social'] == 1) or ($_SESSION['admin'] == 1))
 							{
 								?>
 

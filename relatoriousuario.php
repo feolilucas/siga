@@ -2,9 +2,7 @@
 include "cabecalho.php";
 include "menu.php";
 
-if(($arraypermissoes['administrativo'] == 0) or ($arraypermissoes['planoterapeutico'] ==0) or ($arraypermissoes['psicologico'] == 0) or
-  ($arraypermissoes['neurologico'] == 0) or ($arraypermissoes['fonoaudiologico'] == 0) or ($arraypermissoes['terapiaocupacional'] == 0) or 
-  ($arraypermissoes['pedagogico'] == 0) or ($arraypermissoes['social'] == 0))
+if(($_SESSION['admin'] == 0))
 {
   echo '<script>location.href="index.php";</script>';
 }
@@ -27,8 +25,8 @@ $r = $usuario->mostrartodos();
 			<table style= "white-space: nowrap;" class="table table-bordered">
 		    <thead>
 		    	<tr>
-		    		<th style="text-align: center" colspan="3">DADOS DO USUÁRIO</th>
-		    		<th style="text-align: center" colspan="8">PERMISSÕES</th>
+		    		<th style="text-align: center" colspan="4">DADOS DO USUÁRIO</th>
+		    		<th style="text-align: center" colspan="9">PERMISSÕES</th>
 		    	</tr>
 		      
 		    </thead>
@@ -37,6 +35,7 @@ $r = $usuario->mostrartodos();
 		        <td style="text-align: center;" title="Nome"><b>NOME</b></td>
 		        <td style="text-align: center;" title="Usuário"><b>USUÁRIO</b></td>
 		        <td style="text-align: center;" title="Área"><b>ÁREA</b></td>
+		        <td style="text-align: center;" title="Área"><b>ADMIN</b></td>
 		        <td style="text-align: center;" title="Administrativo"><b>ADM</b></td>
 		        <td style="text-align: center;" title="Planoterapêutico"><b>PT</b></td>
 		        <td style="text-align: center;" title="Psicológico"><b>PSC</b></td>
@@ -56,6 +55,24 @@ $r = $usuario->mostrartodos();
 		      			echo "<td>".$linha['nome']."</td>";
 		      			echo "<td>".$linha['usuario']."</td>";
 		      			echo "<td>".$linha['area']."</td>";
+
+	      			if($linha['administrador'] == 1)
+	      			{
+	      				echo "<td>Sim</td>";
+	      				echo "<td style='text-align: center'><span class='glyphicon glyphicon-ok'></span></td>";
+						echo "<td style='text-align: center'><span class='glyphicon glyphicon-ok'></span></td>";
+						echo "<td style='text-align: center'><span class='glyphicon glyphicon-ok'></span></td>";
+						echo "<td style='text-align: center'><span class='glyphicon glyphicon-ok'></span></td>";
+						echo "<td style='text-align: center'><span class='glyphicon glyphicon-ok'></span></td>";
+						echo "<td style='text-align: center'><span class='glyphicon glyphicon-ok'></span></td>";
+						echo "<td style='text-align: center'><span class='glyphicon glyphicon-ok'></span></td>";
+						echo "<td style='text-align: center'><span class='glyphicon glyphicon-ok'></span></td>";
+					}
+	      			else
+	      			{
+	      				echo "<td>Não</td>";
+		      			
+		      			
 
 		      			if($resp['administrativo'] == 1)
 		      			{
@@ -128,6 +145,7 @@ $r = $usuario->mostrartodos();
 		      			{
 		      				echo "<td style='text-align: center'><span class='glyphicon glyphicon-remove'></span></td>";
 		      			}
+		      		}
 
 		      			echo "</tr>";
 		      		}

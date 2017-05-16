@@ -9,6 +9,7 @@ if((!isset ($_SESSION['login']) == true) and (!isset ($_SESSION['senha']) == tru
 	unset ($_SESSION['idUsuario']);
 	unset ($_SESSION['nome']);
 	unset ($_SESSION['idpermissoes']);
+	unset ($_SESSION['admin']);
 	header('location:telalogin.php');	
 }
 ?>

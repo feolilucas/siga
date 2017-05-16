@@ -2,7 +2,7 @@
 include "cabecalho.php";
 include "menu.php";
 
-if(($arraypermissoes['planoterapeutico'] == 0))
+if(($arraypermissoes['planoterapeutico'] == 0) and ($_SESSION['admin'] == 0))
 {
   echo '<script>location.href="index.php";</script>';
 }
@@ -34,14 +34,14 @@ $r2 = $aluno->mostrarum();
     <div>
       <!-- Nav tabs -->
       <ul class="nav nav-tabs " role="tablist">
-        <li role="presentation" class="active"><a href="#dadosdeficiencia" aria-controls="dadosdeficiencia" role="tab" data-toggle="tab">Dados Deficiência</a></li>
-        <li role="presentation"><a href="#servicosocial" aria-controls="servicosocial" role="tab" data-toggle="tab">Serv. Social</a></li>
-        <li role="presentation"><a href="#fonoaudiologia" aria-controls="fonoaudiologia" role="tab" data-toggle="tab">Fonoaudiologia</a></li>
-        <li role="presentation"><a href="#psicologia" aria-controls="psicologia" role="tab" data-toggle="tab">Psicologia</a></li>
-        <li role="presentation"><a href="#terapeutaocupacional" aria-controls="terapeutaocupacional" role="tab" data-toggle="tab">T.O.</a></li>
-        <li role="presentation"><a href="#fisioterapia" aria-controls="fisioterapia" role="tab" data-toggle="tab">Fisioterapia</a></li>
-        <li role="presentation"><a href="#nutricionista" aria-controls="nutricionista" role="tab" data-toggle="tab">Nutricionista</a></li>
-        <li role="presentation"><a href="#dentista" aria-controls="dentista" role="tab" data-toggle="tab">Dentista</a></li>
+        <li role="presentation" class="active"><a href="#dadosdeficiencia" id="tabdados" aria-controls="dadosdeficiencia" role="tab" data-toggle="tab">Dados Deficiência</a></li>
+        <li role="presentation"><a href="#servicosocial" aria-controls="servicosocial" id="tabsocial" role="tab" data-toggle="tab">Serv. Social</a></li>
+        <li role="presentation"><a href="#fonoaudiologia" aria-controls="fonoaudiologia" id="tabfono" role="tab" data-toggle="tab">Fonoaudiologia</a></li>
+        <li role="presentation"><a href="#psicologia" aria-controls="psicologia" role="tab" id="tabpsicologia" data-toggle="tab">Psicologia</a></li>
+        <li role="presentation"><a href="#terapeutaocupacional" aria-controls="terapeutaocupacional" id="tabto" role="tab" data-toggle="tab">T.O.</a></li>
+        <li role="presentation"><a href="#fisioterapia" aria-controls="fisioterapia" id="tabfisioterapia" role="tab" data-toggle="tab">Fisioterapia</a></li>
+        <li role="presentation"><a href="#nutricionista" aria-controls="nutricionista" id="tabnutricionista" role="tab" data-toggle="tab">Nutricionista</a></li>
+        <li role="presentation"><a href="#dentista" aria-controls="dentista" role="tab" id="tabdentista" data-toggle="tab">Dentista</a></li>
       </ul>
 
       <!-- Tab panes -->
@@ -106,13 +106,14 @@ $r2 = $aluno->mostrarum();
 
                 <!-- Button (Double) -->
                 <br><br><br>
-                <div class="form-group">
-                  <label class="col-md-4 control-label" for="idConfirmar"></label>
-                  <div class="col-md-8">
-                    <button id="idConfirmar" name="idConfirmar" class="btn btn-success" type="submit">Confirmar</button>
-                    <button type="reset" id="idCancelar" name="idCancelar" class="btn btn-danger" onclick="location.href='http://localhost/siga/';">Cancelar</button>
-                  </div>
-                </div>
+                      <div class="form-group">
+                        
+                        <div align="center" class="col-md-12">
+
+                          <a name="proxima" class="btn btn-info" onClick="tabsocial();">Próxima</a>                        
+                        </div>                                     
+                    </div>
+              
               </div>
 
             </div>
@@ -144,13 +145,13 @@ $r2 = $aluno->mostrarum();
               </fieldset>
               <!-- Button (Double) -->
               <br><br><br>
-              <div class="form-group">
-                <label class="col-md-4 control-label" for="idConfirmar"></label>
-                <div class="col-md-8">
-                  <button id="idConfirmar" name="idConfirmar" class="btn btn-success" type="submit">Confirmar</button>
-                  <button id="idCancelar" name="idCancelar" class="btn btn-danger" onclick="location.href='http://localhost/siga/';">Cancelar</button>
-                </div>
-              </div>
+                      <div class="form-group">
+                        
+                        <div align="center" class="col-md-12">
+                        <a name="proxima" class="btn btn-info" onClick="tabdados();">Anterior</a> 
+                          <a name="proxima" class="btn btn-info" onClick="tabfono();">Próxima</a>                        
+                        </div>                                     
+                    </div>
             </div>
           </div>
         </div>
@@ -176,7 +177,14 @@ $r2 = $aluno->mostrarum();
                 </div>
               </div>
             </fieldset>
-                      <?php include "botoesform.php"; ?>
+                       <br><br><br>
+                      <div class="form-group">
+                        
+                        <div align="center" class="col-md-12">
+                        <a name="proxima" class="btn btn-info" onClick="tabsocial();">Anterior</a> 
+                          <a name="proxima" class="btn btn-info" onClick="tabpsicologia();">Próxima</a>                        
+                        </div>                                     
+                    </div>
 
           </div>
         </div>
@@ -203,7 +211,14 @@ $r2 = $aluno->mostrarum();
               </div>
             </div>
           </fieldset>
-                     <?php include "botoesform.php"; ?>
+                      <br><br><br>
+                      <div class="form-group">
+                        
+                        <div align="center" class="col-md-12">
+                        <a name="proxima" class="btn btn-info" onClick="tabfono();">Anterior</a> 
+                          <a name="proxima" class="btn btn-info" onClick="tabto();">Próxima</a>                        
+                        </div>                                     
+                    </div>
 
         </div>
       </div>
@@ -230,7 +245,14 @@ $r2 = $aluno->mostrarum();
             </div>
           </div>
         </fieldset>
-                   <?php include "botoesform.php"; ?>
+                    <br><br><br>
+                      <div class="form-group">
+                        
+                        <div align="center" class="col-md-12">
+                        <a name="proxima" class="btn btn-info" onClick="tabpsicologia();">Anterior</a> 
+                          <a name="proxima" class="btn btn-info" onClick="tabfisioterapia();">Próxima</a>                        
+                        </div>                                     
+                    </div>
 
       </div>
     </div>
@@ -257,7 +279,14 @@ $r2 = $aluno->mostrarum();
           </div>
         </div>
       </fieldset>
-                  <?php include "botoesform.php"; ?>
+                  <br><br><br>
+                      <div class="form-group">
+                        
+                        <div align="center" class="col-md-12">
+                        <a name="proxima" class="btn btn-info" onClick="tabto();">Anterior</a> 
+                          <a name="proxima" class="btn btn-info" onClick="tabnutricionista();">Próxima</a>                        
+                        </div>                                     
+                    </div>
 
     </div>
   </div>
@@ -284,7 +313,14 @@ $r2 = $aluno->mostrarum();
         </div>
       </div>
     </fieldset>
-               <?php include "botoesform.php"; ?>
+                <br><br><br>
+                      <div class="form-group">
+                        
+                        <div align="center" class="col-md-12">
+                        <a name="proxima" class="btn btn-info" onClick="tabfisioterapia();">Anterior</a> 
+                        <a name="proxima" class="btn btn-info" onClick="tabdentista();">Próxima</a>                        
+                        </div>                                     
+                    </div>
 
   </div>
 </div>
@@ -311,7 +347,19 @@ $r2 = $aluno->mostrarum();
         </div>
       </div>
     </fieldset>
-                <?php include "botoesform.php"; ?>
+               <br><br><br>
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="idConfirmar"></label>
+                  <div class="col-md-8">
+                  <a name="proxima" class="btn btn-info" onClick="tabnutricionista();">Anterior</a>
+                    <button id="idConfirmar" name="idConfirmar" class="btn btn-success" type="submit">Confirmar</button>
+                    
+                    <button type="reset" id="idCancelar" name="idCancelar" class="btn btn-danger" onclick=
+                    <?php echo "\"location.href="."'".$servidor."/siga';"."\">"; ?>
+                    Cancelar
+                    </button>
+                </div>
+                </div>
 
   </div>
 </div>
@@ -324,7 +372,48 @@ $r2 = $aluno->mostrarum();
 
 
 
+<script>
 
+  function tabdados()
+  {
+    $('#tabdados').click();
+  }
+
+  function tabsocial()
+  {
+    $('#tabsocial').click();
+  }
+
+  function tabfono()
+  {
+    $('#tabfono').click();
+  }
+
+  function tabpsicologia()
+  {
+    $('#tabpsicologia').click();
+  }
+
+  function tabto()
+  {
+    $('#tabto').click();
+  }
+
+  function tabfisioterapia()
+  {
+    $('#tabfisioterapia').click();
+  }
+
+  function tabnutricionista()
+  {
+    $('#tabnutricionista').click();
+  }
+
+  function tabdentista()
+  {
+    $('#tabdentista').click();
+  }
+</script>
 
 
 

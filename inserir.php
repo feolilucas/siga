@@ -44,6 +44,7 @@ switch($id)
 			$usuario->setDatanascimento($_POST['datanascimento']);
 			$usuario->setTelefone($_POST['telefone']);
 			$usuario->setEmail($_POST['email']);
+			$usuario->setAdministrador($_POST['administrador']);
 			$endereco->setComplemento($_POST['complemento']);
 			$endereco->setNumero($_POST['numero']);
 			$endereco->setLogradouro($_POST['logradouro']);

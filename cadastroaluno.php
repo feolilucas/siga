@@ -2,7 +2,7 @@
 include "cabecalho.php";
 include "menu.php";
 
-if(($arraypermissoes['administrativo'] == 0))
+if(($arraypermissoes['administrativo'] == 0) and ($_SESSION['admin'] == 0))
 {
     echo '<script>location.href="index.php";</script>';
 }
@@ -20,9 +20,9 @@ $r = $area->buscarAreas();
     <div>
       <!-- Nav tabs -->
       <ul class="nav nav-tabs " role="tablist">
-        <li role="presentation" class="active"><a href="#dados_pessoais" aria-controls="dados_pessoais" role="tab" data-toggle="tab">Dados Pessoais</a></li>
+        <li role="presentation" class="active"><a href="#dados_pessoais" id="tabdadospessoais" aria-controls="dados_pessoais" role="tab" data-toggle="tab">Dados Pessoais</a></li>
 
-        <li role="presentation"><a href="#endereco" aria-controls="endereco" role="tab" data-toggle="tab">Endereço</a></li>
+        <li role="presentation"><a href="#endereco" aria-controls="endereco" id="tabendereco" role="tab" data-toggle="tab">Endereço</a></li>
 
       </ul>
 
@@ -108,11 +108,16 @@ $r = $area->buscarAreas();
                       </div>
                     </div>
                   </div></fieldset>
-                  <?php include "botoesform.php"; ?>
+                  
+                    <br><br><br>
+                      <div class="form-group">
+                        
+                        <div align="center" class="col-md-12">
 
-
-
-
+                          <a name="proxima" class="btn btn-info" onClick="tabendereco();">Próxima</a>                        
+                        </div>                                     
+                    </div>
+                    
                 </div>
               </div>
             </div>
@@ -174,7 +179,19 @@ $r = $area->buscarAreas();
                     </div>
                   </fieldset>
 
-              <?php include "botoesform.php"; ?>
+              <br><br><br>
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="idConfirmar"></label>
+                  <div class="col-md-8">
+                  <a name="proxima" class="btn btn-info" onClick="tabdadospessoais();">Anterior</a>
+                    <button id="idConfirmar" name="idConfirmar" class="btn btn-success" type="submit">Confirmar</button>
+                    
+                    <button type="reset" id="idCancelar" name="idCancelar" class="btn btn-danger" onclick=
+                    <?php echo "\"location.href="."'".$servidor."/siga';"."\">"; ?>
+                    Cancelar
+                    </button>
+                </div>
+                </div>
 
 
                 </div>
@@ -195,3 +212,17 @@ $r = $area->buscarAreas();
   <?php  
   include "rodape.php";
   ?>
+
+<script>
+
+  function tabendereco()
+  {
+    $('#tabendereco').click();
+  }
+
+  function tabdadospessoais()
+  {
+    $('#tabdadospessoais').click();
+  }
+
+</script>

@@ -2,9 +2,7 @@
 include "cabecalho.php";
 include "menu.php";
 
-if(($arraypermissoes['administrativo'] == 0) or ($arraypermissoes['planoterapeutico'] ==0) or ($arraypermissoes['psicologico'] == 0) or
-  ($arraypermissoes['neurologico'] == 0) or ($arraypermissoes['fonoaudiologico'] == 0) or ($arraypermissoes['terapiaocupacional'] == 0) or 
-  ($arraypermissoes['pedagogico'] == 0) or ($arraypermissoes['social'] == 0))
+if(($_SESSION['admin'] == 0))
 {
   echo '<script>location.href="index.php";</script>';
 }
@@ -38,14 +36,14 @@ $resppermissoes = $permissoes->mostrar();
 
     <div>
       <!-- Nav tabs -->
-      <ul class="nav nav-tabs " role="tablist">
-        <li role="presentation" class="active"><a href="#dados_pessoais" aria-controls="dados_pessoais" role="tab" data-toggle="tab">Dados Pessoais</a></li>
+       <ul class="nav nav-tabs " role="tablist">
+        <li role="presentation" class="active"><a href="#dados_pessoais" id="tabdadospessoais" aria-controls="dados_pessoais" role="tab" data-toggle="tab">Dados Pessoais</a></li>
 
-        <li role="presentation"><a href="#endereco" aria-controls="endereco" role="tab" data-toggle="tab">Endereço</a></li>
+        <li role="presentation"><a href="#endereco" aria-controls="endereco" id="tabendereco" role="tab" data-toggle="tab">Endereço</a></li>
 
-        <li role="presentation"><a href="#dados_de_acesso" aria-controls="dados_de_acesso" role="tab" data-toggle="tab">Dados de Acesso</a></li>
+        <li role="presentation"><a href="#dados_de_acesso" aria-controls="dados_de_acesso" id="tabdadosacesso" role="tab" data-toggle="tab">Dados de Acesso</a></li>
 
-        <li role="presentation"><a href="#permissoes" aria-controls="permissoes" role="tab" data-toggle="tab">Permissões</a></li>
+        <li role="presentation"><a href="#permissoes" aria-controls="permissoes" id="tabpermissoes" role="tab" data-toggle="tab">Permissões</a></li>
       </ul>
 
       <!-- Tab panes -->
@@ -103,7 +101,14 @@ $resppermissoes = $permissoes->mostrar();
 
                   </div>
                 </fieldset>
-                         <?php include "botoesform.php"; ?>
+                          <br><br><br>
+                      <div class="form-group">
+                        
+                        <div align="center" class="col-md-12">
+
+                          <a name="proxima" class="btn btn-info" onClick="tabendereco();">Próxima</a>                        
+                        </div>                                     
+                    </div>
 
               </div>
               
@@ -168,8 +173,15 @@ $resppermissoes = $permissoes->mostrar();
                   </div>
                 </fieldset>
 
-                          <?php include "botoesform.php"; ?>
+                          <br><br><br>
+                      <div class="form-group">
+                        
+                        <div align="center" class="col-md-12">
 
+                          <a name="proxima" class="btn btn-info" onClick="tabdadospessoais();">Anterior</a>
+                          <a name="proxima" class="btn btn-info" onClick="tabdadosacesso();">Próxima</a>                        
+                        </div>                                     
+                    </div>
               </div>
               
             </div>
@@ -207,7 +219,15 @@ $resppermissoes = $permissoes->mostrar();
                       </div>
                     </div>
                   </fieldset>
-                            <?php include "botoesform.php"; ?>
+                            <br><br><br>
+                      <div class="form-group">
+                        
+                        <div align="center" class="col-md-12">
+
+                          <a name="proxima" class="btn btn-info" onClick="tabendereco();">Anterior</a>
+                          <a name="proxima" class="btn btn-info" onClick="tabpermissoes();">Próxima</a>                        
+                        </div>                                     
+                    </div>
 
                 </div>
                 
@@ -242,6 +262,29 @@ $resppermissoes = $permissoes->mostrar();
                           }
                           ?>
                         </select>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-5 form-group">
+                        <label for="referencia" class="control-label">Administrador</label>
+                        <p><br>
+                        <?php 
+                            if($r['administrador'] == 1)
+                            {
+                              ?>
+                                <input type="radio" checked name="administrador" value="1"/>Sim</input>
+                                <input type="radio" name="administrador" value="0"/>Não</input>
+                              <?php
+                            }
+                            else if($r['administrador'] == 0)
+                            {
+                              ?>
+                                <input type="radio" name="administrador" value="1"/>Sim</input>
+                                <input type="radio" checked name="administrador" value="0"/>Não</input>
+                              <?php
+                            }
+                        ?>
+                        </p>
                       </div>
                     </div>
                   </fieldset>
@@ -399,7 +442,19 @@ $resppermissoes = $permissoes->mostrar();
                     </div>
                   </fieldset>
 
-                           <?php include "botoesform.php"; ?>
+                           <br><br><br>
+                                  <div class="form-group">
+                                    <label class="col-md-4 control-label" for="idConfirmar"></label>
+                                    <div class="col-md-8">
+                                    <a name="proxima" class="btn btn-info" onClick="tabdadosacesso();">Anterior</a>
+                                      <button id="idConfirmar" name="idConfirmar" class="btn btn-success" type="submit">Confirmar</button>
+                                      
+                                      <button type="reset" id="idCancelar" name="idCancelar" class="btn btn-danger" onclick=
+                                      <?php echo "\"location.href="."'".$servidor."/siga';"."\">"; ?>
+                                      Cancelar
+                                      </button>
+                                  </div>
+                                  </div>
 
 
                   
@@ -421,3 +476,26 @@ $resppermissoes = $permissoes->mostrar();
   <?php  
   include "rodape.php";
   ?>
+<script>
+
+  function tabendereco()
+  {
+    $('#tabendereco').click();
+  }
+
+  function tabdadospessoais()
+  {
+    $('#tabdadospessoais').click();
+  }
+
+   function tabdadosacesso()
+  {
+    $('#tabdadosacesso').click();
+  }
+
+   function tabpermissoes()
+  {
+    $('#tabpermissoes').click();
+  }
+
+</script>
