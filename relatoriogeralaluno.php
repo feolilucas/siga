@@ -134,7 +134,7 @@ $r = $aluno->mostrartodos();
 			<div id="chart_div" style="width: 90%; height: 500px;"></div>
 			<div id="barras" style="width: 90%; height: 500px;"></div>
 			<div align="center">
-				<button class="btn btn-info" onclick="window.print();">Imprimir</button><br><br><br>
+				<button class="btn btn-success" onclick="window.print();">Imprimir</button><br><br><br>
 			</div>
 		</div>
 
