@@ -78,17 +78,16 @@ $r = $usuario->mostrartodos();
 
 															
 															echo "<td class='text-center'>
-																<p>
+																<div style='padding-left: 3px;' class='row'>
 																	<a class='btn btn-success btn-xs' href='#' onClick='imprimir(".$linha['idusuario'].");'>
 																<span class='glyphicon glyphicon-print'></span> Imprimir</a>
-																</p>		
-															<p>
+																
 															<a class='btn btn-info btn-xs' href='alterarusuario.php?id=".$linha['idusuario']."'>
 																<span class='glyphicon glyphicon-edit'></span> Alterar</a>
 
 																<a class='btn btn-danger btn-xs' onClick='deletarusuario(1,".$linha['idusuario'].");'>
 																	<span class='glyphicon glyphicon-remove'></span> Deletar</a>
-															</p>
+															</div>
 																</td>";													
 																															
 																echo "</tr>";
@@ -178,18 +177,18 @@ $r = $usuario->mostrartodos();
 
 				<table border="1" cellpadding="5">
 					<thead>
-						<th style="text-align: center" colspan="8">PERMISSÕES</th>
+						<th style="text-align: center" colspan="5">PERMISSÕES</th>
 					</thead>					
 					<tbody>
 					<tr>					 
 					        <td style="text-align: center;" ><b>Administrativo</b></td>
 					        <td style="text-align: center;" ><b>Plano Terapêutico</b></td>
 					        <td style="text-align: center;" ><b>Psicológico</b></td>
-					        <td style="text-align: center;" ><b>Neurológico</b></td>
-					        <td style="text-align: center;" ><b>Fonoaudiológico</b></td>
+					   <!-- <td style="text-align: center;" ><b>Neurológico</b></td>
+					        <td style="text-align: center;" ><b>Fonoaudiológico</b></td> -->
 					        <td style="text-align: center;" ><b>Terapia Ocupacional</b></td>
 					        <td style="text-align: center;" ><b>Pedagogia</b></td>
-					        <td style="text-align: center;" ><b>Social</b></td>		     
+					     <!--   <td style="text-align: center;" ><b>Social</b></td>	-->	     
 					</tr>
 					<tr>
 					<?php
@@ -200,9 +199,9 @@ $r = $usuario->mostrartodos();
 							echo "<td style='text-align: center'>Sim</td>";
 							echo "<td style='text-align: center'>Sim</td>";
 							echo "<td style='text-align: center'>Sim</td>";
-							echo "<td style='text-align: center'>Sim</td>";
-							echo "<td style='text-align: center'>Sim</td>";
-							echo "<td style='text-align: center'>Sim</td>";
+							//echo "<td style='text-align: center'>Sim</td>";
+							//echo "<td style='text-align: center'>Sim</td>";
+							//echo "<td style='text-align: center'>Sim</td>";
 						}
 						
 		      			else
@@ -235,6 +234,7 @@ $r = $usuario->mostrartodos();
 			      			{
 			      				echo "<td style='text-align: center'>Não</td>";
 			      			}
+			      			/*
 			      			if($resp['neurologico'] == 1)
 			      			{
 			      				echo "<td style='text-align: center'>Sim</td>";													
@@ -243,6 +243,7 @@ $r = $usuario->mostrartodos();
 			      			{
 			      				echo "<td style='text-align: center'>Não</td>";
 			      			}
+			      			
 			      			if($resp['fonoaudiologico'] == 1)
 			      			{
 			      				echo "<td style='text-align: center'>Sim</td>";													
@@ -251,6 +252,7 @@ $r = $usuario->mostrartodos();
 			      			{
 			      				echo "<td style='text-align: center'>Não</td>";
 			      			}
+			      			*/
 			      			if($resp['terapiaocupacional'] == 1)
 			      			{
 			      				echo "<td style='text-align: center'>Sim</td>";													
@@ -267,6 +269,7 @@ $r = $usuario->mostrartodos();
 			      			{
 			      				echo "<td style='text-align: center'>Não</td>";
 			      			}
+			      			/*
 			      			if($resp['social'] == 1)
 			      			{
 			      				echo "<td style='text-align: center'>Sim</td>";													
@@ -274,7 +277,7 @@ $r = $usuario->mostrartodos();
 			      			else
 			      			{
 			      				echo "<td style='text-align: center'>Não</td>";
-			      			}
+			      			}*/
 			      		}
 			      		?>
 			      		</tr>

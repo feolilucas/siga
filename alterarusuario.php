@@ -349,45 +349,7 @@ $resppermissoes = $permissoes->mostrar();
                           ?>
 
                           <?php
-                          if($resppermissoes['neurologico'] == 1)
-                          {
-                            ?>  
-                            <p><input checked="" type="checkbox" name="neurologico" value="1">Neurológico</p>
-
-                            <?php
-                          }
-                          else
-                          {
-                            ?>
-                            <p><input type="checkbox" name="neurologico" value="1">Neurológico</p>
-
-                            <?php
-                          }
-                          ?> 
-                          
-                        </div>
-
-                        <div class="checkbox form-group col-md-6">
-
-                          <?php
-                          if($resppermissoes['fonoaudiologico'] == 1)
-                          {
-                            ?>  
-                            <p><input checked type="checkbox" name="fonoaudiologico" value="1">Fonoaudiológico</p>
-
-                            <?php
-                          }
-                          else
-                          {
-                            ?>
-                            <p><input type="checkbox" name="fonoaudiologico" value="1">Fonoaudiológico</p>
-
-                            <?php
-                          }
-                          ?> 
-
-                          <?php
-                          if($resppermissoes['terapiaocupacional'] == 1)
+                             if($resppermissoes['terapiaocupacional'] == 1)
                           {
                             ?>  
                             <p><input checked type="checkbox" name="terapiaocupacional" value="1">Terapia Ocupacional</p>
@@ -417,6 +379,46 @@ $resppermissoes = $permissoes->mostrar();
 
                             <?php
                           }
+                          ?> 
+                          
+                        </div>
+
+                          <!-- div ta invisivel por causa do display: none -->
+                        <div style="display: none;" class="checkbox form-group col-md-6">
+
+                          <?php
+                          if($resppermissoes['fonoaudiologico'] == 1)
+                          {
+                            ?>  
+                            <p><input checked type="checkbox" name="fonoaudiologico" value="1">Fonoaudiológico</p>
+
+                            <?php
+                          }
+                          else
+                          {
+                            ?>
+                            <p><input type="checkbox" name="fonoaudiologico" value="1">Fonoaudiológico</p>
+
+                            <?php
+                          }
+                          ?> 
+
+                          <?php
+                            if($resppermissoes['neurologico'] == 1)
+                          {
+                            ?>  
+                            <p><input checked="" type="checkbox" name="neurologico" value="1">Neurológico</p>
+
+                            <?php
+                          }
+                          else
+                          {
+                            ?>
+                            <p><input type="checkbox" name="neurologico" value="1">Neurológico</p>
+
+                            <?php
+                          }
+                         
                           ?> 
                           
                           <?php

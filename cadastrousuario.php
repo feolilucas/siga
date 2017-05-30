@@ -273,20 +273,25 @@ $r = $area->buscarAreas();
                               <input type="checkbox" name="psicologico" value="1">
                               Psicológico</p>
                               <p>
-                                <input type="checkbox" name="neurologico" value="1">
-                                Neurológico</p>
+                                <input type="checkbox" name="terapiaocupacional" value="1">
+                                Terapia Ocupacional</p>
+                                <p>
+                                      <input type="checkbox" name="pedagogico" value="1">
+                                      Pedagógico</p>
+                                      <p>
+                              
                               </div>
-                              <div class="checkbox form-group col-md-6">
+
+                              <!-- div ta invisivel por causa do display: none -->
+                              <div style="display: none;" class="checkbox form-group col-md-6">
                                 <p>
                                   <input type="checkbox" name="fonoaudiologico" value="1">
                                   Fonoaudiológico</p>
                                   <p>
-                                    <input type="checkbox" name="terapiaocupacional" value="1">
-                                    Terapia Ocupacional</p>
-                                    <p>
-                                      <input type="checkbox" name="pedagogico" value="1">
-                                      Pedagógico</p>
-                                      <p>
+                                <input type="checkbox" name="neurologico" value="1">
+                                Neurológico</p>
+                                  
+                                    
                                         <input type="checkbox" name="social" value="1">
                                         Social</p>
                                       </div>

@@ -26,7 +26,7 @@ $r = $usuario->mostrartodos();
 		    <thead>
 		    	<tr>
 		    		<th style="text-align: center" colspan="4">DADOS DO USUÁRIO</th>
-		    		<th style="text-align: center" colspan="9">PERMISSÕES</th>
+		    		<th style="text-align: center" colspan="6">PERMISSÕES</th>
 		    	</tr>
 		      
 		    </thead>
@@ -39,11 +39,11 @@ $r = $usuario->mostrartodos();
 		        <td style="text-align: center;" title="Administrativo"><b>ADM</b></td>
 		        <td style="text-align: center;" title="Planoterapêutico"><b>PT</b></td>
 		        <td style="text-align: center;" title="Psicológico"><b>PSC</b></td>
-		        <td style="text-align: center;" title="Neurológico"><b>NRL</b></td>
-		        <td style="text-align: center;" title="Fonoaudiológico"><b>FNA</b></td>
+		      <!--  <td style="text-align: center;" title="Neurológico"><b>NRL</b></td>
+		        <td style="text-align: center;" title="Fonoaudiológico"><b>FNA</b></td> -->
 		        <td style="text-align: center;" title="Terapia Ocupacional"><b>TO</b></td>
 		        <td style="text-align: center;" title="Pedagógico"><b>PDG</b></td>
-		        <td style="text-align: center;" title="Social"><b>SL</b></td>		     
+		       <!-- <td style="text-align: center;" title="Social"><b>SL</b></td>	-->	     
 		      </tr>
 		      	<?php
 		      		foreach ($r as $linha) {
@@ -64,9 +64,9 @@ $r = $usuario->mostrartodos();
 						echo "<td style='text-align: center'><span class='glyphicon glyphicon-ok'></span></td>";
 						echo "<td style='text-align: center'><span class='glyphicon glyphicon-ok'></span></td>";
 						echo "<td style='text-align: center'><span class='glyphicon glyphicon-ok'></span></td>";
-						echo "<td style='text-align: center'><span class='glyphicon glyphicon-ok'></span></td>";
-						echo "<td style='text-align: center'><span class='glyphicon glyphicon-ok'></span></td>";
-						echo "<td style='text-align: center'><span class='glyphicon glyphicon-ok'></span></td>";
+						//echo "<td style='text-align: center'><span class='glyphicon glyphicon-ok'></span></td>";
+						//echo "<td style='text-align: center'><span class='glyphicon glyphicon-ok'></span></td>";
+						//echo "<td style='text-align: center'><span class='glyphicon glyphicon-ok'></span></td>";
 					}
 	      			else
 	      			{
@@ -101,7 +101,7 @@ $r = $usuario->mostrartodos();
 		      			{
 		      				echo "<td style='text-align: center'><span class='glyphicon glyphicon-remove'></span></td>";
 		      			}
-		      			if($resp['neurologico'] == 1)
+		      			/*if($resp['neurologico'] == 1)
 		      			{
 		      				echo "<td style='text-align: center'><span class='glyphicon glyphicon-ok'></span></td>";
 																				
@@ -118,7 +118,7 @@ $r = $usuario->mostrartodos();
 		      			else
 		      			{
 		      				echo "<td style='text-align: center'><span class='glyphicon glyphicon-remove'></span></td>";
-		      			}
+		      			}*/
 		      			if($resp['terapiaocupacional'] == 1)
 		      			{
 		      				echo "<td style='text-align: center'><span class='glyphicon glyphicon-ok'></span></td>";
@@ -137,14 +137,14 @@ $r = $usuario->mostrartodos();
 		      			{
 		      				echo "<td style='text-align: center'><span class='glyphicon glyphicon-remove'></span></td>";
 		      			}
-		      			if($resp['social'] == 1)
+		      			/*if($resp['social'] == 1)
 		      			{
 		      				echo "<td style='text-align: center'><span class='glyphicon glyphicon-ok'></span></td>";													
 		      			}
 		      			else
 		      			{
 		      				echo "<td style='text-align: center'><span class='glyphicon glyphicon-remove'></span></td>";
-		      			}
+		      			}*/
 		      		}
 
 		      			echo "</tr>";

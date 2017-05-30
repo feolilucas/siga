@@ -184,6 +184,7 @@ $arraypermissoes = $permissoes->mostrar();
 												<li class="last"><a href="buscaraluno.php?id=6">Buscar</a></li>	
 											</ul> 
 										</li>
+									<!--  
 										<li class="dropdown dropdown-submenu"> 
 											<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa "></i>Anamnese Psicológica</a> 
 											<ul class="dropdown-menu">
@@ -191,15 +192,18 @@ $arraypermissoes = $permissoes->mostrar();
 												<li role="separator" class="divider"></li>
 												<li class="last"><a href="buscaraluno.php">Buscar</a></li>
 											</ul> 
-										</li>
+										</li> 
+									-->
 									</ul>
 								</li>
 
 								<?php
 							}
+
 							if(($arraypermissoes['neurologico'] == 1) or ($_SESSION['admin'] == 1))
 							{
 								?>
+								<!--
 								<li class="dropdown">
 									<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Neurológico<span class="caret"></span></a>
 									<ul class="dropdown-menu">
@@ -213,12 +217,13 @@ $arraypermissoes = $permissoes->mostrar();
 										</li>				
 									</ul>
 								</li>
+								-->
 								<?php
 							}
 							if(($arraypermissoes['fonoaudiologico'] == 1) or ($_SESSION['admin'] == 1))
 							{
 								?>
-
+								<!--
 								<li class="dropdown">
 									<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Fonoaudiológico<span class="caret"></span></a>
 									<ul class="dropdown-menu">
@@ -248,6 +253,7 @@ $arraypermissoes = $permissoes->mostrar();
 										</li>
 									</ul>
 								</li>
+								-->
 								<?php
 							}
 							if(($arraypermissoes['terapiaocupacional'] == 1) or ($_SESSION['admin'] == 1))
@@ -293,7 +299,7 @@ $arraypermissoes = $permissoes->mostrar();
 							if(($arraypermissoes['social'] == 1) or ($_SESSION['admin'] == 1))
 							{
 								?>
-
+								<!--
 								<li class="dropdown">
 									<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Social<span class="caret"></span></a>
 									<ul class="dropdown-menu">
@@ -315,6 +321,7 @@ $arraypermissoes = $permissoes->mostrar();
 										</li>
 									</ul>
 								</li>
+								-->
 								<?php
 							}
 							?>
