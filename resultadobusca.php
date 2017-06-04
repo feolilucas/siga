@@ -108,12 +108,17 @@ else
 																	echo "<td>".$linha['idavaliacaopedagogica']."</td>";
 																	echo "<td>".$linha['datacadastro']."</td>";
 																	echo "<td class='text-center'>
+																	<div style='padding-left: 3px;' class='row'>
+
+																				<a class='btn btn-success btn-xs' href='#' onClick='imprimir(".$linha['idavaliacaopedagogica'].");'>
+																				<span class='glyphicon glyphicon-print'></span> Imprimir</a>
+
 																	<a class='btn btn-info btn-xs' href='alteraravaliacaopedagogica.php?id=".$linha['idavaliacaopedagogica']."'>
 																		<span class='glyphicon glyphicon-edit'></span> Alterar</a>
 
 																		<a class='btn btn-danger btn-xs' onClick='deletar(3,".$linha['idavaliacaopedagogica'].");'>
 																			<span class='glyphicon glyphicon-remove'></span> Deletar</a>
-																		</td>";										
+																		</div></td>";										
 																	}
 
 																	echo "</tr>";
@@ -123,6 +128,27 @@ else
 															</table>
 
 															<?php
+
+															foreach($r as $linha)
+															{
+																?>
+																<div <?php echo "id='divimprimir".$linha['idavaliacaopedagogica']."'" ?>  style="display: none;">
+																<p style="float:right;"><b>Data de cadastro: </b><?php echo $linha['datacadastro'];?></p>
+																<h2 align="center">Avaliação Pedagógica</h2>
+																	<table cellpadding="5">
+																		<tr>
+																			<td><b>Nome do aluno: </b> <?php echo $nomealuno['nome']?></td><br><br>
+																		</tr>
+																		<tr>
+																			<td><b>Avaliação Pedagógica: </b> <?php echo $linha['avaliacaopedagogica']?></td>
+																		</tr>
+																		<tr>
+																			<td><b>Observações gerais: </b> <?php echo $linha['observacoesgerais']?></td>
+																		</tr>										
+																	</table>
+																</div>
+															<?php
+															}			
 															break;
 														case 4: //parecerpsicologico
 														$aluno->setIdaluno($idaluno);
@@ -149,12 +175,17 @@ else
 																	echo "<td>".$linha['idparecerpsicologico']."</td>";
 																	echo "<td>".$linha['datacadastro']."</td>";
 																	echo "<td class='text-center'>
+																	<div style='padding-left: 3px;' class='row'>
+
+																				<a class='btn btn-success btn-xs' href='#' onClick='imprimir(".$linha['idparecerpsicologico'].");'>
+																				<span class='glyphicon glyphicon-print'></span> Imprimir</a>
+
 																	<a class='btn btn-info btn-xs' href='alterarparecerpsicologico.php?id=".$linha['idparecerpsicologico']."'>
 																		<span class='glyphicon glyphicon-edit'></span> Alterar</a>
 
 																		<a class='btn btn-danger btn-xs' onClick='deletar(4,".$linha['idparecerpsicologico'].");'>
 																			<span class='glyphicon glyphicon-remove'></span> Deletar</a>
-																		</td>";				
+																		</div></td>";				
 
 																	}																			
 																	echo "</tr>";																		
@@ -163,6 +194,27 @@ else
 															</table>
 
 															<?php
+
+															foreach($r as $linha)
+															{
+																?>
+																<div <?php echo "id='divimprimir".$linha['idparecerpsicologico']."'" ?>  style="display: none;">
+																<p style="float:right;"><b>Data de cadastro: </b><?php echo $linha['datacadastro'];?></p>
+																<h2 align="center">Parecer Psicológico</h2>
+																	<table cellpadding="5">
+																		<tr>
+																			<td><b>Nome do aluno: </b> <?php echo $nomealuno['nome']?></td><br><br>
+																		</tr>
+																		<tr>
+																			<td><b>Parecer Psicológico: </b> <?php echo $linha['parecerpsicologico']?></td>
+																		</tr>
+																		<tr>
+																			<td><b>Observações gerais: </b> <?php echo $linha['observacoesgerais']?></td>
+																		</tr>										
+																	</table>
+																</div>
+															<?php
+															}		
 															break;
 														case 5: //planoterapeuticoindividual
 														$aluno->setIdaluno($idaluno);
@@ -186,22 +238,136 @@ else
 																foreach($r as $linha)
 																{
 																	echo "<tr>";
+
 																	echo "<td>".$linha['idplanoterapeuticoindividual']."</td>";
 																	echo "<td>".$linha['datacadastro']."</td>";
 																	echo "<td class='text-center'>
-																	<a class='btn btn-info btn-xs' href='alterarplanoterapeuticoindividual.php?id=".$linha['idplanoterapeuticoindividual']."'>
-																		<span class='glyphicon glyphicon-edit'></span> Alterar</a>
+																	<div style='padding-left: 3px;' class='row'>
 
-																		<a class='btn btn-danger btn-xs' onClick='deletar(5,".$linha['idplanoterapeuticoindividual'].");'>
-																			<span class='glyphicon glyphicon-remove'></span> Deletar</a>
-																		</td>";								
+																				<a class='btn btn-success btn-xs' href='#' onClick='imprimir(".$linha['idplanoterapeuticoindividual'].");'>
+																				<span class='glyphicon glyphicon-print'></span> Imprimir</a>
+
+																				<a class='btn btn-info btn-xs' href='alterarplanoterapeuticoindividual.php?id=".$linha['idplanoterapeuticoindividual']."'>
+																					<span class='glyphicon glyphicon-edit'></span> Alterar</a>
+
+																					<a class='btn btn-danger btn-xs' onClick='deletar(5,".$linha['idplanoterapeuticoindividual'].");'>
+																						<span class='glyphicon glyphicon-remove'></span> Deletar</a>
+																		</div></td>";								
 																	}																			
 																	echo "</tr>";																		
 																	?>
+
 																</tbody>
 															</table>
 
 															<?php
+															foreach($r as $linha)
+															{
+																?>
+																<div <?php echo "id='divimprimir".$linha['idplanoterapeuticoindividual']."'" ?>  style="display: none;">
+																<p style="float:right;"><b>Data de cadastro: </b><?php echo $linha['datacadastro'];?></p>
+																<h2 align="center">Plano Terapêutico Individual</h2>
+																	<table cellpadding="5">
+																		<tr>
+																			<td><b>Nome do aluno: </b> <?php echo $nomealuno['nome']?></td><br><br>
+
+																		</tr>
+																		<tr>
+																			<td><b>Observações gerais: </b> <?php echo $linha['observacoesgerais']?></td>
+
+																		</tr>
+																		<tr>
+																			<td><b>CID: </b> <?php echo $linha['cid']?></td>
+
+																		</tr>
+																		<tr>
+																			<td><b>Etiologia: </b> <?php echo $linha['etiologia']?></td>
+
+																		</tr>
+																		<tr>
+																			<td><b>Dados médicos relevantes: </b> <?php echo $linha['dadosmedicos']?></td>
+
+																		</tr>
+																		<tr>
+																			<td><b>Diagnóstico: </b> <?php echo $linha['diagnostico']?></td>
+
+																		</tr>
+																			
+																	</table>
+																	<br><br>
+																	<table border="1" cellpadding="5">
+																	<tr>	
+																		<td><b>Serviço Social: </b><?php echo $linha['servicosocial']?>
+																		<br><br>
+																		<b>Objetivo: </b><?php echo $linha['objservicosocial']?></td>
+																	</tr>
+
+																	</table>
+
+																	<br><br>
+																	<table border="1" cellpadding="5">
+																	<tr>	
+																		<td><b>Fonoaudiologia: </b><?php echo $linha['fonoaudiologia']?>
+																		<br><br>
+																		<b>Objetivo: </b><?php echo $linha['objfonoaudiologia']?></td>
+																	</tr>
+
+																	</table>
+
+																	<br><br>
+																	<table border="1" cellpadding="5">
+																	<tr>	
+																		<td><b>Psicologia: </b><?php echo $linha['psicologia']?>
+																		<br><br>
+																		<b>Objetivo: </b><?php echo $linha['objpsicologia']?></td>
+																	</tr>
+
+																	</table>
+
+																	<br><br>
+																	<table border="1" cellpadding="5">
+																	<tr>	
+																		<td><b>Terapia Ocupacional: </b><?php echo $linha['terapeutaocupacional']?>
+																		<br><br>
+																		<b>Objetivo: </b><?php echo $linha['objterapeutaocupacional']?></td>
+																	</tr>
+
+																	</table>
+
+																	<br><br>
+																	<table border="1" cellpadding="5">
+																	<tr>	
+																		<td><b>Fisioterapia: </b><?php echo $linha['fisioterapia']?>
+																		<br><br>
+																		<b>Objetivo: </b><?php echo $linha['objfisioterapia']?></td>
+																	</tr>
+
+																	</table>
+
+																	<br><br>
+																	<table border="1" cellpadding="5">
+																	<tr>	
+																		<td><b>Nutricionista: </b><?php echo $linha['nutricionista']?>
+																		<br><br>
+																		<b>Objetivo: </b><?php echo $linha['objnutricionista']?></td>
+																	</tr>
+
+																	</table>
+
+																	<br><br>
+																	<table border="1" cellpadding="5">
+																	<tr>	
+																		<td><b>Dentista: </b><?php echo $linha['dentista']?>
+																		<br><br>
+																		<b>Objetivo: </b><?php echo $linha['objdentista']?></td>
+																	</tr>
+
+																	</table>
+
+																</div>
+																<?php
+															}
+
 															break;
 														case 6: //planoterapeuticopsicologico
 														$aluno->setIdaluno($idaluno);
@@ -228,12 +394,18 @@ else
 																	echo "<td>".$linha['idplanoterapeuticopsicologico']."</td>";
 																	echo "<td>".$linha['datacadastro']."</td>";
 																	echo "<td class='text-center'>
+
+																	<div style='padding-left: 3px;' class='row'>
+
+																				<a class='btn btn-success btn-xs' href='#' onClick='imprimir(".$linha['idplanoterapeuticopsicologico'].");'>
+																				<span class='glyphicon glyphicon-print'></span> Imprimir</a>
+
 																	<a class='btn btn-info btn-xs' href='alterarplanoterapeuticopsicologico.php?id=".$linha['idplanoterapeuticopsicologico']."'>
 																		<span class='glyphicon glyphicon-edit'></span> Alterar</a>
 
 																		<a class='btn btn-danger btn-xs' onClick='deletar(6,".$linha['idplanoterapeuticopsicologico'].");'>
 																			<span class='glyphicon glyphicon-remove'></span> Deletar</a>
-																		</td>";										
+																		</div></td>";										
 																	}																			
 																	echo "</tr>";																		
 																	?>
@@ -241,6 +413,27 @@ else
 															</table>
 
 															<?php
+
+																foreach($r as $linha)
+															{
+																?>
+																<div <?php echo "id='divimprimir".$linha['idplanoterapeuticopsicologico']."'" ?>  style="display: none;">
+																<p style="float:right;"><b>Data de cadastro: </b><?php echo $linha['datacadastro'];?></p>
+																<h2 align="center">Plano Terapêutico Psicológico</h2>
+																	<table cellpadding="5">
+																		<tr>
+																			<td><b>Nome do aluno: </b> <?php echo $nomealuno['nome']?></td><br><br>
+																		</tr>
+																		<tr>
+																			<td><b>Plano Terapêutico Psicológico: </b> <?php echo $linha['planoterapeutico']?></td>
+																		</tr>
+																		<tr>
+																			<td><b>Observações gerais: </b> <?php echo $linha['observacoesgerais']?></td>
+																		</tr>										
+																	</table>
+																</div>
+															<?php
+															}		
 															break;
 														case 7: //relatorioobservacao
 														$aluno->setIdaluno($idaluno);
@@ -267,19 +460,50 @@ else
 																	echo "<td>".$linha['idrelatorioobservacao']."</td>";
 																	echo "<td>".$linha['datacadastro']."</td>";
 																	echo "<td class='text-center'>
+																	<div style='padding-left: 3px;' class='row'>
+
+																				<a class='btn btn-success btn-xs' href='#' onClick='imprimir(".$linha['idrelatorioobservacao'].");'>
+																				<span class='glyphicon glyphicon-print'></span> Imprimir</a>
+
 																	<a class='btn btn-info btn-xs' href='alterarrelatorioobservacao.php?id=".$linha['idrelatorioobservacao']."'>
 																		<span class='glyphicon glyphicon-edit'></span> Alterar</a>
 
 																		<a class='btn btn-danger btn-xs' onClick='deletar(7,".$linha['idrelatorioobservacao'].");'>
 																			<span class='glyphicon glyphicon-remove'></span> Deletar</a>
-																		</td>";											
+																		</div></td>";											
 																	}																			
 																	echo "</tr>";																		
 																	?>
 																</tbody>
 															</table>
-
 															<?php
+															foreach($r as $linha)
+															{
+																?>
+																<div <?php echo "id='divimprimir".$linha['idrelatorioobservacao']."'" ?>  style="display: none;">
+																<p style="float:right;"><b>Data de cadastro: </b><?php echo $linha['datacadastro'];?></p>
+																<h2 align="center">Relatório de Observação</h2>
+																	<table cellpadding="5">
+																		<tr>
+																			<td><b>Nome do aluno: </b> <?php echo $nomealuno['nome']?></td><br><br>
+																		</tr>
+																		<tr>
+																			<td><b>Vida diária: </b> <?php echo $linha['vidadiaria']?></td>
+																		</tr>
+																		<tr>
+																			<td><b>Vida prática: </b> <?php echo $linha['vidapratica']?></td>
+																		</tr>
+																		<tr>
+																			<td><b>Habilidades básicas: </b> <?php echo $linha['habilidadesbasicas']?></td>
+																		</tr>
+																		<tr>
+																			<td><b>Observações gerais: </b> <?php echo $linha['observacoesgerais']?></td>
+																		</tr>
+																	</table>
+																</div>
+															<?php
+															}			
+															
 															break;
 														case 8: //triagempsicologica
 														$aluno->setIdaluno($idaluno);
@@ -306,12 +530,18 @@ else
 																	echo "<td>".$linha['idtriagempsicologica']."</td>";
 																	echo "<td>".$linha['datacadastro']."</td>";
 																	echo "<td class='text-center'>
+
+																	<div style='padding-left: 3px;' class='row'>
+
+																				<a class='btn btn-success btn-xs' href='#' onClick='imprimir(".$linha['idtriagempsicologica'].");'>
+																				<span class='glyphicon glyphicon-print'></span> Imprimir</a>
+
 																	<a class='btn btn-info btn-xs' href='alterartriagempsicologica.php?id=".$linha['idtriagempsicologica']."'>
 																		<span class='glyphicon glyphicon-edit'></span> Alterar</a>
 
 																		<a class='btn btn-danger btn-xs' onClick='deletar(8,".$linha['idtriagempsicologica'].");'>
 																			<span class='glyphicon glyphicon-remove'></span> Deletar</a>
-																		</td>";											
+																		</div></td>";											
 																	}																			
 																	echo "</tr>";																		
 																	?>
@@ -319,6 +549,27 @@ else
 															</table>
 
 															<?php
+
+															foreach($r as $linha)
+															{
+																?>
+																<div <?php echo "id='divimprimir".$linha['idtriagempsicologica']."'" ?>  style="display: none;">
+																<p style="float:right;"><b>Data de cadastro: </b><?php echo $linha['datacadastro'];?></p>
+																<h2 align="center">Triagem Psicológica</h2>
+																	<table cellpadding="5">
+																		<tr>
+																			<td><b>Nome do aluno: </b> <?php echo $nomealuno['nome']?></td><br><br>
+																		</tr>
+																		<tr>
+																			<td><b>Triagem Psicológica: </b> <?php echo $linha['triagem']?></td>
+																		</tr>
+																		<tr>
+																			<td><b>Observações gerais: </b> <?php echo $linha['observacoesgerais']?></td>
+																		</tr>										
+																	</table>
+																</div>
+															<?php
+															}		
 															break;
 
 
@@ -346,3 +597,14 @@ else
 		<?php  
 		include "rodape.php";
 		?>
+
+<script>
+	 function imprimir(id) {
+            var conteudo = document.getElementById('divimprimir'+id).innerHTML,
+                tela_impressao = window.open('about:blank');
+
+            tela_impressao.document.write(conteudo);
+            tela_impressao.window.print();
+            tela_impressao.window.close();
+        };
+</script>

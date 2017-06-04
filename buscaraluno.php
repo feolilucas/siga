@@ -77,11 +77,16 @@ else
 															switch ($id) {
 																case 2: //Aluno
 																	echo "<td class='text-center'>
+																			<div style='padding-left: 3px;' class='row'>
+																				<a class='btn btn-success btn-xs' href='#' onClick='imprimir(".$linha['idaluno'].");'>
+																				<span class='glyphicon glyphicon-print'></span> Imprimir</a>
+
 																				<a class='btn btn-info btn-xs' href='alteraraluno.php?id=".$linha['idaluno']."'>
 																				<span class='glyphicon glyphicon-edit'></span> Alterar</a>
 
 																				<a class='btn btn-danger btn-xs' onClick='deletaraluno(2,".$linha['idaluno'].");'>
 																				<span class='glyphicon glyphicon-remove'></span> Deletar</a>
+																			</div>
 																			</td>";																	
 																break;
 																case 3: // avaliacaopedagogica
@@ -130,6 +135,97 @@ else
 														?>
 													</tbody>
 												</table>
+
+<?php
+	foreach($r as $linha)
+	{ 
+	switch ($id) {
+	case 2: //Aluno
+	?>
+				<div <?php echo "id='divimprimir".$linha['idaluno']."'" ?>  style="display: none;">
+
+				<!-- <p style="float: right;"><b>Data de Cadastro: </b><?php// echo $linha['datacadastro']; ?></p> -->
+
+				<table cellpadding="5">
+					<tr>
+							<td><b>ID do Aluno: </b> <?php echo $linha['idaluno'];?></td>							
+					</tr>
+					<tr>
+							<td><b>Nome: </b> <?php echo $linha['nome'];?></td>							
+					</tr>
+					<tr>
+							<td><b>RG: </b> <?php echo $linha['rg'];?></td>												
+					</tr>
+					<tr>
+							<td><b>Data de emissão do RG: </b> <?php echo $linha['dataemissaorg'];?></td>	
+					</tr>
+					<tr>
+							<td><b>CPF: </b> <?php echo $linha['cpf'];?></td>							
+					</tr>
+					<tr>
+							<td><b>Data de Nascimento: </b> <?php echo $linha['datanascimento'];?></td>							
+					</tr>
+					<tr>
+							<td><b>Sexo: </b> <?php echo $linha['sexo'];?></td>							
+					</tr>
+					<tr>
+							<td><b>Nome do pai: </b> <?php echo $linha['nomepai'];	?></td>							
+					</tr>
+					<tr>
+							<td><b>Nome da Mãe: </b> <?php echo $linha['nomemae'];?></td>							
+					</tr>
+					<tr>
+							<td><b>Nacionalidade: </b> <?php echo $linha['nacionalidade'];?></td>							
+					</tr>
+					<tr>
+							<td><b>Deficiência: </b> <?php echo $linha['deficiencia'];?></td>							
+					</tr>
+					<tr>
+							<td><b>CEP: </b> <?php echo $linha['cep'];?></td>							
+					</tr>	
+					<tr>
+							<td><b>Logradouro: </b> <?php echo $linha['logradouro'];?></td>							
+					</tr>
+					<tr>
+							<td><b>Número: </b> <?php echo $linha['numero'];?></td>							
+					</tr>
+					<tr>
+							<td><b>Complemento: </b> <?php echo $linha['complemento'];?></td>							
+					</tr>
+					<tr>
+							<td><b>Referência: </b> <?php echo $linha['referencia'];?></td>							
+					</tr>
+					<tr>
+							<td><b>Bairro: </b> <?php echo $linha['bairro'];?></td>							
+					</tr>
+					<tr>
+							<td><b>Cidade: </b> <?php echo $linha['cidade'];?></td>							
+					</tr>
+					<tr>
+							<td><b>Estado: </b> <?php echo $linha['estado'];?></td>							
+					</tr>
+				</table>
+				<br><br>	
+
+<?php											
+	break;													
+	default:
+		
+	break;
+}
+}
+?>
+
+
+
+
+
+
+
+
+
+
+
 											</div>
 										</div>
 									</div>
@@ -170,6 +266,15 @@ if(window.location.href == "http://localhost/siga/buscaraluno.php?id=2&deletou=1
   if(window.location.href == "http://localhost/siga/buscaraluno.php?id=8&deletou=1"){
 	swal("Excluido!", "O registro foi excluido com sucesso!", "success");
  };
+
+ function imprimir(id) {
+            var conteudo = document.getElementById('divimprimir'+id).innerHTML,
+                tela_impressao = window.open('about:blank');
+
+            tela_impressao.document.write(conteudo);
+            tela_impressao.window.print();
+            tela_impressao.window.close();
+        };
 
 </script>
 
