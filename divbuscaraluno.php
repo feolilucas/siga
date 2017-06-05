@@ -13,7 +13,7 @@
     ?>
 
     <section class="container">
-      <div style="padding:30px;">
+      <div style="padding:2%; margin-left: 2%; margin-right: 8%;">
 
         <div class="row">
 
@@ -28,7 +28,7 @@
 
         </div>
         
-        <table class="table table-hover teste" id="dev-table">
+        <table class="table table-hover teste" id="dev-table" >
           <thead>
             <tr>
               <th>ID</th>

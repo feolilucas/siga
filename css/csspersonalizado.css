@@ -35,7 +35,13 @@
       position: absolute;
       top:200px;
       z-index: 3;
-      left:301px;
+      left:50%;
+      margin-left: -405px;
+      
+
+
+
+
 
       display: none;
     }

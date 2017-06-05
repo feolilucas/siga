@@ -19,9 +19,9 @@ if(($arraypermissoes['planoterapeutico'] == 0) and ($_SESSION['admin'] == 0))
   <div>
     <!-- Nav tabs -->
     <ul class="nav nav-tabs " role="tablist">
-        <li role="presentation" class="active"><a href="#dadosdeficiencia" id="tabdados" aria-controls="dadosdeficiencia" role="tab" data-toggle="tab">Dados Deficiência</a></li>
+        <li role="presentation" class="active"><a href="#dadosdeficiencia" id="tabdados" aria-controls="dadosdeficiencia" role="tab" data-toggle="tab">Deficiência</a></li>
         <li role="presentation"><a href="#servicosocial" aria-controls="servicosocial" id="tabsocial" role="tab" data-toggle="tab">Serv. Social</a></li>
-        <li role="presentation"><a href="#fonoaudiologia" aria-controls="fonoaudiologia" id="tabfono" role="tab" data-toggle="tab">Fonoaudiologia</a></li>
+        <li role="presentation"><a href="#fonoaudiologia" aria-controls="fonoaudiologia" id="tabfono" role="tab" data-toggle="tab">Fonoaud.</a></li>
         <li role="presentation"><a href="#psicologia" aria-controls="psicologia" role="tab" id="tabpsicologia" data-toggle="tab">Psicologia</a></li>
         <li role="presentation"><a href="#terapeutaocupacional" aria-controls="terapeutaocupacional" id="tabto" role="tab" data-toggle="tab">T.O.</a></li>
         <li role="presentation"><a href="#fisioterapia" aria-controls="fisioterapia" id="tabfisioterapia" role="tab" data-toggle="tab">Fisioterapia</a></li>
